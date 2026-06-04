@@ -48,15 +48,6 @@ public class OceanGenerator : MonoBehaviour
         if (settings.oceanMaterial != null)
         {
             meshRenderer.sharedMaterial = settings.oceanMaterial;
-
-            // Use MaterialPropertyBlock to set per-instance values
-            // without modifying the shared material asset
-            var props = new MaterialPropertyBlock();
-            props.SetFloat("_Radius", oceanRadius);
-            props.SetColor("_Color", settings.oceanColor);
-            props.SetVector("_PlanetCenter",
-                transform.parent ? transform.parent.position : Vector3.zero);
-            meshRenderer.SetPropertyBlock(props);
         }
         else
         {

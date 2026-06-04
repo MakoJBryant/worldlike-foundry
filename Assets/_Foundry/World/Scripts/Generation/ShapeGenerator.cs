@@ -5,7 +5,7 @@ public class ShapeGenerator : MonoBehaviour
 {
     [Range(2, 256)]
     public int resolution = 64;
-    public float radius = 2000f;
+    public float radius = 100f;
 
     [Header("Settings")]
     public ShapeSettings shapeSettings;
@@ -53,8 +53,8 @@ public class ShapeGenerator : MonoBehaviour
             out Vector3[] displaced,
             out float min, out float max);
 
-        MinElevation = min;
-        MaxElevation = max;
+        MinElevation = min * radius;
+        MaxElevation = max * radius;
 
         for (int i = 0; i < displaced.Length; i++)
             displaced[i] = displaced[i].normalized * displaced[i].magnitude * radius;

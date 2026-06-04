@@ -9,7 +9,6 @@ public class AtmosphereGenerator : MonoBehaviour
     private MeshFilter meshFilter;
     private MeshRenderer meshRenderer;
     private Mesh mesh;
-    private MaterialPropertyBlock propertyBlock;
 
     /// <summary>
     /// Generates the atmosphere glow sphere around the planet.
@@ -24,14 +23,13 @@ public class AtmosphereGenerator : MonoBehaviour
 
         meshFilter = GetComponent<MeshFilter>();
         meshRenderer = GetComponent<MeshRenderer>();
-        propertyBlock = new MaterialPropertyBlock();
 
         if (mesh == null)
             mesh = new Mesh { name = "Atmosphere Mesh" };
 
         mesh.Clear();
 
-        float atmosphereRadius = maxElevation * (1f + settings.thicknessMultiplier);
+        float atmosphereRadius = maxElevation * (1f + settings.sizeMultiplier);
 
         SphereCreator.CreateSphereMesh(
             resolution, atmosphereRadius,
@@ -50,8 +48,6 @@ public class AtmosphereGenerator : MonoBehaviour
         if (settings.atmosphereMaterial != null)
         {
             meshRenderer.sharedMaterial = settings.atmosphereMaterial;
-            propertyBlock.SetColor("_Color", settings.atmosphereColor);
-            meshRenderer.SetPropertyBlock(propertyBlock);
         }
         else
         {
@@ -72,9 +68,7 @@ public class AtmosphereGenerator : MonoBehaviour
     /// </summary>
     public void SetSunDirection(Vector3 direction)
     {
-        if (meshRenderer == null || propertyBlock == null) return;
-
-        propertyBlock.SetVector("_SunDirection", direction);
-        meshRenderer.SetPropertyBlock(propertyBlock);
+        if (meshRenderer == null) return;
+        meshRenderer.material.SetVector("_SunDirection", direction);
     }
 }

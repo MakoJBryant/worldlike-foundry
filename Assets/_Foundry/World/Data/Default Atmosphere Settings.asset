@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Default Atmosphere Settings
   m_EditorClassIdentifier: Assembly-CSharp::AtmosphereSettings
   atmosphereMaterial: {fileID: 2100000, guid: a57b705da2af94947aab4af1e9715592, type: 2}
-  thicknessMultiplier: 0.3
-  atmosphereColor: {r: 0.4, g: 0.6, b: 1, a: 1}
-  sunsetColor: {r: 1, g: 0.5, b: 0.2, a: 1}
+  thicknessMultiplier: 0
   nightOpacity: 0.1
