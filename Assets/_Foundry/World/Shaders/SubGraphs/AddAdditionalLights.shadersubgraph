@@ -714,9 +714,6 @@
         },
         {
             "m_Id": "3290a06902fa456da6215e30e89328cf"
-        },
-        {
-            "m_Id": "93d6a4c43f0244dd80633d2238d3dad8"
         }
     ],
     "synonyms": [],
@@ -935,31 +932,6 @@
     "m_Property": {
         "m_Id": "893710c57bae443ab9da0d5ebcfbc2e7"
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
-    "m_ObjectId": "93d6a4c43f0244dd80633d2238d3dad8",
-    "m_Id": 1,
-    "m_DisplayName": "Out_Vector4",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "OutVector4",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_Labels": []
 }
 
 {
