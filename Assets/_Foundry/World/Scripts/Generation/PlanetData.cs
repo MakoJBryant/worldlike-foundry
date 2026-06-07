@@ -1,16 +1,12 @@
 using UnityEngine;
-
 [CreateAssetMenu(fileName = "New Planet", menuName = "Worldlike Foundry/Planet")]
 public class PlanetData : ScriptableObject
 {
-    [Header("Generation")]
-    [Range(2, 256)]
-    public int resolution = 64;
+    [Header("Planet")]
     public float radius = 100f;
 
     [Header("Settings")]
-    public ShapeSettings shapeSettings;
-    public ColorRampSettings colorRampSettings;
+    public TerrainSettings terrainSettings;
     public OceanSettings oceanSettings;
     public AtmosphereSettings atmosphereSettings;
 

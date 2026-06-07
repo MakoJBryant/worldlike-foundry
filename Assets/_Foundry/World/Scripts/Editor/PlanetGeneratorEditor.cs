@@ -5,12 +5,6 @@ using UnityEditor;
 public class PlanetGeneratorEditor : Editor
 {
     private PlanetGenerator generator;
-
-    // Foldout states
-    private bool showShape = true;
-    private bool showColorRamp = true;
-    private bool showOcean = true;
-    private bool showAtmosphere = true;
     private bool showBake = false;
 
     void OnEnable()
@@ -29,17 +23,6 @@ public class PlanetGeneratorEditor : Editor
 
         EditorGUILayout.Space();
 
-        // ── Subsystems ───────────────────────────────────────
-        EditorGUILayout.LabelField("Subsystems", EditorStyles.boldLabel);
-        generator.shapeGenerator = (ShapeGenerator)EditorGUILayout.ObjectField(
-            "Shape", generator.shapeGenerator, typeof(ShapeGenerator), true);
-        generator.oceanGenerator = (OceanGenerator)EditorGUILayout.ObjectField(
-            "Ocean", generator.oceanGenerator, typeof(OceanGenerator), true);
-        generator.atmosphereGenerator = (AtmosphereGenerator)EditorGUILayout.ObjectField(
-            "Atmosphere", generator.atmosphereGenerator, typeof(AtmosphereGenerator), true);
-
-        EditorGUILayout.Space();
-
         if (generator.planetData == null)
         {
             EditorGUILayout.HelpBox(
@@ -49,15 +32,16 @@ public class PlanetGeneratorEditor : Editor
             return;
         }
 
-        // ── Settings ─────────────────────────────────────────
-        EditorGUILayout.LabelField("Settings", EditorStyles.boldLabel);
-
-        // Radius and Resolution fields above the Shape foldout
+        // ── Planet Settings ──────────────────────────────────
+        EditorGUILayout.LabelField("Planet Settings", EditorStyles.boldLabel);
         EditorGUI.indentLevel++;
         using (var check = new EditorGUI.ChangeCheckScope())
         {
             generator.planetData.radius = EditorGUILayout.FloatField("Radius", generator.planetData.radius);
-            generator.planetData.resolution = EditorGUILayout.IntSlider("Resolution", generator.planetData.resolution, 2, 256);
+            generator.planetData.axialTilt = EditorGUILayout.Slider("Axial Tilt", generator.planetData.axialTilt, 0f, 90f);
+            generator.planetData.rotationSpeed = EditorGUILayout.FloatField("Rotation Speed", generator.planetData.rotationSpeed);
+            generator.planetData.orbitRadius = EditorGUILayout.FloatField("Orbit Radius", generator.planetData.orbitRadius);
+            generator.planetData.orbitSpeed = EditorGUILayout.FloatField("Orbit Speed", generator.planetData.orbitSpeed);
             if (check.changed)
             {
                 EditorUtility.SetDirty(generator.planetData);
@@ -69,15 +53,21 @@ public class PlanetGeneratorEditor : Editor
 
         EditorGUILayout.Space();
 
-        DrawFoldout("Shape", ref showShape, generator.planetData.shapeSettings);
-        DrawFoldout("Color Ramp", ref showColorRamp, generator.planetData.colorRampSettings);
-        DrawFoldout("Ocean", ref showOcean, generator.planetData.oceanSettings);
-        DrawFoldout("Atmosphere", ref showAtmosphere, generator.planetData.atmosphereSettings);
+        // ── Subsystems ───────────────────────────────────────
+        EditorGUILayout.LabelField("Subsystems", EditorStyles.boldLabel);
+        EditorGUI.indentLevel++;
+        generator.terrainGenerator = (TerrainGenerator)EditorGUILayout.ObjectField(
+            "Terrain", generator.terrainGenerator, typeof(TerrainGenerator), true);
+        generator.oceanGenerator = (OceanGenerator)EditorGUILayout.ObjectField(
+            "Ocean", generator.oceanGenerator, typeof(OceanGenerator), true);
+        generator.atmosphereGenerator = (AtmosphereGenerator)EditorGUILayout.ObjectField(
+            "Atmosphere", generator.atmosphereGenerator, typeof(AtmosphereGenerator), true);
+        EditorGUI.indentLevel--;
 
         EditorGUILayout.Space();
 
-        // ── Generate ─────────────────────────────────────────
-        EditorGUILayout.LabelField("Generate", EditorStyles.boldLabel);
+        // ── Actions ──────────────────────────────────────────
+        EditorGUILayout.LabelField("Actions", EditorStyles.boldLabel);
 
         if (GUILayout.Button("Generate Preview", GUILayout.Height(32)))
         {
@@ -87,7 +77,6 @@ public class PlanetGeneratorEditor : Editor
 
         EditorGUILayout.Space();
 
-        // ── Bake ─────────────────────────────────────────────
         showBake = EditorGUILayout.Foldout(showBake, "Bake", true, EditorStyles.foldoutHeader);
         if (showBake)
         {
@@ -121,44 +110,13 @@ public class PlanetGeneratorEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 
-    private void DrawFoldout(string label, ref bool foldout, ScriptableObject settings)
-    {
-        foldout = EditorGUILayout.Foldout(foldout, label, true, EditorStyles.foldoutHeader);
-        if (!foldout) return;
-
-        EditorGUI.indentLevel++;
-
-        if (settings == null)
-        {
-            EditorGUILayout.HelpBox($"No {label} settings assigned on PlanetData.", MessageType.Warning);
-            EditorGUI.indentLevel--;
-            return;
-        }
-
-        using (var check = new EditorGUI.ChangeCheckScope())
-        {
-            Editor settingsEditor = CreateEditor(settings);
-            settingsEditor.OnInspectorGUI();
-
-            if (check.changed)
-            {
-                EditorUtility.SetDirty(settings);
-                generator.GeneratePlanet();
-                SceneView.RepaintAll();
-            }
-        }
-
-        EditorGUI.indentLevel--;
-        EditorGUILayout.Space();
-    }
-
     private void BakePlanet()
     {
         if (generator.planetData == null) return;
 
         generator.GeneratePlanet();
 
-        MeshFilter mf = generator.shapeGenerator?.GetComponent<MeshFilter>();
+        MeshFilter mf = generator.terrainGenerator?.GetComponent<MeshFilter>();
         if (mf == null || mf.sharedMesh == null)
         {
             Debug.LogWarning("[PlanetGeneratorEditor] No mesh found to bake.");

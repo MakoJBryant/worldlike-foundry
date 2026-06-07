@@ -5,9 +5,10 @@ public class PlanetGenerator : MonoBehaviour
     [Header("Planet Data")]
     public PlanetData planetData;
     [Header("Subsystems")]
-    public ShapeGenerator shapeGenerator;
+    public TerrainGenerator terrainGenerator;
     public OceanGenerator oceanGenerator;
     public AtmosphereGenerator atmosphereGenerator;
+
     public void GeneratePlanet()
     {
         if (planetData == null)
@@ -15,55 +16,39 @@ public class PlanetGenerator : MonoBehaviour
             Debug.LogWarning("[PlanetGenerator] No PlanetData assigned.");
             return;
         }
-        if (shapeGenerator == null)
+        if (terrainGenerator == null)
         {
-            Debug.LogWarning("[PlanetGenerator] No ShapeGenerator assigned.");
+            Debug.LogWarning("[PlanetGenerator] No TerrainGenerator assigned.");
             return;
         }
-        // 1. Sync shape generator with planet data
-        shapeGenerator.shapeSettings = planetData.shapeSettings;
-        // 2. Generate terrain shape, get the mesh back
-        Mesh planetMesh = shapeGenerator.GenerateShape(planetData.radius, planetData.resolution);
+
+        // 1. Sync terrain generator with planet data
+        terrainGenerator.terrainSettings = planetData.terrainSettings;
+
+        // 2. Generate terrain, get the mesh back
+        Mesh planetMesh = terrainGenerator.GenerateTerrain(planetData.radius);
         if (planetMesh == null) return;
-        // 3. Apply vertex colors from color ramp
-        if (planetData.colorRampSettings != null)
-        {
-            ApplyVertexColors(planetMesh, shapeGenerator.MinElevation, shapeGenerator.MaxElevation);
-        }
-        // 4. Generate ocean
+
+        // 3. Generate ocean
         if (oceanGenerator != null && planetData.oceanSettings != null)
         {
             oceanGenerator.settings = planetData.oceanSettings;
             oceanGenerator.Generate(
-                planetData.resolution,
-                shapeGenerator.MinElevation,
-                shapeGenerator.MaxElevation);
+                planetData.terrainSettings.resolution,
+                terrainGenerator.MinElevation,
+                terrainGenerator.MaxElevation);
         }
-        // 5. Generate atmosphere
+
+        // 4. Generate atmosphere
         if (atmosphereGenerator != null && planetData.atmosphereSettings != null)
         {
             atmosphereGenerator.settings = planetData.atmosphereSettings;
             atmosphereGenerator.Generate(
-                planetData.resolution,
-                shapeGenerator.MaxElevation);
+                planetData.terrainSettings.resolution,
+                terrainGenerator.MaxElevation);
         }
-        // 6. Apply axial tilt
+
+        // 5. Apply axial tilt
         transform.rotation = Quaternion.Euler(planetData.axialTilt, 0f, 0f);
-    }
-    private void ApplyVertexColors(Mesh mesh, float minElevation, float maxElevation)
-    {
-        Vector3[] vertices = mesh.vertices;
-        Color[] colors = new Color[vertices.Length];
-        float elevRange = maxElevation - minElevation;
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            float height = vertices[i].magnitude;
-            float normalizedElev = elevRange > 0f
-                ? (height - minElevation) / elevRange
-                : 0f;
-            colors[i] = ColorRampGenerator.SampleColor(
-                planetData.colorRampSettings, normalizedElev);
-        }
-        mesh.colors = colors;
     }
 }

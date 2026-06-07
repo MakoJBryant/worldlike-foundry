@@ -1,92 +1,62 @@
 using UnityEngine;
-
-/// <summary>
-/// Applies procedural terrain deformation to a base sphere using ShapeSettings.
-/// Operates in normalized (radius = 1) space — scaling to world radius happens in ShapeGenerator.
-/// </summary>
-public static class TerrainGenerator
+[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider))]
+public class TerrainGenerator : MonoBehaviour
 {
-    public static void ApplyTerrainDeformation(
-        Vector3[] baseVertices,
-        ShapeSettings shapeSettings,
-        out Vector3[] displacedVertices,
-        out float minElevation,
-        out float maxElevation)
+    public TerrainSettings terrainSettings;
+    public float MinElevation { get; private set; }
+    public float MaxElevation { get; private set; }
+    private MeshFilter meshFilter;
+    private MeshCollider meshCollider;
+    private Mesh previewMesh;
+
+    void Awake()
     {
-        displacedVertices = new Vector3[baseVertices.Length];
-        minElevation = float.MaxValue;
-        maxElevation = -float.MaxValue; // Note: float.MinValue is a large negative, not zero
-
-        if (shapeSettings == null)
-        {
-            Debug.LogError("[TerrainGenerator] ShapeSettings is null.");
-            return;
-        }
-
-        for (int i = 0; i < baseVertices.Length; i++)
-        {
-            Vector3 normal = baseVertices[i].normalized;
-            float displacement = shapeSettings.globalHeightOffset;
-            float firstLayerValue = 0f;
-
-            if (shapeSettings.noiseLayers != null)
-            {
-                for (int layerIndex = 0; layerIndex < shapeSettings.noiseLayers.Length; layerIndex++)
-                {
-                    NoiseLayer layer = shapeSettings.noiseLayers[layerIndex];
-                    if (layer == null || !layer.enabled) continue;
-
-                    float layerValue = EvaluateLayer(layer, normal);
-
-                    if (layerIndex == 0)
-                        firstLayerValue = layerValue;
-
-                    // If masking is on, this layer only applies where the first layer is positive
-                    if (layer.useFirstLayerAsMask && firstLayerValue <= 0f)
-                        layerValue = 0f;
-
-                    displacement += layerValue * layer.strength;
-                }
-            }
-
-            Vector3 displaced = normal * (baseVertices[i].magnitude + displacement);
-            displacedVertices[i] = displaced;
-
-            float height = displaced.magnitude;
-            minElevation = Mathf.Min(minElevation, height);
-            maxElevation = Mathf.Max(maxElevation, height);
-        }
+        meshFilter = GetComponent<MeshFilter>();
+        meshCollider = GetComponent<MeshCollider>();
     }
 
-    private static float EvaluateLayer(NoiseLayer layer, Vector3 normal)
+    public Mesh GenerateTerrain(float radius)
     {
-        float noise = 0f;
-        float frequency = layer.roughness;
-        float amplitude = 1f;
-        float totalAmplitude = 0f;
-
-        // Push samples far from the origin to break the point-symmetry in Perlin noise
-        // that causes quad mirroring on cube-spheres. The offset is applied after frequency
-        // scaling so it stays spatially consistent across octaves.
-        Vector3 seedOffset = layer.offset + new Vector3(1000f, 1000f, 1000f);
-
-        for (int o = 0; o < layer.octaves; o++)
+        if (terrainSettings == null ||
+            terrainSettings.noiseLayers == null ||
+            terrainSettings.noiseLayers.Length == 0)
         {
-            Vector3 p = (normal * frequency) + seedOffset;
-            float v = PerlinNoise3D.GenerateNoise(p.x, p.y, p.z);
-
-            // Standard: remap [0,1] to [-1,1]
-            // Ridge: fold the noise to create sharp ridgelines
-            v = layer.noiseType == NoiseType.Ridge
-                ? 1f - Mathf.Abs(v * 2f - 1f)
-                : v * 2f - 1f;
-
-            noise += v * amplitude;
-            totalAmplitude += amplitude;
-            amplitude *= layer.persistence;
-            frequency *= layer.lacunarity;
+            Debug.LogWarning("[TerrainGenerator] TerrainSettings missing or has no noise layers.");
+            return null;
         }
 
-        return (totalAmplitude == 0f ? 0f : noise / totalAmplitude) + layer.minValue;
+        meshFilter = GetComponent<MeshFilter>();
+        meshCollider = GetComponent<MeshCollider>();
+        previewMesh = new Mesh { name = "Planet Terrain Preview" };
+
+        SphereCreator.CreateSphereMesh(
+            terrainSettings.resolution, 1f,
+            out Vector3[] vertices,
+            out int[] triangles,
+            out Vector2[] uvs);
+
+        SphereDeformer.ApplyTerrainDeformation(
+            vertices, terrainSettings,
+            out Vector3[] displaced,
+            out float min, out float max);
+
+        MinElevation = min * radius;
+        MaxElevation = max * radius;
+
+        for (int i = 0; i < displaced.Length; i++)
+            displaced[i] = displaced[i].normalized * displaced[i].magnitude * radius;
+
+        previewMesh.Clear();
+        previewMesh.vertices = displaced;
+        previewMesh.triangles = triangles;
+        previewMesh.uv = uvs;
+        previewMesh.RecalculateNormals();
+        previewMesh.RecalculateBounds();
+
+        meshFilter.sharedMesh = previewMesh;
+        meshCollider.sharedMesh = null;
+        meshCollider.sharedMesh = previewMesh;
+
+        return previewMesh;
     }
 }
