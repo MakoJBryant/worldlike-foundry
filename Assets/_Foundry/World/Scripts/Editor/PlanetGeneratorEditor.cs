@@ -16,37 +16,35 @@ public class PlanetGeneratorEditor : Editor
     {
         serializedObject.Update();
 
-        // ── Planet Data ──────────────────────────────────────
+        // ── Planet Settings ──────────────────────────────────
         EditorGUILayout.LabelField("Planet", EditorStyles.boldLabel);
-        generator.planetData = (PlanetData)EditorGUILayout.ObjectField(
-            "Planet Data", generator.planetData, typeof(PlanetData), false);
+        generator.planetSettings = (PlanetSettings)EditorGUILayout.ObjectField(
+            "Planet Settings", generator.planetSettings, typeof(PlanetSettings), false);
 
         EditorGUILayout.Space();
 
-        if (generator.planetData == null)
+        if (generator.planetSettings == null)
         {
             EditorGUILayout.HelpBox(
-                "Assign a PlanetData asset to begin editing.",
+                "Assign a PlanetSettings asset to begin editing.",
                 MessageType.Info);
             serializedObject.ApplyModifiedProperties();
             return;
         }
 
-        // ── Planet Settings ──────────────────────────────────
+        // ── Planet Settings Fields ───────────────────────────
         EditorGUILayout.LabelField("Planet Settings", EditorStyles.boldLabel);
         EditorGUI.indentLevel++;
         using (var check = new EditorGUI.ChangeCheckScope())
         {
-            generator.planetData.radius = EditorGUILayout.FloatField("Radius", generator.planetData.radius);
-            generator.planetData.axialTilt = EditorGUILayout.Slider("Axial Tilt", generator.planetData.axialTilt, 0f, 90f);
-            generator.planetData.rotationSpeed = EditorGUILayout.FloatField("Rotation Speed", generator.planetData.rotationSpeed);
-            generator.planetData.orbitRadius = EditorGUILayout.FloatField("Orbit Radius", generator.planetData.orbitRadius);
-            generator.planetData.orbitSpeed = EditorGUILayout.FloatField("Orbit Speed", generator.planetData.orbitSpeed);
+            generator.planetSettings.radius = EditorGUILayout.FloatField("Radius", generator.planetSettings.radius);
+            generator.planetSettings.axialTilt = EditorGUILayout.Slider("Axial Tilt", generator.planetSettings.axialTilt, 0f, 90f);
+            generator.planetSettings.rotationSpeed = EditorGUILayout.FloatField("Rotation Speed", generator.planetSettings.rotationSpeed);
+            generator.planetSettings.orbitRadius = EditorGUILayout.FloatField("Orbit Radius", generator.planetSettings.orbitRadius);
+            generator.planetSettings.orbitSpeed = EditorGUILayout.FloatField("Orbit Speed", generator.planetSettings.orbitSpeed);
             if (check.changed)
             {
-                EditorUtility.SetDirty(generator.planetData);
-                generator.GeneratePlanet();
-                SceneView.RepaintAll();
+                EditorUtility.SetDirty(generator.planetSettings);
             }
         }
         EditorGUI.indentLevel--;
@@ -69,6 +67,15 @@ public class PlanetGeneratorEditor : Editor
         // ── Actions ──────────────────────────────────────────
         EditorGUILayout.LabelField("Actions", EditorStyles.boldLabel);
 
+        if (GUILayout.Button("Save Settings", GUILayout.Height(32)))
+        {
+            EditorUtility.SetDirty(generator.planetSettings);
+            AssetDatabase.SaveAssets();
+            Debug.Log("[PlanetGeneratorEditor] Planet settings saved.");
+        }
+
+        EditorGUILayout.Space();
+
         if (GUILayout.Button("Generate Preview", GUILayout.Height(32)))
         {
             generator.GeneratePlanet();
@@ -82,10 +89,10 @@ public class PlanetGeneratorEditor : Editor
         {
             EditorGUI.indentLevel++;
 
-            if (generator.planetData.bakedMesh != null)
+            if (generator.planetSettings.bakedMesh != null)
             {
                 EditorGUILayout.HelpBox(
-                    $"Baked mesh: {generator.planetData.bakedMesh.vertexCount} vertices.",
+                    $"Baked mesh: {generator.planetSettings.bakedMesh.vertexCount} vertices.",
                     MessageType.Info);
             }
             else
@@ -112,7 +119,7 @@ public class PlanetGeneratorEditor : Editor
 
     private void BakePlanet()
     {
-        if (generator.planetData == null) return;
+        if (generator.planetSettings == null) return;
 
         generator.GeneratePlanet();
 
@@ -124,14 +131,14 @@ public class PlanetGeneratorEditor : Editor
         }
 
         string folder = "Assets/_Foundry/World/Meshes";
-        string assetName = generator.planetData.name + "_Baked.asset";
+        string assetName = generator.planetSettings.name + "_Baked.asset";
         string path = $"{folder}/{assetName}";
 
         if (!AssetDatabase.IsValidFolder(folder))
             AssetDatabase.CreateFolder("Assets/_Foundry/World", "Meshes");
 
         Mesh bakedMesh = Instantiate(mf.sharedMesh);
-        bakedMesh.name = generator.planetData.name + "_Baked";
+        bakedMesh.name = generator.planetSettings.name + "_Baked";
 
         Mesh existing = AssetDatabase.LoadAssetAtPath<Mesh>(path);
         if (existing != null)
@@ -144,15 +151,15 @@ public class PlanetGeneratorEditor : Editor
             existing.RecalculateNormals();
             existing.RecalculateBounds();
             EditorUtility.SetDirty(existing);
-            generator.planetData.bakedMesh = existing;
+            generator.planetSettings.bakedMesh = existing;
         }
         else
         {
             AssetDatabase.CreateAsset(bakedMesh, path);
-            generator.planetData.bakedMesh = bakedMesh;
+            generator.planetSettings.bakedMesh = bakedMesh;
         }
 
-        EditorUtility.SetDirty(generator.planetData);
+        EditorUtility.SetDirty(generator.planetSettings);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 

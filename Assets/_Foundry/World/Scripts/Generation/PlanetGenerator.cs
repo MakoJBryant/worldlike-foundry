@@ -2,8 +2,8 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class PlanetGenerator : MonoBehaviour
 {
-    [Header("Planet Data")]
-    public PlanetData planetData;
+    [Header("Planet Settings")]
+    public PlanetSettings planetSettings;
     [Header("Subsystems")]
     public TerrainGenerator terrainGenerator;
     public OceanGenerator oceanGenerator;
@@ -11,9 +11,9 @@ public class PlanetGenerator : MonoBehaviour
 
     public void GeneratePlanet()
     {
-        if (planetData == null)
+        if (planetSettings == null)
         {
-            Debug.LogWarning("[PlanetGenerator] No PlanetData assigned.");
+            Debug.LogWarning("[PlanetGenerator] No PlanetSettings assigned.");
             return;
         }
         if (terrainGenerator == null)
@@ -22,33 +22,33 @@ public class PlanetGenerator : MonoBehaviour
             return;
         }
 
-        // 1. Sync terrain generator with planet data
-        terrainGenerator.terrainSettings = planetData.terrainSettings;
+        // 1. Sync terrain generator with planet settings
+        terrainGenerator.terrainSettings = planetSettings.terrainSettings;
 
         // 2. Generate terrain, get the mesh back
-        Mesh planetMesh = terrainGenerator.GenerateTerrain(planetData.radius);
+        Mesh planetMesh = terrainGenerator.GenerateTerrain(planetSettings.radius);
         if (planetMesh == null) return;
 
         // 3. Generate ocean
-        if (oceanGenerator != null && planetData.oceanSettings != null)
+        if (oceanGenerator != null && planetSettings.oceanSettings != null)
         {
-            oceanGenerator.settings = planetData.oceanSettings;
+            oceanGenerator.settings = planetSettings.oceanSettings;
             oceanGenerator.Generate(
-                planetData.terrainSettings.resolution,
+                planetSettings.terrainSettings.resolution,
                 terrainGenerator.MinElevation,
                 terrainGenerator.MaxElevation);
         }
 
         // 4. Generate atmosphere
-        if (atmosphereGenerator != null && planetData.atmosphereSettings != null)
+        if (atmosphereGenerator != null && planetSettings.atmosphereSettings != null)
         {
-            atmosphereGenerator.settings = planetData.atmosphereSettings;
+            atmosphereGenerator.settings = planetSettings.atmosphereSettings;
             atmosphereGenerator.Generate(
-                planetData.terrainSettings.resolution,
+                planetSettings.terrainSettings.resolution,
                 terrainGenerator.MaxElevation);
         }
 
         // 5. Apply axial tilt
-        transform.rotation = Quaternion.Euler(planetData.axialTilt, 0f, 0f);
+        transform.rotation = Quaternion.Euler(planetSettings.axialTilt, 0f, 0f);
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 [CreateAssetMenu(fileName = "New Planet", menuName = "Worldlike Foundry/Planet")]
-public class PlanetData : ScriptableObject
+public class PlanetSettings : ScriptableObject
 {
     [Header("Planet")]
     public float radius = 100f;
