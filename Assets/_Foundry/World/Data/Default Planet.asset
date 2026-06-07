@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default Planet
   m_EditorClassIdentifier: Assembly-CSharp::PlanetData
   resolution: 64
-  radius: 10
+  radius: 1000
   shapeSettings: {fileID: 11400000, guid: 3529cc4122e94834ab209197b789fd83, type: 2}
   colorRampSettings: {fileID: 11400000, guid: 969a25a674649ed48b0eb4110428e37f, type: 2}
   oceanSettings: {fileID: 11400000, guid: 0f5caf05ef58ece4f8d2efbd8f8cc692, type: 2}

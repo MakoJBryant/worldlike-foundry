@@ -52,6 +52,23 @@ public class PlanetGeneratorEditor : Editor
         // ── Settings ─────────────────────────────────────────
         EditorGUILayout.LabelField("Settings", EditorStyles.boldLabel);
 
+        // Radius and Resolution fields above the Shape foldout
+        EditorGUI.indentLevel++;
+        using (var check = new EditorGUI.ChangeCheckScope())
+        {
+            generator.planetData.radius = EditorGUILayout.FloatField("Radius", generator.planetData.radius);
+            generator.planetData.resolution = EditorGUILayout.IntSlider("Resolution", generator.planetData.resolution, 2, 256);
+            if (check.changed)
+            {
+                EditorUtility.SetDirty(generator.planetData);
+                generator.GeneratePlanet();
+                SceneView.RepaintAll();
+            }
+        }
+        EditorGUI.indentLevel--;
+
+        EditorGUILayout.Space();
+
         DrawFoldout("Shape", ref showShape, generator.planetData.shapeSettings);
         DrawFoldout("Color Ramp", ref showColorRamp, generator.planetData.colorRampSettings);
         DrawFoldout("Ocean", ref showOcean, generator.planetData.oceanSettings);
@@ -139,7 +156,6 @@ public class PlanetGeneratorEditor : Editor
     {
         if (generator.planetData == null) return;
 
-        // Make sure we have a fresh generation before baking
         generator.GeneratePlanet();
 
         MeshFilter mf = generator.shapeGenerator?.GetComponent<MeshFilter>();
@@ -149,23 +165,19 @@ public class PlanetGeneratorEditor : Editor
             return;
         }
 
-        // Build save path
         string folder = "Assets/_Foundry/World/Meshes";
         string assetName = generator.planetData.name + "_Baked.asset";
         string path = $"{folder}/{assetName}";
 
-        // Ensure folder exists
         if (!AssetDatabase.IsValidFolder(folder))
             AssetDatabase.CreateFolder("Assets/_Foundry/World", "Meshes");
 
-        // Copy the preview mesh into a new saved mesh
         Mesh bakedMesh = Instantiate(mf.sharedMesh);
         bakedMesh.name = generator.planetData.name + "_Baked";
 
         Mesh existing = AssetDatabase.LoadAssetAtPath<Mesh>(path);
         if (existing != null)
         {
-            // Update existing asset in place
             existing.Clear();
             existing.vertices = bakedMesh.vertices;
             existing.triangles = bakedMesh.triangles;

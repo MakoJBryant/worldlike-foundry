@@ -6,7 +6,7 @@ public class PlanetData : ScriptableObject
     [Header("Generation")]
     [Range(2, 256)]
     public int resolution = 64;
-    public float radius = 1000f;
+    public float radius = 100f;
 
     [Header("Settings")]
     public ShapeSettings shapeSettings;
@@ -23,7 +23,7 @@ public class PlanetData : ScriptableObject
 
     [Header("Orbit")]
     [Tooltip("Distance from the star this planet orbits.")]
-    public float orbitRadius = 5000f;
+    public float orbitRadius = 1000f;
     [Tooltip("Degrees per second this planet moves along its orbit.")]
     public float orbitSpeed = 5f;
 
