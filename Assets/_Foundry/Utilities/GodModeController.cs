@@ -9,6 +9,7 @@ public class GodModeController : MonoBehaviour
     public PlanetCameraController planetCameraController;
     public GravityBody gravityBody;
     public Camera cam;
+    public SelectionManager selectionManager;
 
     [Header("Clipping Planes")]
     public float playModeFarClip = 10000f;
@@ -32,7 +33,34 @@ public class GodModeController : MonoBehaviour
         originalCameraLocalRotation = cam.transform.localRotation;
 
         editorFlyCamera = cam.GetComponent<EditorFlyCamera>();
+
+        // Disable everything that belongs to play mode at the start
         editorFlyCamera.enabled = false;
+        planetCameraController.enabled = false;
+        playerController.enabled = false;
+        gravityBody.enabled = false;
+        selectionManager.enabled = false;
+    }
+
+    void Start()
+    {
+        // Subscribe to GameManager mode changes
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnModeChanged += OnGameModeChanged;
+    }
+
+    void OnDestroy()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnModeChanged -= OnGameModeChanged;
+    }
+
+    void OnGameModeChanged(GameMode mode)
+    {
+        if (mode == GameMode.SolarEditor)
+            EnterGodMode();
+        else if (mode == GameMode.PlayerSurface)
+            ExitGodMode();
     }
 
     void Update()
@@ -40,9 +68,9 @@ public class GodModeController : MonoBehaviour
         if (Keyboard.current.tabKey.wasPressedThisFrame)
         {
             if (isGodMode)
-                ExitGodMode();
+                GameManager.Instance.EnterPlayerSurface();
             else
-                EnterGodMode();
+                GameManager.Instance.EnterSolarEditor();
         }
     }
 
@@ -53,6 +81,9 @@ public class GodModeController : MonoBehaviour
         // Save player state
         savedPlayerPosition = playerController.transform.position;
         savedPlayerRotation = playerController.transform.rotation;
+
+        // Unparent player from planet
+        playerController.transform.SetParent(null);
 
         // Freeze player
         gravityBody.enabled = false;
@@ -71,8 +102,9 @@ public class GodModeController : MonoBehaviour
         if (playerController.planet != null)
             editorFlyCamera.focusTarget = playerController.planet.transform;
 
-        // Enable editor camera
+        // Enable god mode systems
         editorFlyCamera.enabled = true;
+        selectionManager.enabled = true;
 
         // Unlock cursor
         Cursor.lockState = CursorLockMode.None;
@@ -83,8 +115,9 @@ public class GodModeController : MonoBehaviour
     {
         isGodMode = false;
 
-        // Disable editor camera
+        // Disable god mode systems
         editorFlyCamera.enabled = false;
+        selectionManager.enabled = false;
 
         // Restore far clip for play mode
         cam.farClipPlane = playModeFarClip;
@@ -94,10 +127,16 @@ public class GodModeController : MonoBehaviour
         cam.transform.localPosition = originalCameraLocalPosition;
         cam.transform.localRotation = originalCameraLocalRotation;
 
-        // Restore player state
+        // Restore player position and rotation
         playerController.transform.position = savedPlayerPosition;
         playerController.transform.rotation = savedPlayerRotation;
         rb.linearVelocity = Vector3.zero;
+
+        // Reparent player to planet
+        if (playerController.planet != null)
+            playerController.transform.SetParent(playerController.planet.transform);
+
+        // Re-enable player
         gravityBody.enabled = true;
         playerController.enabled = true;
         planetCameraController.enabled = true;

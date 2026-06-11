@@ -13,7 +13,7 @@ public class EditorFlyCamera : MonoBehaviour
 
     [Header("Orbit")]
     public float orbitDistance = 2000f;
-    public float orbitSensitivity = 1f;
+    public float orbitSensitivity = 0.08f;
     public float minDistance = 100f;
     public float maxDistance = 50000f;
 
@@ -22,7 +22,7 @@ public class EditorFlyCamera : MonoBehaviour
     public float zoomSmoothing = 8f;
 
     [Header("Pan")]
-    public float panSensitivity = 1f;
+    public float panSensitivity = 0.001f;
 
     [Header("Focus")]
     public float focusSmoothing = 8f;
@@ -35,6 +35,7 @@ public class EditorFlyCamera : MonoBehaviour
     private float currentPitch = 30f;
     private float targetDistance;
     private Vector3 focusPoint;
+    private bool isPanning = false;
 
     void OnEnable()
     {
@@ -52,6 +53,10 @@ public class EditorFlyCamera : MonoBehaviour
 
     void LateUpdate()
     {
+        // Keep focus point locked to target unless user is panning
+        if (focusTarget != null && !isPanning)
+            focusPoint = focusTarget.position;
+
         HandleFocus();
         HandleOrbit();
         HandleZoom();
@@ -91,13 +96,14 @@ public class EditorFlyCamera : MonoBehaviour
         }
 
         orbitDistance = Mathf.Lerp(orbitDistance, targetDistance, zoomSmoothing * Time.deltaTime);
-        // Hard clamp after lerp so it never exceeds bounds
         orbitDistance = Mathf.Clamp(orbitDistance, minDistance, maxDistance);
     }
 
     void HandlePan()
     {
-        if (Mouse.current.middleButton.isPressed)
+        isPanning = Mouse.current.middleButton.isPressed;
+
+        if (isPanning)
         {
             Vector2 delta = Mouse.current.delta.ReadValue();
             Vector3 right = transform.right * (-delta.x * panSensitivity * (orbitDistance / maxDistance));

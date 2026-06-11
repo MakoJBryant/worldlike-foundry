@@ -17,12 +17,6 @@ public class PlanetSettings : ScriptableObject
     [Range(0f, 90f)]
     public float axialTilt = 23.5f;
 
-    [Header("Orbit")]
-    [Tooltip("Distance from the star this planet orbits.")]
-    public float orbitRadius = 1000f;
-    [Tooltip("Degrees per second this planet moves along its orbit.")]
-    public float orbitSpeed = 5f;
-
     [Header("Baked Assets")]
     [Tooltip("The baked mesh generated from the settings above. Assigned automatically when you bake.")]
     public Mesh bakedMesh;

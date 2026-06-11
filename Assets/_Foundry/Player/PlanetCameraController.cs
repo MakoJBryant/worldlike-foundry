@@ -16,9 +16,14 @@ public class PlanetCameraController : MonoBehaviour
     [Header("Distance")]
     public float cameraDistance = 4f;
     public float cameraCollisionRadius = 0.3f;
+    public LayerMask collisionMask;
+
+    [Header("Smoothing")]
+    public float positionSmoothing = 20f;
 
     private InputSystem_Actions input;
     private float pitch;
+    private Vector3 smoothedPivotPosition;
 
     void Awake()
     {
@@ -27,12 +32,17 @@ public class PlanetCameraController : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void OnEnable() => input.Enable();
+    void OnEnable()
+    {
+        input.Enable();
+        if (player != null)
+            smoothedPivotPosition = player.transform.position;
+    }
+
     void OnDisable() => input.Disable();
 
     void Update()
     {
-        // Toggle cursor lock with Escape
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             bool locked = Cursor.lockState == CursorLockMode.Locked;
@@ -45,13 +55,18 @@ public class PlanetCameraController : MonoBehaviour
     {
         if (player == null || cameraPivot == null || cam == null) return;
 
-        // Pitch — rotate camera pivot vertically
+        // Pitch
         Vector2 lookInput = input.Player.Look.ReadValue<Vector2>();
         pitch -= lookInput.y * mouseSensitivity;
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
 
-        // Position pivot at player, apply pitch on top of player rotation
-        cameraPivot.position = player.transform.position;
+        // Smooth pivot position to reduce jitter from physics/render mismatch
+        smoothedPivotPosition = Vector3.Lerp(
+            smoothedPivotPosition,
+            player.transform.position,
+            positionSmoothing * Time.deltaTime);
+
+        cameraPivot.position = smoothedPivotPosition;
         cameraPivot.rotation = player.transform.rotation * Quaternion.Euler(pitch, 0f, 0f);
 
         // Camera position with collision
@@ -63,7 +78,7 @@ public class PlanetCameraController : MonoBehaviour
             -cameraPivot.forward,
             out RaycastHit hit,
             cameraDistance,
-            ~0,
+            collisionMask,
             QueryTriggerInteraction.Ignore))
         {
             desiredPos = hit.point + hit.normal * cameraCollisionRadius;

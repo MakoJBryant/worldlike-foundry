@@ -40,8 +40,6 @@ public class PlanetGeneratorEditor : Editor
             generator.planetSettings.radius = EditorGUILayout.FloatField("Radius", generator.planetSettings.radius);
             generator.planetSettings.axialTilt = EditorGUILayout.Slider("Axial Tilt", generator.planetSettings.axialTilt, 0f, 90f);
             generator.planetSettings.rotationSpeed = EditorGUILayout.FloatField("Rotation Speed", generator.planetSettings.rotationSpeed);
-            generator.planetSettings.orbitRadius = EditorGUILayout.FloatField("Orbit Radius", generator.planetSettings.orbitRadius);
-            generator.planetSettings.orbitSpeed = EditorGUILayout.FloatField("Orbit Speed", generator.planetSettings.orbitSpeed);
             if (check.changed)
             {
                 EditorUtility.SetDirty(generator.planetSettings);

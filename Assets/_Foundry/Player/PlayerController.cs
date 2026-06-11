@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private InputSystem_Actions input;
-
     private Vector2 moveInput;
     private float currentYaw;
     private bool jumpRequested;
@@ -39,8 +38,14 @@ public class PlayerController : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         rb.angularDamping = 10f;
-
         input = new InputSystem_Actions();
+    }
+
+    void Start()
+    {
+        // Parent player to planet so it moves with orbit and rotation
+        if (planet != null)
+            transform.SetParent(planet.transform);
     }
 
     void OnEnable() => input.Enable();
@@ -50,15 +55,12 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = input.Player.Move.ReadValue<Vector2>();
 
-        // Yaw — rotate player body horizontally
         Vector2 lookInput = input.Player.Look.ReadValue<Vector2>();
         currentYaw += lookInput.x * mouseSensitivity;
 
-        // Toggle sprint
         if (input.Player.Sprint.WasPressedThisFrame())
             isSprinting = !isSprinting;
 
-        // Jump request
         if (input.Player.Jump.WasPressedThisFrame())
             jumpRequested = true;
     }
@@ -66,7 +68,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (planet == null) return;
-
         AlignToGravity();
         CheckGround();
         HandleMovement();
@@ -93,12 +94,10 @@ public class PlayerController : MonoBehaviour
         Vector3 input3D = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
         float targetSpeed = isSprinting ? sprintSpeed : walkSpeed;
         Vector3 desiredVel = transform.TransformDirection(input3D) * targetSpeed;
-
         Vector3 velocity = rb.linearVelocity;
         Vector3 surfaceVelocity = Vector3.ProjectOnPlane(velocity, up);
         Vector3 verticalVelocity = Vector3.Project(velocity, up);
         Vector3 velocityChange = desiredVel - surfaceVelocity;
-
         rb.AddForce(velocityChange * acceleration, ForceMode.Acceleration);
         rb.linearVelocity = surfaceVelocity + verticalVelocity;
     }
@@ -108,13 +107,11 @@ public class PlayerController : MonoBehaviour
         if (!jumpRequested) return;
         jumpRequested = false;
         if (!isGrounded) return;
-
         Vector3 up = (transform.position - planet.transform.position).normalized;
         rb.linearVelocity -= Vector3.Project(rb.linearVelocity, up);
         rb.AddForce(up * jumpForce, ForceMode.VelocityChange);
     }
 
-    // Read by PlanetCameraController
     public Vector3 GravityUp =>
         planet != null ? (transform.position - planet.transform.position).normalized : Vector3.up;
 }
