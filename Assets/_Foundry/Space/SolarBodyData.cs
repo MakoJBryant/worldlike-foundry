@@ -37,6 +37,8 @@ public class SolarBodyData
     [Header("Identity")]
     public string name;
     public Transform transform;
+    [Tooltip("If true, this planet stays pinned at world origin (0,0,0) while everything else orbits around it.")]
+    public bool isHomePlanet = false;
 
     [Header("Rotation")]
     [Tooltip("Degrees per second this body rotates on its own axis.")]

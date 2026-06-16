@@ -44,9 +44,13 @@ public class GodModeController : MonoBehaviour
 
     void Start()
     {
-        // Subscribe to GameManager mode changes
         if (GameManager.Instance != null)
+        {
             GameManager.Instance.OnModeChanged += OnGameModeChanged;
+            // GameManager may have already fired its initial mode before we subscribed,
+            // depending on script execution order. Sync to whatever the current mode is now.
+            OnGameModeChanged(GameManager.Instance.CurrentMode);
+        }
     }
 
     void OnDestroy()
@@ -57,9 +61,9 @@ public class GodModeController : MonoBehaviour
 
     void OnGameModeChanged(GameMode mode)
     {
-        if (mode == GameMode.SolarEditor)
+        if (mode == GameMode.SolarEditor && !isGodMode)
             EnterGodMode();
-        else if (mode == GameMode.PlayerSurface)
+        else if (mode == GameMode.PlayerSurface && isGodMode)
             ExitGodMode();
     }
 

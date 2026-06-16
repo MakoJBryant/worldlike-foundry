@@ -2,8 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Manages all orbiting bodies in the solar system.
-/// Controls orbit, rotation, and inclination for planets and their moons.
+/// Manages all orbiting bodies in the solar system as a natural simulation.
+/// Sun sits at world origin. Planets and moons orbit normally in world space.
+/// No parenting, no reference-frame tricks — every transform is independent,
+/// which is required for the custom gravity system to layer on top correctly.
 /// </summary>
 public class SolarSystemManager : MonoBehaviour
 {
