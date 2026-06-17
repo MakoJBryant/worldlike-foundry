@@ -162,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 120913712}
   serializedVersion: 2
   m_LocalRotation: {x: 0.20364176, y: -0, z: -0, w: 0.97904545}
-  m_LocalPosition: {x: 0, y: -47, z: -6449}
+  m_LocalPosition: {x: 2249.51, y: 238.0598, z: 9740.792}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -276,13 +276,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10621337, y: 0.6801947, z: 0.11083683, w: 0.71677697}
-  m_LocalPosition: {x: 0, y: 3, z: -6114}
+  m_LocalRotation: {x: 0.08229233, y: 0.089441285, z: 0.027775887, w: 0.992198}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0.085, y: 87.013, z: 17.661}
+  m_LocalEulerAnglesHint: {x: 9.11, y: 10.625, z: 4.056}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,10 +959,10 @@ MonoBehaviour:
   - name: mundi
     transform: {fileID: 120913714}
     isHomePlanet: 1
-    rotationSpeed: 1
+    rotationSpeed: 2
     axialTilt: 23.5
     orbitRadius: 10000
-    orbitSpeed: 5
+    orbitSpeed: 0
     orbitalInclination: 1.4
     startingAngle: 77
     moons: []
@@ -1085,6 +1085,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d8369ee02eeca44ac1cc93a5e91bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityBody
+--- !u!4 &1147674301 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
+  m_PrefabInstance: {fileID: 947973975499660117}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1282638574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,7 +2090,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed34f78aa68d5ac4cb22152cf1185f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  startingMode: 0
+  startingMode: 1
+--- !u!4 &1809226859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1732869350670229889, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
+  m_PrefabInstance: {fileID: 947973975499660117}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1827044810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,12 +2507,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100420070}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.121637896, y: -0.14357665, z: 0.018262275, w: 0.98196566}
-  m_LocalPosition: {x: 1037.8287, y: 865.9322, z: -9923.667}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1809226859}
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!114 &2100420075
 MonoBehaviour:
@@ -2516,7 +2526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa2ac005e6e2aa47980b4e7a7eaed68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EditorFlyCamera
-  focusTarget: {fileID: 120913714}
+  focusTarget: {fileID: 1147674301}
   orbitDistance: 2000
   orbitSensitivity: 1
   minDistance: 100
@@ -2537,43 +2547,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11259.9
+      value: 1464.4799
       objectReference: {fileID: 0}
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -609.1
+      value: 1030.8809
       objectReference: {fileID: 0}
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -847.9
+      value: 10187.504
       objectReference: {fileID: 0}
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7224456
+      value: -0.12085248
       objectReference: {fileID: 0}
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.09328025
+      value: -0.43384397
       objectReference: {fileID: 0}
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6795769
+      value: 0.8874468
       objectReference: {fileID: 0}
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.08687027
+      value: -0.09804231
       objectReference: {fileID: 0}
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -204.731
+      value: -196.193
       objectReference: {fileID: 0}
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -72.09
+      value: -352.254
       objectReference: {fileID: 0}
     - target: {fileID: 3912898114570694645, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -215.689
+      value: -231.001
       objectReference: {fileID: 0}
     - target: {fileID: 5418769686925071455, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_Name
@@ -2581,7 +2591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5418769686925071455, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5488826319505644722, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: cam
@@ -2597,7 +2607,10 @@ PrefabInstance:
       objectReference: {fileID: 120913715}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1732869350670229889, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2100420074}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
 --- !u!1660057539 &9223372036854775807
@@ -2614,4 +2627,3 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 947973975499660117}
   - {fileID: 1282638578}
-  - {fileID: 2100420074}
