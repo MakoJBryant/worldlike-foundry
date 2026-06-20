@@ -4,6 +4,12 @@ using UnityEngine.InputSystem;
 [DisallowMultipleComponent]
 public class GodModeController : MonoBehaviour
 {
+    [Header("Mode Toggles")]
+    [Tooltip("Enable if this scene has a player that walks on planet surfaces (PlayerController, PlanetCameraController, GravityBody). Uncheck if there's no player in this game.")]
+    public bool usePlayerView = true;
+    [Tooltip("Enable if this scene has the space/solar editor view (EditorFlyCamera, SelectionManager).")]
+    public bool useSpaceView = true;
+
     [Header("References")]
     public PlayerController playerController;
     public PlanetCameraController planetCameraController;
@@ -26,7 +32,8 @@ public class GodModeController : MonoBehaviour
 
     void Awake()
     {
-        rb = playerController.GetComponent<Rigidbody>();
+        if (usePlayerView && playerController != null)
+            rb = playerController.GetComponent<Rigidbody>();
 
         originalCameraParent = cam.transform.parent;
         originalCameraLocalPosition = cam.transform.localPosition;
@@ -35,11 +42,17 @@ public class GodModeController : MonoBehaviour
         editorFlyCamera = cam.GetComponent<EditorFlyCamera>();
 
         // Disable everything that belongs to play mode at the start
-        editorFlyCamera.enabled = false;
-        planetCameraController.enabled = false;
-        playerController.enabled = false;
-        gravityBody.enabled = false;
-        selectionManager.enabled = false;
+        if (useSpaceView)
+        {
+            if (editorFlyCamera != null) editorFlyCamera.enabled = false;
+            if (selectionManager != null) selectionManager.enabled = false;
+        }
+        if (usePlayerView)
+        {
+            if (planetCameraController != null) planetCameraController.enabled = false;
+            if (playerController != null) playerController.enabled = false;
+            if (gravityBody != null) gravityBody.enabled = false;
+        }
     }
 
     void Start()
@@ -69,6 +82,8 @@ public class GodModeController : MonoBehaviour
 
     void Update()
     {
+        if (!usePlayerView) return; // nothing to toggle to without a player
+
         if (Keyboard.current.tabKey.wasPressedThisFrame)
         {
             if (isGodMode)
@@ -82,19 +97,25 @@ public class GodModeController : MonoBehaviour
     {
         isGodMode = true;
 
-        // Save player state
-        savedPlayerPosition = playerController.transform.position;
-        savedPlayerRotation = playerController.transform.rotation;
+        if (usePlayerView && playerController != null)
+        {
+            // Save player state
+            savedPlayerPosition = playerController.transform.position;
+            savedPlayerRotation = playerController.transform.rotation;
 
-        // Unparent player from planet
-        playerController.transform.SetParent(null);
+            // Unparent player from planet
+            playerController.transform.SetParent(null);
 
-        // Freeze player
-        gravityBody.enabled = false;
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        playerController.enabled = false;
-        planetCameraController.enabled = false;
+            // Freeze player
+            if (gravityBody != null) gravityBody.enabled = false;
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+            playerController.enabled = false;
+            if (planetCameraController != null) planetCameraController.enabled = false;
+        }
 
         // Detach camera from player hierarchy
         cam.transform.SetParent(null);
@@ -102,13 +123,16 @@ public class GodModeController : MonoBehaviour
         // Extend far clip for solar system scale
         cam.farClipPlane = editorModeFarClip;
 
-        // Set editor camera focus to current planet
-        if (playerController.planet != null)
-            editorFlyCamera.focusTarget = playerController.planet.transform;
+        if (useSpaceView)
+        {
+            // Set editor camera focus to current planet
+            if (usePlayerView && playerController != null && playerController.planet != null)
+                editorFlyCamera.focusTarget = playerController.planet.transform;
 
-        // Enable god mode systems
-        editorFlyCamera.enabled = true;
-        selectionManager.enabled = true;
+            // Enable god mode systems
+            if (editorFlyCamera != null) editorFlyCamera.enabled = true;
+            if (selectionManager != null) selectionManager.enabled = true;
+        }
 
         // Unlock cursor
         Cursor.lockState = CursorLockMode.None;
@@ -119,34 +143,46 @@ public class GodModeController : MonoBehaviour
     {
         isGodMode = false;
 
-        // Disable god mode systems
-        editorFlyCamera.enabled = false;
-        selectionManager.enabled = false;
+        if (useSpaceView)
+        {
+            // Disable god mode systems
+            if (editorFlyCamera != null) editorFlyCamera.enabled = false;
+            if (selectionManager != null) selectionManager.enabled = false;
+        }
 
         // Restore far clip for play mode
         cam.farClipPlane = playModeFarClip;
 
-        // Reattach camera to player
-        cam.transform.SetParent(originalCameraParent);
-        cam.transform.localPosition = originalCameraLocalPosition;
-        cam.transform.localRotation = originalCameraLocalRotation;
+        if (usePlayerView && playerController != null)
+        {
+            // Reattach camera to player
+            cam.transform.SetParent(originalCameraParent);
+            cam.transform.localPosition = originalCameraLocalPosition;
+            cam.transform.localRotation = originalCameraLocalRotation;
 
-        // Restore player position and rotation
-        playerController.transform.position = savedPlayerPosition;
-        playerController.transform.rotation = savedPlayerRotation;
-        rb.linearVelocity = Vector3.zero;
+            // Restore player position and rotation
+            playerController.transform.position = savedPlayerPosition;
+            playerController.transform.rotation = savedPlayerRotation;
+            if (rb != null) rb.linearVelocity = Vector3.zero;
 
-        // Reparent player to planet
-        if (playerController.planet != null)
-            playerController.transform.SetParent(playerController.planet.transform);
+            // Reparent player to planet
+            if (playerController.planet != null)
+                playerController.transform.SetParent(playerController.planet.transform);
 
-        // Re-enable player
-        gravityBody.enabled = true;
-        playerController.enabled = true;
-        planetCameraController.enabled = true;
+            // Re-enable player
+            if (gravityBody != null) gravityBody.enabled = true;
+            playerController.enabled = true;
+            if (planetCameraController != null) planetCameraController.enabled = true;
 
-        // Lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+            // Lock cursor
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            // No player to hand control back to — keep cursor free for the space view
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }

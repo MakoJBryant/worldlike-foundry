@@ -456,7 +456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8968011878838487902, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: orbitDistance
-      value: 1000
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -554,6 +554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dffdbd886b15764ab869e5929c02f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GodModeController
+  usePlayerView: 0
+  useSpaceView: 1
   playerController: {fileID: 0}
   planetCameraController: {fileID: 0}
   gravityBody: {fileID: 0}
