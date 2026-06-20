@@ -16,9 +16,9 @@ public class PlanetDragController : MonoBehaviour
     public SolarSystemManager solarSystemManager;
 
     [Header("Tuning")]
-    public float orbitRadiusSensitivity = 1f;
+    public float orbitRadiusSensitivity = 0.5f;
     public float orbitSpeedFlingSensitivity = 0.05f;
-    public float spinFlingSensitivity = 4f;
+    public float spinFlingSensitivity = 250f;
 
     Transform draggedPlanet;
     SolarBodyData draggedBody;
@@ -77,7 +77,14 @@ public class PlanetDragController : MonoBehaviour
         smoothedScreenVelocity = Vector2.Lerp(smoothedScreenVelocity, screenDelta, 0.5f);
         lastScreenPoint = screenPos;
 
-        if (isSpinMode) return; // spin only needs velocity at the moment of release
+        if (isSpinMode)
+        {
+            // Holding brakes the existing spin a little every frame, like gripping a
+            // spinning ball. If you also drag, the release impulse below adds fresh
+            // momentum on top — drag hard enough and you overcome the brake.
+            solarSystemManager.DampenSpin(draggedBody, solarSystemManager.holdBrakeStrength * Time.deltaTime);
+            return;
+        }
 
         if (!TryGetViewportPoint(out Vector2 viewport)) return;
         Ray ray = cam.ViewportPointToRay(viewport);
@@ -102,8 +109,8 @@ public class PlanetDragController : MonoBehaviour
     {
         if (isSpinMode)
         {
-            Vector3 axis = cam.transform.right * -smoothedScreenVelocity.y
-                         + cam.transform.up * smoothedScreenVelocity.x;
+            Vector3 axis = cam.transform.right * smoothedScreenVelocity.y
+                         - cam.transform.up * smoothedScreenVelocity.x;
             solarSystemManager.AddSpin(draggedBody, axis * spinFlingSensitivity);
         }
         else

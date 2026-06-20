@@ -201,9 +201,9 @@ MonoBehaviour:
   rawImage: {fileID: 1083514442}
   selectionManager: {fileID: 675086178}
   solarSystemManager: {fileID: 1057837529}
-  orbitRadiusSensitivity: 1
+  orbitRadiusSensitivity: 0.5
   orbitSpeedFlingSensitivity: 0.05
-  spinFlingSensitivity: 4
+  spinFlingSensitivity: 250
 --- !u!43 &475003566
 Mesh:
   m_ObjectHideFlags: 0
@@ -981,6 +981,7 @@ MonoBehaviour:
   rotationScale: 1
   orbitSpeedRecoveryRate: 1.5
   spinDamping: 0.4
+  holdBrakeStrength: 2
 --- !u!1 &1083514440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,9 +1594,9 @@ MonoBehaviour:
   rawImage: {fileID: 1083514442}
   selectionManager: {fileID: 675086178}
   solarSystemManager: {fileID: 1057837529}
-  orbitRadiusSensitivity: 1
+  orbitRadiusSensitivity: 0.5
   orbitSpeedFlingSensitivity: 0.05
-  spinFlingSensitivity: 4
+  spinFlingSensitivity: 250
 --- !u!1 &1498002560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,9 +2044,9 @@ MonoBehaviour:
   rawImage: {fileID: 1083514442}
   selectionManager: {fileID: 675086178}
   solarSystemManager: {fileID: 1057837529}
-  orbitRadiusSensitivity: 1
+  orbitRadiusSensitivity: 0.5
   orbitSpeedFlingSensitivity: 0.05
-  spinFlingSensitivity: 4
+  spinFlingSensitivity: 250
 --- !u!1 &1615299383
 GameObject:
   m_ObjectHideFlags: 0

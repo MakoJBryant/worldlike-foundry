@@ -21,6 +21,8 @@ public class SolarSystemManager : MonoBehaviour
     public float orbitSpeedRecoveryRate = 1.5f;
     [Tooltip("How quickly player-added spin momentum decays. Higher = stops sooner.")]
     public float spinDamping = 0.4f;
+    [Tooltip("How strongly holding a planet (without flinging) brakes its current spin.")]
+    public float holdBrakeStrength = 2f;
 
     void Start()
     {
@@ -118,5 +120,9 @@ public class SolarSystemManager : MonoBehaviour
     public void AddSpin(SolarBodyData body, Vector3 angularImpulse)
     {
         body.spinVelocity += angularImpulse;
+    }
+    public void DampenSpin(SolarBodyData body, float t)
+    {
+        body.spinVelocity = Vector3.Lerp(body.spinVelocity, Vector3.zero, t);
     }
 }
