@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 /// <summary>
 /// Data for a moon — same orbital properties as a planet but no moons of its own.
 /// </summary>
@@ -10,12 +9,10 @@ public class MoonData
     [Header("Identity")]
     public string name;
     public Transform transform;
-
     [Header("Rotation")]
     public float rotationSpeed = 5f;
     [Range(0f, 90f)]
     public float axialTilt = 0f;
-
     [Header("Orbit")]
     public float orbitRadius = 1500f;
     public float orbitSpeed = 20f;
@@ -23,11 +20,9 @@ public class MoonData
     public float orbitalInclination = 0f;
     [Range(0f, 360f)]
     public float startingAngle = 0f;
-
     [HideInInspector]
     public float currentAngle;
 }
-
 /// <summary>
 /// Represents a single planet in the solar system with optional moons.
 /// </summary>
@@ -39,14 +34,12 @@ public class SolarBodyData
     public Transform transform;
     [Tooltip("If true, this planet stays pinned at world origin (0,0,0) while everything else orbits around it.")]
     public bool isHomePlanet = false;
-
     [Header("Rotation")]
     [Tooltip("Degrees per second this body rotates on its own axis.")]
     public float rotationSpeed = 10f;
     [Tooltip("Tilt of the rotation axis in degrees.")]
     [Range(0f, 90f)]
     public float axialTilt = 0f;
-
     [Header("Orbit")]
     [Tooltip("Distance from the sun this planet orbits.")]
     public float orbitRadius = 10000f;
@@ -58,10 +51,17 @@ public class SolarBodyData
     [Tooltip("Starting angle so planets don't all start in a line.")]
     [Range(0f, 360f)]
     public float startingAngle = 0f;
-
+    [Header("Drag Interaction")]
+    [Tooltip("Minimum orbit radius the player can drag this planet to. 0 or less = auto-derive (half the starting radius) at runtime.")]
+    public float minOrbitRadius = -1f;
+    [Tooltip("Maximum orbit radius the player can drag this planet to. 0 or less = auto-derive (double the starting radius) at runtime.")]
+    public float maxOrbitRadius = -1f;
     [Header("Moons")]
     public List<MoonData> moons = new List<MoonData>();
-
     [HideInInspector]
     public float currentAngle;
+    [HideInInspector]
+    public float baseOrbitSpeed;
+    [System.NonSerialized]
+    public Vector3 spinVelocity;
 }
