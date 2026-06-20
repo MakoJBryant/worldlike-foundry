@@ -16,6 +16,7 @@ public class GodModeController : MonoBehaviour
     public GravityBody gravityBody;
     public Camera cam;
     public SelectionManager selectionManager;
+    public CameraFrameOffset cameraFrameOffset;
 
     [Header("Clipping Planes")]
     public float playModeFarClip = 10000f;
@@ -46,6 +47,7 @@ public class GodModeController : MonoBehaviour
         {
             if (editorFlyCamera != null) editorFlyCamera.enabled = false;
             if (selectionManager != null) selectionManager.enabled = false;
+            if (cameraFrameOffset != null) cameraFrameOffset.enabled = false;
         }
         if (usePlayerView)
         {
@@ -132,6 +134,7 @@ public class GodModeController : MonoBehaviour
             // Enable god mode systems
             if (editorFlyCamera != null) editorFlyCamera.enabled = true;
             if (selectionManager != null) selectionManager.enabled = true;
+            if (cameraFrameOffset != null) cameraFrameOffset.enabled = true;
         }
 
         // Unlock cursor
@@ -148,6 +151,7 @@ public class GodModeController : MonoBehaviour
             // Disable god mode systems
             if (editorFlyCamera != null) editorFlyCamera.enabled = false;
             if (selectionManager != null) selectionManager.enabled = false;
+            if (cameraFrameOffset != null) cameraFrameOffset.enabled = false;
         }
 
         // Restore far clip for play mode

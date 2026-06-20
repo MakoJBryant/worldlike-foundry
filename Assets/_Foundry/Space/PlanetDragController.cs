@@ -18,7 +18,7 @@ public class PlanetDragController : MonoBehaviour
     [Header("Tuning")]
     public float orbitRadiusSensitivity = 0.5f;
     public float orbitSpeedFlingSensitivity = 0.05f;
-    public float spinFlingSensitivity = 250f;
+    public float spinFlingSensitivity = 50f;
 
     Transform draggedPlanet;
     SolarBodyData draggedBody;

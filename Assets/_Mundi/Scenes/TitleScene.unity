@@ -203,7 +203,12 @@ MonoBehaviour:
   solarSystemManager: {fileID: 1057837529}
   orbitRadiusSensitivity: 0.5
   orbitSpeedFlingSensitivity: 0.05
-  spinFlingSensitivity: 250
+  spinFlingSensitivity: 50
+--- !u!1 &403569431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7972518313434568364, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
+  m_PrefabInstance: {fileID: 563221305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &475003566
 Mesh:
   m_ObjectHideFlags: 0
@@ -461,7 +466,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7972518313434568364, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 970258468}
   m_SourcePrefab: {fileID: 100100000, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
 --- !u!1 &675086176
 GameObject:
@@ -561,6 +569,7 @@ MonoBehaviour:
   gravityBody: {fileID: 0}
   cam: {fileID: 970258463}
   selectionManager: {fileID: 675086178}
+  cameraFrameOffset: {fileID: 0}
   playModeFarClip: 1000
   editorModeFarClip: 100000
 --- !u!1 &755250642
@@ -885,12 +894,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8968011878838487902, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
   m_PrefabInstance: {fileID: 563221305}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 403569431}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfa2ac005e6e2aa47980b4e7a7eaed68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EditorFlyCamera
+--- !u!114 &970258468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403569431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797286ede25fa78478402c18ef8200a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFrameOffset
+  horizontalOffset: 0.5
 --- !u!1 &1057837527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1620,7 @@ MonoBehaviour:
   solarSystemManager: {fileID: 1057837529}
   orbitRadiusSensitivity: 0.5
   orbitSpeedFlingSensitivity: 0.05
-  spinFlingSensitivity: 250
+  spinFlingSensitivity: 50
 --- !u!1 &1498002560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,7 +2070,7 @@ MonoBehaviour:
   solarSystemManager: {fileID: 1057837529}
   orbitRadiusSensitivity: 0.5
   orbitSpeedFlingSensitivity: 0.05
-  spinFlingSensitivity: 250
+  spinFlingSensitivity: 50
 --- !u!1 &1615299383
 GameObject:
   m_ObjectHideFlags: 0
