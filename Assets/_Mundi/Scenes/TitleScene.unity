@@ -397,35 +397,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2741.3335
+      value: -359.61142
       objectReference: {fileID: 0}
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 151.05511
+      value: 388.45267
       objectReference: {fileID: 0}
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -229.64569
+      value: -3105.4243
       objectReference: {fileID: 0}
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.80772936
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.03662243
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.587811
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.026651997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -965,7 +965,7 @@ MonoBehaviour:
     rotationSpeed: 2
     axialTilt: 23.5
     orbitRadius: 1000
-    orbitSpeed: 10
+    orbitSpeed: 1
     orbitalInclination: 0
     startingAngle: 0
     minOrbitRadius: -1
@@ -979,7 +979,7 @@ MonoBehaviour:
     rotationSpeed: 2
     axialTilt: 61.3
     orbitRadius: 1500
-    orbitSpeed: -20
+    orbitSpeed: 2
     orbitalInclination: 0
     startingAngle: 0
     minOrbitRadius: -1
@@ -993,7 +993,7 @@ MonoBehaviour:
     rotationSpeed: 10
     axialTilt: 16.5
     orbitRadius: 2000
-    orbitSpeed: 30
+    orbitSpeed: -3
     orbitalInclination: 0.6
     startingAngle: 0
     minOrbitRadius: -1
