@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 120913714}
   - component: {fileID: 120913713}
   - component: {fileID: 120913715}
+  - component: {fileID: 120913716}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -184,6 +185,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanetGravity
   gravityStrength: 24
+--- !u!114 &120913716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120913712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed4658842e18324c83ca13c62217c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetDragController
+  cam: {fileID: 970258463}
+  rawImage: {fileID: 1083514442}
+  selectionManager: {fileID: 675086178}
+  solarSystemManager: {fileID: 1057837529}
+  orbitRadiusSensitivity: 1
+  orbitSpeedFlingSensitivity: 0.05
+  spinFlingSensitivity: 4
 --- !u!43 &475003566
 Mesh:
   m_ObjectHideFlags: 0
@@ -1456,6 +1476,7 @@ GameObject:
   - component: {fileID: 1469692757}
   - component: {fileID: 1469692756}
   - component: {fileID: 1469692755}
+  - component: {fileID: 1469692759}
   m_Layer: 0
   m_Name: Planet2
   m_TagString: Untagged
@@ -1556,6 +1577,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469692759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469692754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed4658842e18324c83ca13c62217c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetDragController
+  cam: {fileID: 970258463}
+  rawImage: {fileID: 1083514442}
+  selectionManager: {fileID: 675086178}
+  solarSystemManager: {fileID: 1057837529}
+  orbitRadiusSensitivity: 1
+  orbitSpeedFlingSensitivity: 0.05
+  spinFlingSensitivity: 4
 --- !u!1 &1498002560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,6 +1926,7 @@ GameObject:
   - component: {fileID: 1570268135}
   - component: {fileID: 1570268134}
   - component: {fileID: 1570268133}
+  - component: {fileID: 1570268137}
   m_Layer: 0
   m_Name: Planet3
   m_TagString: Untagged
@@ -1986,6 +2027,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1570268137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570268132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed4658842e18324c83ca13c62217c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetDragController
+  cam: {fileID: 970258463}
+  rawImage: {fileID: 1083514442}
+  selectionManager: {fileID: 675086178}
+  solarSystemManager: {fileID: 1057837529}
+  orbitRadiusSensitivity: 1
+  orbitSpeedFlingSensitivity: 0.05
+  spinFlingSensitivity: 4
 --- !u!1 &1615299383
 GameObject:
   m_ObjectHideFlags: 0
