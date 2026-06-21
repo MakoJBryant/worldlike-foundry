@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24c71940a8faa8641945f7702ca6e3c4, type: 3}
-  m_Name: Default Planet
+  m_Name: Small Planet
   m_EditorClassIdentifier: Assembly-CSharp::PlanetData
-  radius: 100
-  terrainSettings: {fileID: 11400000, guid: 3529cc4122e94834ab209197b789fd83, type: 2}
-  oceanSettings: {fileID: 11400000, guid: 0f5caf05ef58ece4f8d2efbd8f8cc692, type: 2}
-  atmosphereSettings: {fileID: 11400000, guid: 04170c90f80569847897a110fc82b3e0, type: 2}
+  radius: 50
+  terrainSettings: {fileID: 11400000, guid: 109d8a02e08d4264a86f7068f47c73f4, type: 2}
+  oceanSettings: {fileID: 11400000, guid: 0272ac3280dbed747bbec23b445e63d8, type: 2}
+  atmosphereSettings: {fileID: 11400000, guid: c52dea56d20060c488315ea6b0026e6b, type: 2}
   rotationSpeed: 0
   axialTilt: 23.5
   bakedMesh: {fileID: 0}

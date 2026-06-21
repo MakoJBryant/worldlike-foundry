@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_PlanetSurface
+  m_Name: M_Dirt_PlanetSurface
   m_Shader: {fileID: -6465566751694194690, guid: c818cfa3539d83046b3aff1456dcc2f2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -144,7 +144,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.36131454, g: 0.5943396, b: 0.3504361, a: 1}
-    - _Color: {r: 0.36078432, g: 0.59607846, b: 0.34901962, a: 1}
+    - _Color: {r: 0.4811321, g: 0.28796828, b: 0.11574403, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

@@ -52,9 +52,11 @@ public class SolarBodyData
     [Range(0f, 360f)]
     public float startingAngle = 0f;
     [Header("Drag Interaction")]
-    [Tooltip("Minimum orbit radius the player can drag this planet to. 0 or less = auto-derive (half the starting radius) at runtime.")]
+    [Tooltip("If true, Orbit Radius, Min, and Max below are automatically calculated from this planet's PlanetSettings.radius at Start(), and the values below are overwritten. If false, the values below are used as-is (with the old radius*0.5/2 auto-fill for min/max if left at 0).")]
+    public bool useRadiusBasedOrbitDistance = true;
+    [Tooltip("Minimum orbit radius the player can drag this planet to. Ignored at Start() if Use Radius Based Orbit Distance is on.")]
     public float minOrbitRadius = -1f;
-    [Tooltip("Maximum orbit radius the player can drag this planet to. 0 or less = auto-derive (double the starting radius) at runtime.")]
+    [Tooltip("Maximum orbit radius the player can drag this planet to. Ignored at Start() if Use Radius Based Orbit Distance is on.")]
     public float maxOrbitRadius = -1f;
     [Header("Moons")]
     public List<MoonData> moons = new List<MoonData>();

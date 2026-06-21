@@ -23,6 +23,13 @@ public class SolarSystemManager : MonoBehaviour
     public float spinDamping = 0.4f;
     [Tooltip("How strongly holding a planet (without flinging) brakes its current spin.")]
     public float holdBrakeStrength = 2f;
+    [Header("Orbit Distance Scaling")]
+    [Tooltip("Starting orbit distance = planet radius x this value, for planets with Use Radius Based Orbit Distance enabled.")]
+    public float startOrbitRadiusMultiplier = 50f;
+    [Tooltip("Minimum drag-in distance = planet radius x this value.")]
+    public float minOrbitRadiusMultiplier = 20f;
+    [Tooltip("Maximum drag-out distance = planet radius x this value.")]
+    public float maxOrbitRadiusMultiplier = 150f;
 
     void Start()
     {
@@ -32,8 +39,20 @@ public class SolarSystemManager : MonoBehaviour
         {
             planet.currentAngle = planet.startingAngle;
             planet.baseOrbitSpeed = planet.orbitSpeed;
-            if (planet.minOrbitRadius <= 0f) planet.minOrbitRadius = planet.orbitRadius * 0.5f;
-            if (planet.maxOrbitRadius <= 0f) planet.maxOrbitRadius = planet.orbitRadius * 2f;
+
+            if (planet.useRadiusBasedOrbitDistance)
+            {
+                float planetRadius = GetPlanetRadius(planet.transform);
+                planet.orbitRadius = planetRadius * startOrbitRadiusMultiplier;
+                planet.minOrbitRadius = planetRadius * minOrbitRadiusMultiplier;
+                planet.maxOrbitRadius = planetRadius * maxOrbitRadiusMultiplier;
+            }
+            else
+            {
+                if (planet.minOrbitRadius <= 0f) planet.minOrbitRadius = planet.orbitRadius * 0.5f;
+                if (planet.maxOrbitRadius <= 0f) planet.maxOrbitRadius = planet.orbitRadius * 2f;
+            }
+
             foreach (var moon in planet.moons)
                 moon.currentAngle = moon.startingAngle;
         }
@@ -53,6 +72,15 @@ public class SolarSystemManager : MonoBehaviour
                 RotateMoon(moon);
             }
         }
+    }
+    float GetPlanetRadius(Transform planetTransform)
+    {
+        var generator = planetTransform.GetComponent<PlanetGenerator>();
+        if (generator != null && generator.planetSettings != null)
+            return generator.planetSettings.radius;
+
+        Debug.LogWarning($"[SolarSystemManager] {planetTransform.name} has no PlanetGenerator/PlanetSettings assigned — using a fallback radius of 1 for orbit distance scaling. Its orbit values will likely look wrong.");
+        return 1f;
     }
     void OrbitPlanet(SolarBodyData planet)
     {

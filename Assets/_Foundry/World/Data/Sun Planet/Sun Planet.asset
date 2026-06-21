@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24c71940a8faa8641945f7702ca6e3c4, type: 3}
-  m_Name: Default Planet
+  m_Name: Sun Planet
   m_EditorClassIdentifier: Assembly-CSharp::PlanetData
-  radius: 100
-  terrainSettings: {fileID: 11400000, guid: 3529cc4122e94834ab209197b789fd83, type: 2}
-  oceanSettings: {fileID: 11400000, guid: 0f5caf05ef58ece4f8d2efbd8f8cc692, type: 2}
-  atmosphereSettings: {fileID: 11400000, guid: 04170c90f80569847897a110fc82b3e0, type: 2}
+  radius: 500
+  terrainSettings: {fileID: 11400000, guid: ee837e3051951d0468ea9cdf1253b0b0, type: 2}
+  oceanSettings: {fileID: 11400000, guid: 4bd28cde7af7b1e4faac983ec9734fac, type: 2}
+  atmosphereSettings: {fileID: 11400000, guid: 6ac8969569c616c41976160c0cf7239f, type: 2}
   rotationSpeed: 0
-  axialTilt: 23.5
+  axialTilt: 0
   bakedMesh: {fileID: 0}
