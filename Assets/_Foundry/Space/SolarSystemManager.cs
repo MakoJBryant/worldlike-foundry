@@ -10,6 +10,7 @@ public class SolarSystemManager : MonoBehaviour
 {
     [Header("Sun")]
     public Transform sun;
+    public SolarBodyData sunData;
     [Header("Planets")]
     public List<SolarBodyData> planets = new List<SolarBodyData>();
     [Header("Settings")]
@@ -24,17 +25,27 @@ public class SolarSystemManager : MonoBehaviour
     [Tooltip("How strongly holding a planet (without flinging) brakes its current spin.")]
     public float holdBrakeStrength = 2f;
     [Header("Orbit Distance Scaling")]
-    [Tooltip("Starting orbit distance = planet radius x this value, for planets with Use Radius Based Orbit Distance enabled.")]
-    public float startOrbitRadiusMultiplier = 50f;
-    [Tooltip("Minimum drag-in distance = planet radius x this value.")]
-    public float minOrbitRadiusMultiplier = 20f;
-    [Tooltip("Maximum drag-out distance = planet radius x this value.")]
-    public float maxOrbitRadiusMultiplier = 150f;
+    [Tooltip("Starting orbit distance = sun radius + (planet radius x this value), for planets with Use Radius Based Orbit Distance enabled.")]
+    public float startOrbitRadiusMultiplier = 4f;
+    [Tooltip("Minimum drag-in distance = sun radius + (planet radius x this value).")]
+    public float minOrbitRadiusMultiplier = 2.5f;
+    [Tooltip("Maximum drag-out distance = sun radius + (planet radius x this value).")]
+    public float maxOrbitRadiusMultiplier = 10f;
 
     void Start()
     {
         if (sun != null)
             sun.position = Vector3.zero;
+
+        // Initialize sun data
+        if (sunData != null)
+        {
+            sunData.baseOrbitSpeed = 0f;
+            sunData.spinVelocity = Vector3.zero;
+        }
+
+        float sunRadius = sun != null ? GetBodyRadius(sun) : 0f;
+
         foreach (var planet in planets)
         {
             planet.currentAngle = planet.startingAngle;
@@ -42,10 +53,10 @@ public class SolarSystemManager : MonoBehaviour
 
             if (planet.useRadiusBasedOrbitDistance)
             {
-                float planetRadius = GetPlanetRadius(planet.transform);
-                planet.orbitRadius = planetRadius * startOrbitRadiusMultiplier;
-                planet.minOrbitRadius = planetRadius * minOrbitRadiusMultiplier;
-                planet.maxOrbitRadius = planetRadius * maxOrbitRadiusMultiplier;
+                float planetRadius = GetBodyRadius(planet.transform);
+                planet.orbitRadius = sunRadius + planetRadius * startOrbitRadiusMultiplier;
+                planet.minOrbitRadius = sunRadius + planetRadius * minOrbitRadiusMultiplier;
+                planet.maxOrbitRadius = sunRadius + planetRadius * maxOrbitRadiusMultiplier;
             }
             else
             {
@@ -57,9 +68,17 @@ public class SolarSystemManager : MonoBehaviour
                 moon.currentAngle = moon.startingAngle;
         }
     }
+
     void FixedUpdate()
     {
-        if (sun == null) return;
+        // Keep sun pinned at origin every frame
+        if (sun != null)
+            sun.position = Vector3.zero;
+
+        // Handle sun spin separately — no orbit, just spin velocity
+        if (sunData != null && sunData.transform != null)
+            RotatePlanet(sunData);
+
         foreach (var planet in planets)
         {
             if (planet.transform == null) continue;
@@ -73,15 +92,17 @@ public class SolarSystemManager : MonoBehaviour
             }
         }
     }
-    float GetPlanetRadius(Transform planetTransform)
+
+    float GetBodyRadius(Transform t)
     {
-        var generator = planetTransform.GetComponent<PlanetGenerator>();
+        var generator = t.GetComponent<PlanetGenerator>();
         if (generator != null && generator.planetSettings != null)
             return generator.planetSettings.radius;
 
-        Debug.LogWarning($"[SolarSystemManager] {planetTransform.name} has no PlanetGenerator/PlanetSettings assigned — using a fallback radius of 1 for orbit distance scaling. Its orbit values will likely look wrong.");
+        Debug.LogWarning($"[SolarSystemManager] {t.name} has no PlanetGenerator or PlanetSettings — using a fallback radius of 1 for orbit distance scaling.");
         return 1f;
     }
+
     void OrbitPlanet(SolarBodyData planet)
     {
         planet.orbitSpeed = Mathf.Lerp(planet.orbitSpeed, planet.baseOrbitSpeed, orbitSpeedRecoveryRate * Time.fixedDeltaTime);
@@ -96,6 +117,7 @@ public class SolarSystemManager : MonoBehaviour
         );
         planet.transform.position = sun.position + orbitOffset;
     }
+
     void OrbitMoon(MoonData moon, Vector3 planetPosition)
     {
         moon.currentAngle += moon.orbitSpeed * timeScale * Time.fixedDeltaTime;
@@ -109,6 +131,7 @@ public class SolarSystemManager : MonoBehaviour
         );
         moon.transform.position = planetPosition + orbitOffset;
     }
+
     void RotatePlanet(SolarBodyData planet)
     {
         Vector3 tiltedAxis = Quaternion.Euler(planet.axialTilt, 0f, 0f) * Vector3.up;
@@ -121,34 +144,41 @@ public class SolarSystemManager : MonoBehaviour
             planet.spinVelocity = Vector3.Lerp(planet.spinVelocity, Vector3.zero, spinDamping * Time.fixedDeltaTime);
         }
     }
+
     void RotateMoon(MoonData moon)
     {
         Vector3 tiltedAxis = Quaternion.Euler(moon.axialTilt, 0f, 0f) * Vector3.up;
         moon.transform.Rotate(tiltedAxis, moon.rotationSpeed * rotationScale * Time.fixedDeltaTime, Space.World);
     }
+
     public void SetTimeScale(float scale)
     {
         timeScale = scale;
     }
 
-    public SolarBodyData GetBodyData(Transform planetTransform)
+    public SolarBodyData GetBodyData(Transform t)
     {
+        if (sunData != null && sunData.transform == t) return sunData;
         foreach (var p in planets)
-            if (p.transform == planetTransform) return p;
+            if (p.transform == t) return p;
         return null;
     }
+
     public void AdjustOrbitRadius(SolarBodyData body, float delta)
     {
         body.orbitRadius = Mathf.Clamp(body.orbitRadius + delta, body.minOrbitRadius, body.maxOrbitRadius);
     }
+
     public void BoostOrbitSpeed(SolarBodyData body, float boost)
     {
         body.orbitSpeed += boost;
     }
+
     public void AddSpin(SolarBodyData body, Vector3 angularImpulse)
     {
         body.spinVelocity += angularImpulse;
     }
+
     public void DampenSpin(SolarBodyData body, float t)
     {
         body.spinVelocity = Vector3.Lerp(body.spinVelocity, Vector3.zero, t);

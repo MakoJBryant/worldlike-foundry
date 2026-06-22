@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Default Ocean
   m_EditorClassIdentifier: Assembly-CSharp::OceanSettings
   oceanMaterial: {fileID: 2100000, guid: d9bf1b2156bb26540ba535ff701d04b2, type: 2}
-  seaLevel: 0.65
+  seaLevel: 0.6

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b0f988814637b4698b71d2a5844565, type: 3}
   m_Name: Sun Ocean
   m_EditorClassIdentifier: Assembly-CSharp::OceanSettings
-  oceanMaterial: {fileID: 2100000, guid: 4cbb7301dbabb7a4b995797d079eacd9, type: 2}
-  seaLevel: 0.65
+  oceanMaterial: {fileID: 2100000, guid: bb70de050b921f44896fabceeb45b222, type: 2}
+  seaLevel: 0.5
