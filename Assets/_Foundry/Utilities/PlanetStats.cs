@@ -4,13 +4,17 @@ using UnityEngine;
 /// Holds Fortune and Wonder values for a planet.
 /// Fortune accrues from fast spinning (player-driven spin velocity).
 /// Wonder accrues from slow natural rotation.
-/// Both cap at 9.
+/// Both caps are independently tunable in the inspector.
 /// </summary>
 public class PlanetStats : MonoBehaviour
 {
     [Header("Values")]
     public float fortune = 0f;
     public float wonder = 0f;
+
+    [Header("Caps")]
+    public float fortuneCap = 100f;
+    public float wonderCap = 10f;
 
     [Header("Accrual Settings")]
     [Tooltip("Spin velocity magnitude above this threshold counts as 'fast spin' for Fortune.")]
@@ -20,22 +24,19 @@ public class PlanetStats : MonoBehaviour
     [Tooltip("Wonder gained per second while spinning naturally (below threshold).")]
     public float wonderAccrualRate = 0.5f;
 
-    public const int MaxValue = 9;
-
-    // Set by SolarSystemManager each frame
     [HideInInspector] public float currentSpinMagnitude = 0f;
 
     void Update()
     {
         if (currentSpinMagnitude >= fortuneSpinThreshold)
         {
-            if (fortune < MaxValue)
-                fortune = Mathf.Min(fortune + fortuneAccrualRate * Time.deltaTime, MaxValue);
+            if (fortune < fortuneCap)
+                fortune = Mathf.Min(fortune + fortuneAccrualRate * Time.deltaTime, fortuneCap);
         }
         else
         {
-            if (wonder < MaxValue)
-                wonder = Mathf.Min(wonder + wonderAccrualRate * Time.deltaTime, MaxValue);
+            if (wonder < wonderCap)
+                wonder = Mathf.Min(wonder + wonderAccrualRate * Time.deltaTime, wonderCap);
         }
     }
 
