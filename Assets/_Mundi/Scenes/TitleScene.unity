@@ -282,11 +282,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlanetStats
   fortune: 0
   wonder: 0
-  fortuneCap: 100
-  wonderCap: 10
-  fortuneSpinThreshold: 5
+  fortuneCap: 1000
+  wonderCap: 1000
+  fortuneSpinThreshold: 15
   fortuneAccrualWindow: 2
-  fortuneAccrualRate: 5
+  fortuneAccrualRate: 1
   wonderAccrualRate: 0.1
   currentSpinMagnitude: 0
 --- !u!1 &153974028 stripped
@@ -313,12 +313,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlanetStats
   fortune: 0
   wonder: 0
-  fortuneCap: 100
+  fortuneCap: 10
   wonderCap: 10
-  fortuneSpinThreshold: 50
+  fortuneSpinThreshold: 5
   fortuneAccrualWindow: 2
-  fortuneAccrualRate: 1
-  wonderAccrualRate: 0.5
+  fortuneAccrualRate: 3
+  wonderAccrualRate: 0.001
   currentSpinMagnitude: 0
 --- !u!114 &153974034
 MonoBehaviour:
@@ -2002,6 +2002,7 @@ MonoBehaviour:
     moons: []
     currentAngle: 0
     baseOrbitSpeed: 0
+  selectionManager: {fileID: 0}
   planets:
   - name: Large Planet
     transform: {fileID: 120913714}
@@ -2485,11 +2486,11 @@ MonoBehaviour:
   fortune: 0
   wonder: 0
   fortuneCap: 100
-  wonderCap: 10
-  fortuneSpinThreshold: 50
+  wonderCap: 100
+  fortuneSpinThreshold: 10
   fortuneAccrualWindow: 2
-  fortuneAccrualRate: 1
-  wonderAccrualRate: 0.5
+  fortuneAccrualRate: 2
+  wonderAccrualRate: 0.01
   currentSpinMagnitude: 0
 --- !u!114 &1469844573
 MonoBehaviour:

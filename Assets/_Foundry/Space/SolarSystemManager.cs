@@ -11,6 +11,8 @@ public class SolarSystemManager : MonoBehaviour
     [Header("Sun")]
     public Transform sun;
     public SolarBodyData sunData;
+    [Header("References")]
+    public SelectionManager selectionManager;
     [Header("Planets")]
     public List<SolarBodyData> planets = new List<SolarBodyData>();
     [Header("Settings")]
@@ -31,6 +33,7 @@ public class SolarSystemManager : MonoBehaviour
     public float minOrbitRadiusMultiplier = 2.5f;
     [Tooltip("Maximum drag-out distance = sun radius + (planet radius x this value).")]
     public float maxOrbitRadiusMultiplier = 10f;
+
 
     void Start()
     {
