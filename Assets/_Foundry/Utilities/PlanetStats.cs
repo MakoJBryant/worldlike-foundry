@@ -17,24 +17,36 @@ public class PlanetStats : MonoBehaviour
     public float wonderCap = 10f;
 
     [Header("Accrual Settings")]
-    [Tooltip("Spin velocity magnitude above this threshold counts as 'fast spin' for Fortune.")]
-    public float fortuneSpinThreshold = 50f;
+    [Tooltip("Spin velocity magnitude above this threshold counts as fast spin for Fortune.")]
+    public float fortuneSpinThreshold = 5f;
+    [Tooltip("How long after a fling Fortune continues to accrue, in seconds.")]
+    public float fortuneAccrualWindow = 2f;
     [Tooltip("Fortune gained per second while spinning fast.")]
     public float fortuneAccrualRate = 1f;
     [Tooltip("Wonder gained per second while spinning naturally (below threshold).")]
     public float wonderAccrualRate = 0.5f;
 
+    // Set by SolarSystemManager each frame
     [HideInInspector] public float currentSpinMagnitude = 0f;
+
+    float fortuneWindowTimer = 0f;
 
     void Update()
     {
+        // If currently spinning fast, reset the window timer
         if (currentSpinMagnitude >= fortuneSpinThreshold)
+            fortuneWindowTimer = fortuneAccrualWindow;
+
+        if (fortuneWindowTimer > 0f)
         {
+            // Accruing Fortune — planet was recently flung
             if (fortune < fortuneCap)
                 fortune = Mathf.Min(fortune + fortuneAccrualRate * Time.deltaTime, fortuneCap);
+            fortuneWindowTimer -= Time.deltaTime;
         }
         else
         {
+            // Accruing Wonder — planet spinning naturally
             if (wonder < wonderCap)
                 wonder = Mathf.Min(wonder + wonderAccrualRate * Time.deltaTime, wonderCap);
         }

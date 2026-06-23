@@ -37,7 +37,6 @@ public class SolarSystemManager : MonoBehaviour
         if (sun != null)
             sun.position = Vector3.zero;
 
-        // Initialize sun data
         if (sunData != null)
         {
             sunData.baseOrbitSpeed = 0f;
@@ -71,11 +70,9 @@ public class SolarSystemManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Keep sun pinned at origin every frame
         if (sun != null)
             sun.position = Vector3.zero;
 
-        // Handle sun spin separately — no orbit, just spin velocity
         if (sunData != null && sunData.transform != null)
             RotatePlanet(sunData);
 
@@ -136,6 +133,11 @@ public class SolarSystemManager : MonoBehaviour
     {
         Vector3 tiltedAxis = Quaternion.Euler(planet.axialTilt, 0f, 0f) * Vector3.up;
         planet.transform.Rotate(tiltedAxis, planet.rotationSpeed * rotationScale * Time.fixedDeltaTime, Space.World);
+
+        // Read magnitude BEFORE damping so PlanetStats sees the real spin value
+        var stats = planet.transform.GetComponent<PlanetStats>();
+        if (stats != null)
+            stats.currentSpinMagnitude = planet.spinVelocity.magnitude;
 
         if (planet.spinVelocity.sqrMagnitude > 0.0001f)
         {
