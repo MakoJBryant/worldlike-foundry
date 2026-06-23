@@ -76,7 +76,7 @@ public class TitleScreenController : MonoBehaviour
 
         if (sunLabel != null)
         {
-            if (hovered == startPlanet) sunLabel.SetText("HELP");
+            if (hovered == startPlanet) sunLabel.SetText("CONTROLS");
             else if (hovered == optionsPlanet) sunLabel.SetText("OPTIONS");
             else if (hovered == exitPlanet) sunLabel.SetText("EXIT");
             else if (hovered == sun) sunLabel.SetText("PLAY");
@@ -92,9 +92,7 @@ public class TitleScreenController : MonoBehaviour
         if (clicked == null) return;
 
         if (clicked == sun) OnStartGame();
-        else if (clicked == startPlanet) OnControls();
-        else if (clicked == optionsPlanet) OnOptions();
-        else if (clicked == exitPlanet) OnExit();
+        // planets do nothing for now
     }
 
     Transform GetHoveredPlanet()
@@ -139,6 +137,10 @@ public class TitleScreenController : MonoBehaviour
         if (startHover != null) startHover.isHovered = false;
         if (optionsHover != null) optionsHover.isHovered = false;
         if (exitHover != null) exitHover.isHovered = false;
+
+        // Hide the sun label
+        if (sunLabel != null)
+            sunLabel.gameObject.SetActive(false);
 
         gameObject.SetActive(false);
     }
