@@ -57,8 +57,15 @@ public class SelectionManager : MonoBehaviour
     void SelectObject(Transform obj)
     {
         selectedObject = obj;
+
         if (editorFlyCamera != null)
             editorFlyCamera.focusTarget = obj;
+
+        // Notify upgrade manager if present
+        var upgradeManager = obj.GetComponent<PlanetUpgradeManager>();
+        if (upgradeManager != null)
+            upgradeManager.OnSelected();
+
         Debug.Log($"[SelectionManager] Selected: {obj.name}");
     }
 
