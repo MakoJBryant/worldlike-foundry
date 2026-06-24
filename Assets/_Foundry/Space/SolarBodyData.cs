@@ -66,4 +66,6 @@ public class SolarBodyData
     public float baseOrbitSpeed;
     [System.NonSerialized]
     public Vector3 spinVelocity;
+    [System.NonSerialized]
+    public bool wasSelected = false;
 }

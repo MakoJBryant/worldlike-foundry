@@ -27,13 +27,14 @@ public class SolarSystemManager : MonoBehaviour
     [Tooltip("How strongly holding a planet (without flinging) brakes its current spin.")]
     public float holdBrakeStrength = 2f;
     [Header("Orbit Distance Scaling")]
-    [Tooltip("Starting orbit distance = sun radius + (planet radius x this value), for planets with Use Radius Based Orbit Distance enabled.")]
+    [Tooltip("Starting orbit distance = sun radius + (planet radius x this value).")]
     public float startOrbitRadiusMultiplier = 4f;
     [Tooltip("Minimum drag-in distance = sun radius + (planet radius x this value).")]
     public float minOrbitRadiusMultiplier = 2.5f;
     [Tooltip("Maximum drag-out distance = sun radius + (planet radius x this value).")]
     public float maxOrbitRadiusMultiplier = 10f;
 
+    [HideInInspector] public bool gameActive = false;
 
     void Start()
     {
@@ -82,8 +83,30 @@ public class SolarSystemManager : MonoBehaviour
         foreach (var planet in planets)
         {
             if (planet.transform == null) continue;
+
+            bool isSelected = selectionManager != null &&
+                              selectionManager.selectedObject == planet.transform;
+
+            // Brake spin when deselected
+            if (!isSelected && planet.spinVelocity.sqrMagnitude > 0.001f)
+                planet.spinVelocity = Vector3.Lerp(
+                    planet.spinVelocity,
+                    Vector3.zero,
+                    holdBrakeStrength * Time.fixedDeltaTime);
+
+            // Push selection and game state to PlanetStats
+            var stats = planet.transform.GetComponent<PlanetStats>();
+            if (stats != null)
+            {
+                stats.isSelected = isSelected;
+                stats.gameActive = gameActive;
+            }
+
+            planet.wasSelected = isSelected;
+
             OrbitPlanet(planet);
             RotatePlanet(planet);
+
             foreach (var moon in planet.moons)
             {
                 if (moon.transform == null) continue;
@@ -99,7 +122,7 @@ public class SolarSystemManager : MonoBehaviour
         if (generator != null && generator.planetSettings != null)
             return generator.planetSettings.radius;
 
-        Debug.LogWarning($"[SolarSystemManager] {t.name} has no PlanetGenerator or PlanetSettings — using a fallback radius of 1 for orbit distance scaling.");
+        Debug.LogWarning($"[SolarSystemManager] {t.name} has no PlanetGenerator or PlanetSettings — using fallback radius of 1.");
         return 1f;
     }
 
@@ -137,10 +160,16 @@ public class SolarSystemManager : MonoBehaviour
         Vector3 tiltedAxis = Quaternion.Euler(planet.axialTilt, 0f, 0f) * Vector3.up;
         planet.transform.Rotate(tiltedAxis, planet.rotationSpeed * rotationScale * Time.fixedDeltaTime, Space.World);
 
-        // Read magnitude BEFORE damping so PlanetStats sees the real spin value
         var stats = planet.transform.GetComponent<PlanetStats>();
+        bool isSelected = selectionManager != null &&
+                          selectionManager.selectedObject == planet.transform;
+
         if (stats != null)
-            stats.currentSpinMagnitude = planet.spinVelocity.magnitude;
+        {
+            // Only feed spin magnitude when selected — prevents stored spin
+            // from triggering fortune accrual when you come back to the planet
+            stats.currentSpinMagnitude = isSelected ? planet.spinVelocity.magnitude : 0f;
+        }
 
         if (planet.spinVelocity.sqrMagnitude > 0.0001f)
         {

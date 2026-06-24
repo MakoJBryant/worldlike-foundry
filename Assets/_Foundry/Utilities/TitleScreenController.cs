@@ -37,6 +37,7 @@ public class TitleScreenController : MonoBehaviour
     void Start()
     {
         solarSystemManager.timeScale = 0f;
+        solarSystemManager.gameActive = false;
 
         if (editorFlyCamera != null && sun != null)
             editorFlyCamera.focusTarget = sun;
@@ -129,6 +130,7 @@ public class TitleScreenController : MonoBehaviour
     {
         titleActive = false;
         solarSystemManager.timeScale = 1f;
+        solarSystemManager.gameActive = true;
 
         if (selectionManager != null)
             selectionManager.isLocked = false;
@@ -138,7 +140,6 @@ public class TitleScreenController : MonoBehaviour
         if (optionsHover != null) optionsHover.isHovered = false;
         if (exitHover != null) exitHover.isHovered = false;
 
-        // Hide the sun label
         if (sunLabel != null)
             sunLabel.gameObject.SetActive(false);
 

@@ -470,6 +470,8 @@ MonoBehaviour:
   fortuneAccrualRate: 1
   wonderAccrualRate: 0.1
   currentSpinMagnitude: 0
+  isSelected: 0
+  gameActive: 0
 --- !u!114 &120913719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,6 +509,8 @@ MonoBehaviour:
   fortuneAccrualRate: 3
   wonderAccrualRate: 0.001
   currentSpinMagnitude: 0
+  isSelected: 0
+  gameActive: 0
 --- !u!114 &153974034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3247,7 +3251,7 @@ MonoBehaviour:
     moons: []
     currentAngle: 0
     baseOrbitSpeed: 0
-  selectionManager: {fileID: 0}
+  selectionManager: {fileID: 675086178}
   planets:
   - name: Large Planet
     transform: {fileID: 4800361534929206695}
@@ -3302,6 +3306,7 @@ MonoBehaviour:
   startOrbitRadiusMultiplier: 50
   minOrbitRadiusMultiplier: 20
   maxOrbitRadiusMultiplier: 150
+  gameActive: 0
 --- !u!1 &1083514440
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,6 +3743,8 @@ MonoBehaviour:
   fortuneAccrualRate: 2
   wonderAccrualRate: 0.01
   currentSpinMagnitude: 0
+  isSelected: 0
+  gameActive: 0
 --- !u!114 &1469844573
 MonoBehaviour:
   m_ObjectHideFlags: 0
