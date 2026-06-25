@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6087f68c06082a4fac5116f5e5b3b8f, type: 3}
-  m_Name: Ocean_Mundi
+  m_Name: Ocean_Azure_Seas
   m_EditorClassIdentifier: Assembly-CSharp::PlanetUpgrade
-  upgradeName: Ocean Mundi
+  upgradeName: Azure Seas
   description: 
   slot: 1
   terrainSettings: {fileID: 0}
-  oceanSettings: {fileID: 11400000, guid: 03d37ebfa6d7d384c9fb7d715b4bb429, type: 2}
+  oceanSettings: {fileID: 0}
   atmosphereSettings: {fileID: 0}
