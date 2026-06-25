@@ -12,5 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f634783c3609844b93a2ece65c900de, type: 3}
   m_Name: UpgradeDatabase
   m_EditorClassIdentifier: Assembly-CSharp::PlanetUpgradeDatabase
-  allUpgrades: []
-  rollCost: 10
+  allUpgrades:
+  - {fileID: 11400000, guid: 7fda7684e95a4164d8e3d8b2652dfbb1, type: 2}
+  - {fileID: 11400000, guid: 1b35bddd36ef24041a6c8de0aebb797a, type: 2}
+  - {fileID: 11400000, guid: db35734aa41d2d648b6a77b32b137dcd, type: 2}
+  - {fileID: 11400000, guid: ec992a617afb1304999a8f4ddc3dedc7, type: 2}
+  - {fileID: 11400000, guid: 5ba506670e63eb54eac79d191d1ae65c, type: 2}
+  - {fileID: 11400000, guid: 54f6955e31aff1f40bdcf1017478675e, type: 2}
+  - {fileID: 11400000, guid: 8ddbda4ef8138a34e9ea2c8d9d1ca9d1, type: 2}
+  - {fileID: 11400000, guid: fd53c43a2f5cf0b4291a7339f553ec90, type: 2}
+  - {fileID: 11400000, guid: bf7ec14983b392942ba1b5e9849bbfef, type: 2}
+  - {fileID: 11400000, guid: 42907ad924b780844aa98defb3c9b1e7, type: 2}
+  - {fileID: 11400000, guid: 2b042eb9e4547d343a0167ad538b31d5, type: 2}
+  - {fileID: 11400000, guid: e3140498637e8cb44b15b50f0df7b523, type: 2}
+  - {fileID: 11400000, guid: 470b46103fcbd7a45b87e8ac818c9193, type: 2}
+  - {fileID: 11400000, guid: b3a714953cd10c7479d62ddb7844531e, type: 2}
+  - {fileID: 11400000, guid: 2013ffb100093c84cbaf718632ca61d8, type: 2}
+  rollCost: 1
