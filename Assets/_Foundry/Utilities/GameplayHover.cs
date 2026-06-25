@@ -13,12 +13,18 @@ public class GameplayHover : MonoBehaviour
     public Camera cam;
     public RawImage rawImage;
     public SolarSystemManager solarSystemManager;
+    public SelectionManager selectionManager;
 
     TitlePlanetHover lastHovered;
 
     void Update()
     {
         Transform hovered = GetHoveredPlanet();
+
+        // Don't hover-highlight the currently selected planet
+        if (hovered != null && selectionManager != null &&
+            hovered == selectionManager.selectedObject)
+            hovered = null;
 
         TitlePlanetHover newHover = hovered != null
             ? hovered.GetComponent<TitlePlanetHover>()
