@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61e45c26afda9b418aaa8bb70db9022, type: 3}
   m_Name: Aurora_Veil
   m_EditorClassIdentifier: Assembly-CSharp::AtmosphereSettings
-  atmosphereMaterial: {fileID: 0}
-  sizeMultiplier: 0
+  atmosphereMaterial: {fileID: 2100000, guid: e1fd9439e3a7be549b101ad5f7f17724, type: 2}
+  sizeMultiplier: 0.08
   nightOpacity: 0.1

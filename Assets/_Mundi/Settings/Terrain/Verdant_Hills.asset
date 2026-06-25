@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TerrainSettings
   resolution: 64
   globalHeightOffset: 0
-  noiseLayers: []
+  noiseLayers:
+  - {fileID: 11400000, guid: ac2283b4f34d245449a6a6164999fcb0, type: 2}

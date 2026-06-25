@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61e45c26afda9b418aaa8bb70db9022, type: 3}
   m_Name: Ember_Haze
   m_EditorClassIdentifier: Assembly-CSharp::AtmosphereSettings
-  atmosphereMaterial: {fileID: 0}
-  sizeMultiplier: 0
+  atmosphereMaterial: {fileID: 2100000, guid: 6c7527509da2e0545baf6d3e8a426fb3, type: 2}
+  sizeMultiplier: 0.01
   nightOpacity: 0.1
