@@ -3,9 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Handles rolling upgrade options, applying chosen upgrades,
-/// and pushing current state to the planet's WorldSpacePanel.
-/// Attach to each planet root alongside PlanetGenerator and PlanetStats.
+/// Handles rolling upgrade options via spinning, slot machine cycling,
+/// and applying chosen upgrades using Fortune.
 /// </summary>
 public class PlanetUpgradeManager : MonoBehaviour
 {
@@ -15,56 +14,78 @@ public class PlanetUpgradeManager : MonoBehaviour
     public PlanetUpgradeDatabase database;
     public WorldSpacePanel panel;
     public SelectionManager selectionManager;
+    public SolarSystemManager solarSystemManager;
 
     [Header("Current Upgrades (read-only at runtime)")]
     public PlanetUpgrade currentTerrainUpgrade;
     public PlanetUpgrade currentOceanUpgrade;
     public PlanetUpgrade currentAtmosphereUpgrade;
 
-    PlanetUpgrade[] currentOptions = new PlanetUpgrade[3];
-    bool optionsActive = false;
-    bool isDirty = true; // forces panel refresh on first frame selected
+    [Header("Slot Machine")]
+    [Tooltip("How fast the slot machine cycles through options at full spin speed.")]
+    public float cycleSpeedMax = 10f;
+
+    PlanetUpgrade[] rolledOptions = new PlanetUpgrade[3];
+    bool optionsRolled = false;
+    PlanetUpgrade lockedOffer = null;
+
+    float cycleTimer = 0f;
+    int cycleIndex = 0;
+    bool wasSpinning = false;
 
     void Update()
     {
         if (selectionManager == null || selectionManager.selectedObject != transform) return;
+        if (!planetStats.gameActive) return;
 
-        // R to roll
-        if (Keyboard.current.rKey.wasPressedThisFrame)
+        bool isSpinning = planetStats.IsSpinning;
+
+        // Force brake if Wonder runs out mid-spin
+        if (isSpinning && planetStats.IsOutOfWonder)
         {
-            TryRoll();
-            isDirty = true;
+            var body = solarSystemManager.GetBodyData(transform);
+            if (body != null)
+                solarSystemManager.DampenSpin(body, 1f);
         }
 
-        // 1/2/3 to pick an option
-        if (optionsActive)
+        // Spin just started — roll options
+        if (isSpinning && !wasSpinning)
         {
-            if (Keyboard.current.digit1Key.wasPressedThisFrame) TryApplyUpgrade(0);
-            else if (Keyboard.current.digit2Key.wasPressedThisFrame) TryApplyUpgrade(1);
-            else if (Keyboard.current.digit3Key.wasPressedThisFrame) TryApplyUpgrade(2);
+            RollOptions();
+            lockedOffer = null;
         }
 
-        // Only rebuild panel text when something changed
-        if (isDirty)
+        // While spinning — cycle slot machine
+        if (isSpinning && optionsRolled)
         {
-            UpdatePanelDisplay();
-            isDirty = false;
+            float cycleSpeed = Mathf.Lerp(1f, cycleSpeedMax,
+                planetStats.currentSpinMagnitude / planetStats.fortuneSpinThreshold);
+
+            cycleTimer += Time.deltaTime * cycleSpeed;
+            if (cycleTimer >= 1f)
+            {
+                cycleTimer = 0f;
+                cycleIndex = (cycleIndex + 1) % 3;
+            }
         }
+
+        // Spin just stopped — lock in current option
+        if (!isSpinning && wasSpinning && optionsRolled)
+        {
+            lockedOffer = rolledOptions[cycleIndex];
+        }
+
+        wasSpinning = isSpinning;
+
+        // B to buy locked offer
+        if (lockedOffer != null && Keyboard.current.bKey.wasPressedThisFrame)
+            TryBuyOffer();
+
+        UpdatePanelDisplay();
     }
 
-    void TryRoll()
+    void RollOptions()
     {
-        if (database == null) return;
-
-        if (planetStats.fortune < database.rollCost)
-        {
-            Debug.Log("[Upgrades] Not enough fortune to roll.");
-            return;
-        }
-
-        planetStats.fortune -= database.rollCost;
-
-        // Pool: everything except what's already applied in each slot
         List<PlanetUpgrade> pool = new List<PlanetUpgrade>();
         foreach (var upgrade in database.allUpgrades)
         {
@@ -74,27 +95,34 @@ public class PlanetUpgradeManager : MonoBehaviour
             pool.Add(upgrade);
         }
 
-        // Pick up to 3 without duplicates
-        currentOptions = new PlanetUpgrade[3];
+        rolledOptions = new PlanetUpgrade[3];
         for (int i = 0; i < 3 && pool.Count > 0; i++)
         {
             int idx = Random.Range(0, pool.Count);
-            currentOptions[i] = pool[idx];
+            rolledOptions[i] = pool[idx];
             pool.RemoveAt(idx);
         }
 
-        optionsActive = true;
+        optionsRolled = true;
+        cycleIndex = 0;
+        cycleTimer = 0f;
     }
 
-    void TryApplyUpgrade(int index)
+    void TryBuyOffer()
     {
-        if (index >= currentOptions.Length || currentOptions[index] == null) return;
+        if (lockedOffer == null || database == null) return;
 
-        ApplyUpgrade(currentOptions[index]);
+        float cost = database.rollCost;
+        if (planetStats.fortune < cost)
+        {
+            panel.SetBody("Not enough Fortune to buy!");
+            return;
+        }
 
-        currentOptions = new PlanetUpgrade[3];
-        optionsActive = false;
-        isDirty = true;
+        planetStats.fortune -= cost;
+        ApplyUpgrade(lockedOffer);
+        lockedOffer = null;
+        optionsRolled = false;
     }
 
     void ApplyUpgrade(PlanetUpgrade upgrade)
@@ -126,45 +154,52 @@ public class PlanetUpgradeManager : MonoBehaviour
     {
         if (panel == null) return;
 
-        if (optionsActive)
+        if (planetStats.IsSpinning && optionsRolled)
         {
-            panel.SetTitle("CHOOSE UPGRADE");
-
+            // Slot machine cycling display
+            panel.SetTitle("SPINNING...");
             string body = "";
             for (int i = 0; i < 3; i++)
             {
-                if (currentOptions[i] != null)
-                {
-                    body += $"[{i + 1}] {currentOptions[i].upgradeName}\n";
-                    body += $"    {currentOptions[i].slot} — {currentOptions[i].description}\n\n";
-                }
+                if (rolledOptions[i] == null) continue;
+                string arrow = (i == cycleIndex) ? ">>> " : "    ";
+                body += $"{arrow}{rolledOptions[i].upgradeName} ({rolledOptions[i].slot})\n";
             }
-            body += "Press 1, 2 or 3 to apply.";
+            body += $"\nWonder: {planetStats.WonderInt}/{(int)planetStats.wonderCap}";
+            panel.SetBody(body);
+        }
+        else if (lockedOffer != null)
+        {
+            // Offer locked in — show buy prompt
+            panel.SetTitle("UPGRADE OFFER");
+            string body = $"{lockedOffer.upgradeName}\n";
+            body += $"{lockedOffer.slot}\n\n";
+            body += $"{lockedOffer.description}\n\n";
+            body += $"Cost: {(int)database.rollCost} Fortune\n";
+            body += $"Yours: {planetStats.FortuneInt} Fortune\n\n";
+            body += "[B] BUY\nSpin again to reroll";
             panel.SetBody(body);
         }
         else
         {
+            // Idle — show current upgrades and wonder fuel level
             panel.SetTitle("UPGRADES");
-
             string terrain = currentTerrainUpgrade != null ? currentTerrainUpgrade.upgradeName : "None";
             string ocean = currentOceanUpgrade != null ? currentOceanUpgrade.upgradeName : "None";
             string atmo = currentAtmosphereUpgrade != null ? currentAtmosphereUpgrade.upgradeName : "None";
-            int fortuneNeeded = database != null ? (int)database.rollCost : 0;
-            int currentFortune = planetStats != null ? planetStats.FortuneInt : 0;
 
             string body = $"TERRAIN: {terrain}\n";
             body += $"OCEAN: {ocean}\n";
             body += $"ATMOSPHERE: {atmo}\n\n";
-            body += $"[R] ROLL OPTIONS\n";
-            body += $"Cost: {fortuneNeeded} Fortune\n";
-            body += $"Yours: {currentFortune} Fortune";
+            body += $"Wonder: {planetStats.WonderInt}/{(int)planetStats.wonderCap}\n";
+            body += $"Fortune: {planetStats.FortuneInt}\n\n";
+            body += "Spin to roll upgrades!";
             panel.SetBody(body);
         }
     }
 
-    // Called externally when selection changes so panel refreshes immediately
     public void OnSelected()
     {
-        isDirty = true;
+        UpdatePanelDisplay();
     }
 }

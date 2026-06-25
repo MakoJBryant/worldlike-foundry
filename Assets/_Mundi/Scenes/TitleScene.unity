@@ -290,7 +290,8 @@ MonoBehaviour:
   fortuneSpinThreshold: 15
   fortuneAccrualWindow: 2
   fortuneAccrualRate: 1
-  wonderAccrualRate: 0.1
+  wonderDrainRate: 1
+  wonderRegenRate: 0.5
   currentSpinMagnitude: 0
   isSelected: 0
   gameActive: 0
@@ -329,7 +330,8 @@ MonoBehaviour:
   fortuneSpinThreshold: 5
   fortuneAccrualWindow: 2
   fortuneAccrualRate: 3
-  wonderAccrualRate: 0.001
+  wonderDrainRate: 1
+  wonderRegenRate: 0.5
   currentSpinMagnitude: 0
   isSelected: 0
   gameActive: 0
@@ -2475,6 +2477,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFrameOffset
   horizontalOffset: 0.5
+--- !u!1 &973020052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 973020053}
+  - component: {fileID: 973020054}
+  m_Layer: 0
+  m_Name: GameplayController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &973020053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973020052}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1615299388}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &973020054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973020052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8818d56947b1a694584181c73dae7476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameplayHover
+  cam: {fileID: 970258463}
+  rawImage: {fileID: 1083514442}
+  solarSystemManager: {fileID: 1057837529}
 --- !u!43 &997425713
 Mesh:
   m_ObjectHideFlags: 0
@@ -3350,85 +3399,7 @@ Transform:
   - {fileID: 1827044814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1397905844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5324220375579635621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0c7180f7721b114d9cd904e17013392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSpinAudio
-  planet: {fileID: 1002985769509946350}
-  loopAudio: {fileID: 84680008}
-  maxSpeed: 180
-  fastThreshold: 60
---- !u!114 &1469844572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5324220375668107411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc12ec3da5452a34b8f0814de805608c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetStats
-  fortune: 0
-  wonder: 0
-  fortuneCap: 100
-  wonderCap: 100
-  fortuneSpinThreshold: 10
-  fortuneAccrualWindow: 2
-  fortuneAccrualRate: 2
-  wonderAccrualRate: 0.01
-  currentSpinMagnitude: 0
-  isSelected: 0
-  gameActive: 0
---- !u!114 &1469844573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5324220375668107411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c5cf8536ff92fb46b6e9538922b2648, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetStatsDisplay
-  cam: {fileID: 970258463}
-  planet: {fileID: 1002985769597633752}
-  stats: {fileID: 1469844572}
-  selectionManager: {fileID: 675086178}
-  fortuneLabel: {fileID: 1027656622}
-  wonderLabel: {fileID: 1957782823}
-  distanceFromCenter: 50
-  wonderHorizontalOffset: 150
-  wonderVerticalOffset: -45
-  fortuneHorizontalOffset: 100
-  fortuneVerticalOffset: -115
---- !u!114 &1469844575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5324220375668107411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0c7180f7721b114d9cd904e17013392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSpinAudio
-  planet: {fileID: 1002985769597633752}
-  loopAudio: {fileID: 682300437}
-  maxSpeed: 180
-  fastThreshold: 60
---- !u!43 &1527525050
+--- !u!43 &1305789025
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3606,6 +3577,85 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &1397905844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324220375579635621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c7180f7721b114d9cd904e17013392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetSpinAudio
+  planet: {fileID: 1002985769509946350}
+  loopAudio: {fileID: 84680008}
+  maxSpeed: 180
+  fastThreshold: 60
+--- !u!114 &1469844572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324220375668107411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc12ec3da5452a34b8f0814de805608c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetStats
+  fortune: 0
+  wonder: 0
+  fortuneCap: 100
+  wonderCap: 100
+  fortuneSpinThreshold: 10
+  fortuneAccrualWindow: 2
+  fortuneAccrualRate: 2
+  wonderDrainRate: 1
+  wonderRegenRate: 0.5
+  currentSpinMagnitude: 0
+  isSelected: 0
+  gameActive: 0
+--- !u!114 &1469844573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324220375668107411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5cf8536ff92fb46b6e9538922b2648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetStatsDisplay
+  cam: {fileID: 970258463}
+  planet: {fileID: 1002985769597633752}
+  stats: {fileID: 1469844572}
+  selectionManager: {fileID: 675086178}
+  fortuneLabel: {fileID: 1027656622}
+  wonderLabel: {fileID: 1957782823}
+  distanceFromCenter: 50
+  wonderHorizontalOffset: 150
+  wonderVerticalOffset: -45
+  fortuneHorizontalOffset: 100
+  fortuneVerticalOffset: -115
+--- !u!114 &1469844575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324220375668107411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c7180f7721b114d9cd904e17013392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetSpinAudio
+  planet: {fileID: 1002985769597633752}
+  loopAudio: {fileID: 682300437}
+  maxSpeed: 180
+  fastThreshold: 60
 --- !u!1 &1539360237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,6 +4128,7 @@ Transform:
   - {fileID: 724825401}
   - {fileID: 1057837528}
   - {fileID: 675086177}
+  - {fileID: 973020053}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1615299389
@@ -5507,7 +5558,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1444470a0168d52488230a530f7befc4, type: 2}
+  - {fileID: 2100000, guid: 7fbc789621fea62408e530044229b520, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5663,7 +5714,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1527525050}
+  m_Mesh: {fileID: 1305789025}
 --- !u!1 &1491839101352136290
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,7 +5846,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8338436741155327297}
-  m_Mesh: {fileID: 1527525050}
+  m_Mesh: {fileID: 1305789025}
 --- !u!33 &3572832085343031245
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6069,7 +6120,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b7795db19fefe64283ecfeee55bc6b1, type: 2}
+  - {fileID: 2100000, guid: 5a0e1462b8dddef4290a5729d5537fdf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6645,7 +6696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5caac329c748344a10509a6a3535f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AtmosphereGenerator
-  settings: {fileID: 11400000, guid: c5e225cd7427ac347b761114d5cdd60b, type: 2}
+  settings: {fileID: 11400000, guid: a1233ebcfb944084ab85fac2a05a77a7, type: 2}
 --- !u!1 &6611581799304192906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6824,7 +6875,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d8101cc6ac57b5b429fb21cd30a8bb0a, type: 2}
+  - {fileID: 2100000, guid: 28498c7b5b7fe5c498b2f8f378dedcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6937,7 +6988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1b33337e5da7740a5a85277f288022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OceanGenerator
-  settings: {fileID: 11400000, guid: 9be72cbf6db05424bacc698b6bef3441, type: 2}
+  settings: {fileID: 11400000, guid: ccf0e7fcb8723af419971e4e64b9e41d, type: 2}
 --- !u!114 &8724441702126195894
 MonoBehaviour:
   m_ObjectHideFlags: 0

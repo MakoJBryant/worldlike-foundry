@@ -15,7 +15,7 @@ MonoBehaviour:
   radius: 250
   terrainSettings: {fileID: 11400000, guid: 5326b7f358f7a564aa7af72c3a83fb24, type: 2}
   oceanSettings: {fileID: 11400000, guid: ccf0e7fcb8723af419971e4e64b9e41d, type: 2}
-  atmosphereSettings: {fileID: 11400000, guid: c5e225cd7427ac347b761114d5cdd60b, type: 2}
+  atmosphereSettings: {fileID: 11400000, guid: a1233ebcfb944084ab85fac2a05a77a7, type: 2}
   rotationSpeed: 10
   axialTilt: 23.5
   bakedMesh: {fileID: 0}
