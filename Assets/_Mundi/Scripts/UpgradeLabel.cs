@@ -56,29 +56,38 @@ public class UpgradeLabel : MonoBehaviour
     {
         if (cam == null || planet == null) return;
 
+        bool isSelected = selectionManager != null &&
+                          selectionManager.selectedObject == planet;
+
+        if (!isSelected)
+        {
+            if (tmp != null) tmp.enabled = false;
+            if (nameLabel != null) nameLabel.enabled = false;
+            if (isPreviewing) EndPreview();
+            return;
+        }
+
+        if (tmp != null) tmp.enabled = true;
+
         Vector3 toCam = (cam.transform.position - planet.position).normalized;
         Vector3 camRight = cam.transform.right;
         Vector3 camUp = cam.transform.up;
 
-        // Position main label
-        transform.position = planet.position
-            + toCam * distanceFromCenter
+        Vector3 baseFacePos = planet.position + toCam * distanceFromCenter;
+        Quaternion faceCamera = Quaternion.LookRotation(baseFacePos - cam.transform.position);
+
+        transform.position = baseFacePos
             + camRight * horizontalOffset
             + camUp * verticalOffset;
+        transform.rotation = faceCamera;
 
-        Quaternion faceCam = Quaternion.LookRotation(
-            transform.position - cam.transform.position);
-        transform.rotation = faceCam;
-
-        // Position name label as sibling — to the right of main label
         if (nameLabel != null && nameLabel.gameObject.activeSelf)
         {
             nameLabel.transform.position = transform.position
                 + camRight * nameHorizontalOffset;
-            nameLabel.transform.rotation = faceCam;
+            nameLabel.transform.rotation = faceCamera;
         }
 
-        // Hover detection
         bool hovering = IsMouseOverThis();
 
         if (hovering && !isPreviewing)
@@ -86,7 +95,6 @@ public class UpgradeLabel : MonoBehaviour
         else if (!hovering && isPreviewing)
             EndPreview();
 
-        // Click to buy
         if (hovering && Mouse.current.leftButton.wasPressedThisFrame)
             upgradeManager?.TryBuyOffer();
     }
