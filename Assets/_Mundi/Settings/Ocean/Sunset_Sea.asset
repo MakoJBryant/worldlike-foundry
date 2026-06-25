@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79b0f988814637b4698b71d2a5844565, type: 3}
-  m_Name: Crystal_Ocean
+  m_Name: Sunset_Sea
   m_EditorClassIdentifier: Assembly-CSharp::OceanSettings
-  oceanMaterial: {fileID: 2100000, guid: fc9c7565e265cfc4d8b4628c8582e774, type: 2}
-  seaLevel: 0.6
+  oceanMaterial: {fileID: 2100000, guid: 5a0e1462b8dddef4290a5729d5537fdf, type: 2}
+  seaLevel: 0.48

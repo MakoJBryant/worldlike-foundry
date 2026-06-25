@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb2ddf951e0b009428258686a95fa36e, type: 3}
-  m_Name: Volcanic_Badlands
+  m_Name: Archipelago
   m_EditorClassIdentifier: Assembly-CSharp::TerrainSettings
   resolution: 64
   globalHeightOffset: 0
   noiseLayers:
-  - {fileID: 11400000, guid: 2061111e6ab0b1a4aaad667357890d02, type: 2}
+  - {fileID: 11400000, guid: ac2283b4f34d245449a6a6164999fcb0, type: 2}

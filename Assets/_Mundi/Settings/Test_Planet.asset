@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Test_Planet
   m_EditorClassIdentifier: Assembly-CSharp::PlanetSettings
   radius: 250
-  terrainSettings: {fileID: 11400000, guid: e1ca6986da96e194280ffc15b9b91879, type: 2}
-  oceanSettings: {fileID: 11400000, guid: 86999a125a5d1d4439cdb92d707faabf, type: 2}
-  atmosphereSettings: {fileID: 11400000, guid: e4855c578c4c758478b48b4b3a023974, type: 2}
+  terrainSettings: {fileID: 11400000, guid: 5326b7f358f7a564aa7af72c3a83fb24, type: 2}
+  oceanSettings: {fileID: 11400000, guid: ccf0e7fcb8723af419971e4e64b9e41d, type: 2}
+  atmosphereSettings: {fileID: 11400000, guid: c5e225cd7427ac347b761114d5cdd60b, type: 2}
   rotationSpeed: 10
   axialTilt: 23.5
   bakedMesh: {fileID: 0}

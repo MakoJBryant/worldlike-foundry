@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Clear_Sky
   m_EditorClassIdentifier: Assembly-CSharp::AtmosphereSettings
   atmosphereMaterial: {fileID: 2100000, guid: 2e599c9495b90c54fb920dfd81f4f25a, type: 2}
-  sizeMultiplier: 0.05
+  sizeMultiplier: 0.02
   nightOpacity: 0.1

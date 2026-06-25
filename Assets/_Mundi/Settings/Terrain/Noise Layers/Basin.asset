@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6f2943e9af768b45b3cc4f17deaf049, type: 3}
-  m_Name: Verdant_Hills
+  m_Name: Basin
   m_EditorClassIdentifier: Assembly-CSharp::NoiseLayer
   enabled: 1
   noiseType: 0
   useFirstLayerAsMask: 0
-  strength: 0.18
-  minValue: 0.12
-  roughness: 1.4
-  lacunarity: 2
-  octaves: 3
-  persistence: 0.45
+  strength: 1.2
+  minValue: 0.06
+  roughness: 0.9
+  lacunarity: 1.8
+  octaves: 2
+  persistence: 0.4
   offset: {x: 0, y: 0, z: 0}
