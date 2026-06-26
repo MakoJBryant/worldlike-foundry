@@ -2,11 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-/// <summary>
-/// Click-and-drag input for planets. Mode is decided by what's currently selected:
-/// dragging the selected planet itself spins it, dragging any other planet
-/// (including while the sun or nothing is selected) adjusts its orbit.
-/// </summary>
 public class PlanetDragController : MonoBehaviour
 {
     [Header("References")]
@@ -16,9 +11,9 @@ public class PlanetDragController : MonoBehaviour
     public SolarSystemManager solarSystemManager;
 
     [Header("Tuning")]
-    public float orbitRadiusSensitivity = 0.5f;
+    public float orbitRadiusSensitivity = 1f;
     public float orbitSpeedFlingSensitivity = 0.05f;
-    public float spinFlingSensitivity = 50f;
+    public float spinFlingSensitivity = 4f;
 
     Transform draggedPlanet;
     SolarBodyData draggedBody;
@@ -48,6 +43,25 @@ public class PlanetDragController : MonoBehaviour
         return normalized.x >= 0 && normalized.x <= 1 && normalized.y >= 0 && normalized.y <= 1;
     }
 
+    bool IsMouseOverUpgradeLabel(Transform planetRoot)
+    {
+        if (planetRoot == null || cam == null) return false;
+        var label = planetRoot.GetComponentInChildren<UpgradeLabel>();
+        if (label == null) return false;
+
+        // Only block drag if there's actually an offer to click
+        if (label.upgradeManager == null || label.upgradeManager.LockedOffer == null) return false;
+
+        Vector3 labelScreenPos = cam.WorldToScreenPoint(label.transform.position);
+        if (labelScreenPos.z < 0) return false;
+
+        Vector2 screenMouse = Mouse.current.position.ReadValue();
+        float dist = Vector2.Distance(
+            new Vector2(labelScreenPos.x, labelScreenPos.y), screenMouse);
+
+        return dist < label.hoverPixelRadius;
+    }
+
     void TryBeginDrag()
     {
         if (!TryGetViewportPoint(out Vector2 viewport)) return;
@@ -56,7 +70,10 @@ public class PlanetDragController : MonoBehaviour
 
         Transform root = hit.transform.root;
         SolarBodyData body = solarSystemManager.GetBodyData(root);
-        if (body == null) return; // not a draggable planet
+        if (body == null) return;
+
+        // Don't start a drag if clicking the upgrade label
+        if (IsMouseOverUpgradeLabel(root)) return;
 
         draggedPlanet = root;
         draggedBody = body;
@@ -79,10 +96,8 @@ public class PlanetDragController : MonoBehaviour
 
         if (isSpinMode)
         {
-            // Holding brakes the existing spin a little every frame, like gripping a
-            // spinning ball. If you also drag, the release impulse below adds fresh
-            // momentum on top — drag hard enough and you overcome the brake.
-            solarSystemManager.DampenSpin(draggedBody, solarSystemManager.holdBrakeStrength * Time.deltaTime);
+            solarSystemManager.DampenSpin(draggedBody,
+                solarSystemManager.holdBrakeStrength * Time.deltaTime);
             return;
         }
 
@@ -109,13 +124,43 @@ public class PlanetDragController : MonoBehaviour
     {
         if (isSpinMode)
         {
-            Vector3 axis = cam.transform.right * smoothedScreenVelocity.y
-                         - cam.transform.up * smoothedScreenVelocity.x;
-            solarSystemManager.AddSpin(draggedBody, axis * spinFlingSensitivity);
+            float currentSpin = draggedBody.spinVelocity.magnitude;
+            if (currentSpin > 5f)
+            {
+                Debug.Log("[Drag] Planet still spinning — wait for it to slow down.");
+                draggedPlanet = null;
+                draggedBody = null;
+                return;
+            }
+
+            // Only count as a fling if mouse was actually moving
+            // prevents hold-to-brake from being charged as a spin
+            float flingStrength = smoothedScreenVelocity.magnitude;
+            if (flingStrength > 2f)
+            {
+                var stats = draggedPlanet.GetComponent<PlanetStats>();
+                if (stats != null)
+                {
+                    if (stats.wonder < 1f)
+                    {
+                        Debug.Log("[Drag] Not enough Wonder to spin — need 1.");
+                        draggedPlanet = null;
+                        draggedBody = null;
+                        return;
+                    }
+                    stats.wonder -= 1f;
+                }
+
+                Vector3 axis = cam.transform.right * smoothedScreenVelocity.y
+                             - cam.transform.up * smoothedScreenVelocity.x;
+                solarSystemManager.AddSpin(draggedBody, axis * spinFlingSensitivity);
+            }
+            // If flingStrength <= 2f it was just a hold — no cost, no spin added
         }
         else
         {
-            solarSystemManager.BoostOrbitSpeed(draggedBody, smoothedTangentVelocity * orbitSpeedFlingSensitivity);
+            solarSystemManager.BoostOrbitSpeed(draggedBody,
+                smoothedTangentVelocity * orbitSpeedFlingSensitivity);
         }
 
         draggedPlanet = null;

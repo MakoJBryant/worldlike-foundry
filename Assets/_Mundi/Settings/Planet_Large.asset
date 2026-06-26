@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24c71940a8faa8641945f7702ca6e3c4, type: 3}
-  m_Name: Medium Planet
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetData
-  radius: 100
-  terrainSettings: {fileID: 11400000, guid: 2059ce81c9e235a4e8b60cae77d06997, type: 2}
-  oceanSettings: {fileID: 11400000, guid: 9be72cbf6db05424bacc698b6bef3441, type: 2}
-  atmosphereSettings: {fileID: 11400000, guid: fde7579f9bbc4b645a972b1cd4251dc3, type: 2}
-  rotationSpeed: 0
+  m_Name: Planet_Large
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetSettings
+  radius: 250
+  terrainSettings: {fileID: 11400000, guid: 5326b7f358f7a564aa7af72c3a83fb24, type: 2}
+  oceanSettings: {fileID: 11400000, guid: 6b714d3f53112a24a8fb12efa08d9df5, type: 2}
+  atmosphereSettings: {fileID: 11400000, guid: a1233ebcfb944084ab85fac2a05a77a7, type: 2}
+  rotationSpeed: 10
   axialTilt: 23.5
   bakedMesh: {fileID: 0}

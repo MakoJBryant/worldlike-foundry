@@ -19,11 +19,12 @@ public class PlanetUpgradeManager : MonoBehaviour
 
     [Header("Slot Machine")]
     public float cycleSpeedMax = 10f;
+    [Tooltip("Spin magnitude must be above this to keep cycling. Below this the label locks early.")]
+    public float cycleStopThreshold = 2f;
 
     PlanetUpgrade[] rolledOptions = new PlanetUpgrade[3];
     bool optionsRolled = false;
 
-    // Public so UpgradeLabel can read it for preview
     public PlanetUpgrade LockedOffer { get; private set; }
 
     float cycleTimer = 0f;
@@ -53,30 +54,45 @@ public class PlanetUpgradeManager : MonoBehaviour
             if (upgradeLabel != null) upgradeLabel.ClearOffer();
         }
 
-        // While spinning — cycle slot machine
+        // While spinning — cycle slot machine only above threshold
         if (isSpinning && optionsRolled)
         {
-            float cycleSpeed = Mathf.Lerp(1f, cycleSpeedMax,
-                planetStats.currentSpinMagnitude / planetStats.fortuneSpinThreshold);
-
-            cycleTimer += Time.deltaTime * cycleSpeed;
-            if (cycleTimer >= 1f)
+            if (planetStats.currentSpinMagnitude > cycleStopThreshold)
             {
-                cycleTimer = 0f;
-                cycleIndex = (cycleIndex + 1) % 3;
-            }
+                float cycleSpeed = Mathf.Lerp(1f, cycleSpeedMax,
+                    planetStats.currentSpinMagnitude / planetStats.fortuneSpinThreshold);
 
-            // Update label to show cycling name
-            if (upgradeLabel != null && rolledOptions[cycleIndex] != null)
-                upgradeLabel.SetOffer(rolledOptions[cycleIndex]);
+                cycleTimer += Time.deltaTime * cycleSpeed;
+                if (cycleTimer >= 1f)
+                {
+                    cycleTimer = 0f;
+                    cycleIndex = (cycleIndex + 1) % 3;
+                }
+
+                if (upgradeLabel != null && rolledOptions[cycleIndex] != null)
+                    upgradeLabel.SetOffer(rolledOptions[cycleIndex]);
+            }
+            else
+            {
+                // Spin slowed enough — lock label early
+                if (LockedOffer == null)
+                {
+                    LockedOffer = rolledOptions[cycleIndex];
+                    if (upgradeLabel != null)
+                        upgradeLabel.SetOffer(LockedOffer);
+                }
+            }
         }
 
         // Spin just stopped — lock in current option
         if (!isSpinning && wasSpinning && optionsRolled)
         {
-            LockedOffer = rolledOptions[cycleIndex];
-            if (upgradeLabel != null)
-                upgradeLabel.SetOffer(LockedOffer);
+            if (LockedOffer == null)
+            {
+                LockedOffer = rolledOptions[cycleIndex];
+                if (upgradeLabel != null)
+                    upgradeLabel.SetOffer(LockedOffer);
+            }
         }
 
         wasSpinning = isSpinning;
@@ -108,12 +124,19 @@ public class PlanetUpgradeManager : MonoBehaviour
 
     public void TryBuyOffer()
     {
-        if (LockedOffer == null || database == null) return;
+        if (LockedOffer == null) return;
 
-        float cost = database.rollCost;
+        // Can't buy while planet is still spinning
+        if (planetStats.IsSpinning)
+        {
+            Debug.Log("[Upgrades] Wait for planet to stop spinning.");
+            return;
+        }
+
+        float cost = 25f;
         if (planetStats.fortune < cost)
         {
-            Debug.Log("[Upgrades] Not enough Fortune to buy.");
+            Debug.Log("[Upgrades] Not enough Fortune — need 25.");
             return;
         }
 
@@ -152,7 +175,6 @@ public class PlanetUpgradeManager : MonoBehaviour
 
     public void OnSelected()
     {
-        // Refresh label on reselect
         if (upgradeLabel != null && LockedOffer != null)
             upgradeLabel.SetOffer(LockedOffer);
     }
