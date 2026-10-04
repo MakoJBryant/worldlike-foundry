@@ -1,0 +1,5193 @@
+﻿PROJECT SCAN: worldlike-foundry
+Scanned: 2026-10-03 14:28:54
+Mode: Structure + script contents
+
+=== PROJECT INFO ===
+Unity version:    6000.3.13f1
+Company:          DefaultCompany
+Color space:      Linear
+Active build target: StandaloneWindows64
+Render pipeline:  UniversalRenderPipelineAsset (PC_RPAsset)
+Scripting defines: (none)
+
+=== SCENES IN BUILD SETTINGS ===
+  [0] ON  Assets/_Mundi/Scenes/TitleScene.unity
+
+=== PACKAGES (Packages/manifest.json) ===
+  com.unity.ai.navigation  2.0.12
+  com.unity.collab-proxy  2.12.4
+  com.unity.ide.rider  3.0.39
+  com.unity.ide.visualstudio  2.0.26
+  com.unity.inputsystem  1.19.0
+  com.unity.multiplayer.center  1.0.1
+  com.unity.render-pipelines.universal  17.3.0
+  com.unity.shadergraph  17.3.0
+  com.unity.test-framework  1.6.0
+  com.unity.timeline  1.8.12
+  com.unity.ugui  2.0.0
+  com.unity.visualscripting  1.9.11
+  com.unity.modules.accessibility  1.0.0
+  com.unity.modules.adaptiveperformance  1.0.0
+  com.unity.modules.ai  1.0.0
+  com.unity.modules.androidjni  1.0.0
+  com.unity.modules.animation  1.0.0
+  com.unity.modules.assetbundle  1.0.0
+  com.unity.modules.audio  1.0.0
+  com.unity.modules.cloth  1.0.0
+  com.unity.modules.director  1.0.0
+  com.unity.modules.imageconversion  1.0.0
+  com.unity.modules.imgui  1.0.0
+  com.unity.modules.jsonserialize  1.0.0
+  com.unity.modules.particlesystem  1.0.0
+  com.unity.modules.physics  1.0.0
+  com.unity.modules.physics2d  1.0.0
+  com.unity.modules.screencapture  1.0.0
+  com.unity.modules.terrain  1.0.0
+  com.unity.modules.terrainphysics  1.0.0
+  com.unity.modules.tilemap  1.0.0
+  com.unity.modules.ui  1.0.0
+  com.unity.modules.uielements  1.0.0
+  com.unity.modules.umbra  1.0.0
+  com.unity.modules.unityanalytics  1.0.0
+  com.unity.modules.unitywebrequest  1.0.0
+  com.unity.modules.unitywebrequestassetbundle  1.0.0
+  com.unity.modules.unitywebrequestaudio  1.0.0
+  com.unity.modules.unitywebrequesttexture  1.0.0
+  com.unity.modules.unitywebrequestwww  1.0.0
+  com.unity.modules.vectorgraphics  1.0.0
+  com.unity.modules.vehicles  1.0.0
+  com.unity.modules.video  1.0.0
+  com.unity.modules.vr  1.0.0
+  com.unity.modules.wind  1.0.0
+  com.unity.modules.xr  1.0.0
+
+=== ASSETS FOLDER TREE ===
+Assets/
+  _Foundry/
+    Input/
+      InputSystem_Actions.cs
+      InputSystem_Actions.inputactions
+    Materials/
+      Atmospheres/
+        M_Blue_Atmosphere.mat
+        M_Purple_Atmosphere.mat
+        M_SunCorona.mat
+        M_Yellow_Atmosphere.mat
+      Oceans/
+        M_Blue_Ocean.mat
+        M_Grey_Ocean.mat
+        M_Lava_Ocean.mat
+      PlanetSurface/
+        M_Dirt_PlanetSurface.mat
+        M_Forest_PlanetSurface.mat
+        M_Marble_PlanetSurface.mat
+        M_SunCore.mat
+      M_Atmosphere.mat
+      M_Default_Atmosphere.mat
+      M_Default_Ocean.mat
+      M_Default_PlanetSurface.mat
+      M_Ocean.mat
+      M_PlanetSurface.mat
+      M_Starfield 1.mat
+      M_Starfield.mat
+      M_SunAtmosphere.mat
+      M_SunOcean.mat
+      M_SunTerrain.mat
+      TestToon.mat
+    Physics/
+      GravityBody.cs
+      PlanetGravity.cs
+      PlanetLightingController.cs
+    Player/
+      PlanetCameraController.cs
+      PlayerController.cs
+    Rendering/
+      Shaders/
+        Includes/
+          Lighting.hlsl
+        SubGraphs/
+          AddAdditionalLights.shadersubgraph
+          AdjustSmoothness.shadersubgraph
+          CalculateLightingRamp.shadersubgraph
+          CalculateLights.shadersubgraph
+          CalculateMainLight.shadersubgraph
+        StarSkybox.shader
+        SunCorona.shader
+        Toon.shadergraph
+        ToonLighting.shadergraph
+      Rainbow.png
+      RT_Pixelated.renderTexture
+      T_Starfield.png
+      ToonRamp.png
+    Space/
+      PlanetDragController.cs
+      SolarBodyData.cs
+      SolarSystemManager.cs
+      SunTracker.cs
+    Utilities/
+      BillboardClickReceiver.cs
+      BillboardLabel.cs
+      CameraFrameOffset.cs
+      EditorFlyCamera.cs
+      GameManager.cs
+      GameplayHover.cs
+      GodModeController.cs
+      LabelFaceCamera.cs
+      PlanetBuyButton.cs
+      PlanetStats.cs
+      PlanetStatsDisplay.cs
+      SelectionManager.cs
+      TitlePlanetHover.cs
+      TitleScreenController.cs
+    World/
+      Data/
+        _Noise Layers/
+          Mountain Noise Layer.asset
+          Rocky Noise Layer.asset
+        Large Planet/
+          Large Atmosphere.asset
+          Large Ocean.asset
+          Large Planet.asset
+          Large Terrain.asset
+        Medium Planet/
+          Medium Atmosphere.asset
+          Medium Ocean.asset
+          Medium Planet.asset
+          Medium Terrain.asset
+        Small Planet/
+          Small Atmosphere.asset
+          Small Ocean.asset
+          Small Planet.asset
+          Small Terrain.asset
+        Sun Planet/
+          Sun Atmosphere.asset
+          Sun Noise Layer.asset
+          Sun Ocean.asset
+          Sun Planet.asset
+          Sun Terrain.asset
+        Default Atmosphere.asset
+        Default Noise Layer.asset
+        Default Ocean.asset
+        Default Planet.asset
+        Default Terrain.asset
+      Prefabs/
+        Planet.prefab
+        Player.prefab
+      Scripts/
+        Editor/
+          AtmosphereGeneratorEditor.cs
+          OceanGeneratorEditor.cs
+          PlanetGeneratorEditor.cs
+          StarTextureGenerator.cs
+          TerrainGeneratorEditor.cs
+        Generation/
+          Noise/
+            NoiseLayer.cs
+            PerlinNoise3D.cs
+          AtmosphereGenerator.cs
+          AtmosphereSettings.cs
+          OceanGenerator.cs
+          OceanSettings.cs
+          PlanetGenerator.cs
+          PlanetSettings.cs
+          SphereCreator.cs
+          SphereDeformer.cs
+          TerrainGenerator.cs
+          TerrainSettings.cs
+    QuitOnEscape.cs
+  _Mundi/
+    Art/
+    Audio/
+      flick_down_v1.wav
+      flick_up_v1.wav
+      MusicFadeIn.cs
+      planet_spin_v1.wav
+      PlanetSpinAudio.cs
+      title_theme_v1.wav
+      twinkle_sun_v1.wav
+      twinkle_v1.wav
+    Scenes/
+      Main Camera.prefab
+      SampleScene.unity
+      TitleScene.unity
+      TitleScene_Backup.unity
+      ToonTestScene.unity
+    Scripts/
+      GlobalSunDirection.cs
+      PlanetUpgradeDatabase.cs
+      PlanetUpgradeManager.cs
+      UpgradeBuyButton.cs
+      UpgradeLabel.cs
+      UpgradeSlot.cs
+      WorldSpacePanel.cs
+    Settings/
+      Atmosphere/
+        Aurora Veil/
+          Atmosphere_Aurora_Veil.asset
+          Aurora_Veil.asset
+          M_Aurora_Veil.mat
+        Clear Sky/
+          Atmosphere_Clear_Sky.asset
+          Clear_Sky.asset
+          M_Clear_Sky.mat
+        Ember Haze/
+          Atmosphere_Ember_Haze.asset
+          Ember_Haze.asset
+          M_Ember_Haze.mat
+        Golden Halo/
+          Atmosphere_Golden_Halo.asset
+          Golden_Halo.asset
+          M_Golden_Halo.mat
+        Morning Mist/
+          Atmosphere_Morning_Mist.asset
+          M_Morning_Mist.mat
+          Morning_Mist.asset
+      Color Palette/
+        M_Ash_Grey.mat
+        M_Basalt_Stone.mat
+        M_Crystal_Ice.mat
+        M_Dry_Meadow.mat
+        M_Ember_Rock.mat
+        M_Highland_Sage.mat
+        M_Sandstone.mat
+        M_Twilight_Bloom.mat
+        M_Verdant_Moss.mat
+      Ocean/
+        Azure Sea/
+          Azure_Sea.asset
+          M_Azure_Sea.mat
+          Ocean_Azure_Sea.asset
+        Crystal Deep/
+          Crystal_Deep.asset
+          M_Crystal_Deep.mat
+          Ocean_Crystal_Deep.asset
+        Jade Sea/
+          Jade_Sea.asset
+          M_Jade_Sea.mat
+          Ocean_Jade_Sea.asset
+        Moonlit Sea/
+          M_Moonlit_Sea.mat
+          Moonlit_Sea.asset
+          Ocean_Moonlit_Sea.asset
+        Sunset Sea/
+          M_Sunset_Sea.mat
+          Ocean_Sunset_Sea.asset
+          Sunset_Sea.asset
+      Terrain/
+        Archipelago/
+          Archipelago.asset
+          NoiseLayer_Archipelago.asset
+          Terrain_Archipelago.asset
+        Basin/
+          Basin.asset
+          NoiseLayer_Basin.asset
+          Terrain_Basin.asset
+        Crag/
+          Crag.asset
+          NoiseLayer_Crag.asset
+          Terrain_Crag.asset
+        Crown/
+          Crown.asset
+          NoiseLayer_Crown.asset
+          Terrain_Crown.asset
+        Highland/
+          Highland.asset
+          NoiseLayer_Highland.asset
+          Terrain_Highland.asset
+      Test_Planet.asset
+    UpgradeDatabase.asset
+  Editor/
+    ProjectScanner.cs
+  Settings/
+    Build Profiles/
+      Windows.asset
+    DefaultVolumeProfile.asset
+    Mobile_Renderer.asset
+    Mobile_RPAsset.asset
+    PC_Renderer.asset
+    PC_RPAsset.asset
+    SampleSceneProfile.asset
+    UniversalRenderPipelineGlobalSettings.asset
+  TextMesh Pro/  [collapsed, 37 files]
+  Readme.asset
+
+=== FILE TYPES IN ASSETS ===
+  .asset          75 files
+  .cs             52 files
+  .mat            44 files
+  .shader         16 files
+  .shadergraph     6 files
+  .wav             6 files
+  .shadersubgraph     5 files
+  .txt             4 files
+  .cginc           4 files
+  .png             4 files
+  .unity           4 files
+  .prefab          3 files
+  .hlsl            2 files
+  .ttf             1 files
+  .json            1 files
+  .inputactions     1 files
+  .rendertexture     1 files
+
+=== ALL SCENES ===
+  Assets/_Mundi/Scenes/SampleScene.unity
+  Assets/_Mundi/Scenes/TitleScene.unity
+  Assets/_Mundi/Scenes/TitleScene_Backup.unity
+  Assets/_Mundi/Scenes/ToonTestScene.unity
+
+=== PREFABS ===
+  Assets/_Foundry/World/Prefabs/Planet.prefab  [Transform, PlanetGenerator, PlanetGravity, PlanetDragController]
+  Assets/_Foundry/World/Prefabs/Player.prefab  [Transform, MeshFilter, MeshRenderer, CapsuleCollider, Rigidbody, GravityBody, PlayerController]
+  Assets/_Mundi/Scenes/Main Camera.prefab  [Transform, EditorFlyCamera, Camera, AudioListener, UniversalAdditionalCameraData]
+
+=== SCRIPTS (types and base classes) ===
+  Assets/_Foundry/Input/InputSystem_Actions.cs
+      - class Example : MonoBehaviour, MyActions.IPlayerActions
+      - struct PlayerActions
+      - struct UIActions
+      - interface IPlayerActions
+      - interface IUIActions
+  Assets/_Foundry/Physics/GravityBody.cs
+      - class GravityBody : MonoBehaviour
+  Assets/_Foundry/Physics/PlanetGravity.cs
+      - class PlanetGravity : MonoBehaviour
+  Assets/_Foundry/Physics/PlanetLightingController.cs
+      - class PlanetLightingController : MonoBehaviour
+  Assets/_Foundry/Player/PlanetCameraController.cs
+      - class PlanetCameraController : MonoBehaviour
+  Assets/_Foundry/Player/PlayerController.cs
+      - class PlayerController : MonoBehaviour
+  Assets/_Foundry/QuitOnEscape.cs
+      - class QuitOnEscape : MonoBehaviour
+  Assets/_Foundry/Space/PlanetDragController.cs
+      - class PlanetDragController : MonoBehaviour
+  Assets/_Foundry/Space/SolarBodyData.cs
+      - class MoonData
+      - class SolarBodyData
+  Assets/_Foundry/Space/SolarSystemManager.cs
+      - class SolarSystemManager : MonoBehaviour
+  Assets/_Foundry/Space/SunTracker.cs
+      - class SunTracker : MonoBehaviour
+  Assets/_Foundry/Utilities/BillboardClickReceiver.cs
+      - class BillboardClickReceiver : MonoBehaviour
+  Assets/_Foundry/Utilities/BillboardLabel.cs
+      - class BillboardLabel : MonoBehaviour
+  Assets/_Foundry/Utilities/CameraFrameOffset.cs
+      - class CameraFrameOffset : MonoBehaviour
+  Assets/_Foundry/Utilities/EditorFlyCamera.cs
+      - class EditorFlyCamera : MonoBehaviour
+  Assets/_Foundry/Utilities/GameManager.cs
+      - class GameManager : MonoBehaviour
+      - enum GameMode
+  Assets/_Foundry/Utilities/GameplayHover.cs
+      - class GameplayHover : MonoBehaviour
+  Assets/_Foundry/Utilities/GodModeController.cs
+      - class GodModeController : MonoBehaviour
+  Assets/_Foundry/Utilities/LabelFaceCamera.cs
+      - class LabelFaceCamera : MonoBehaviour
+  Assets/_Foundry/Utilities/PlanetBuyButton.cs
+      - class PlanetBuyButton : MonoBehaviour
+  Assets/_Foundry/Utilities/PlanetStats.cs
+      - class PlanetStats : MonoBehaviour
+  Assets/_Foundry/Utilities/PlanetStatsDisplay.cs
+      - class PlanetStatsDisplay : MonoBehaviour
+  Assets/_Foundry/Utilities/SelectionManager.cs
+      - class SelectionManager : MonoBehaviour
+  Assets/_Foundry/Utilities/TitlePlanetHover.cs
+      - class TitlePlanetHover : MonoBehaviour
+  Assets/_Foundry/Utilities/TitleScreenController.cs
+      - class TitleScreenController : MonoBehaviour
+  Assets/_Foundry/World/Scripts/Editor/AtmosphereGeneratorEditor.cs
+      - class AtmosphereGeneratorEditor : Editor
+  Assets/_Foundry/World/Scripts/Editor/OceanGeneratorEditor.cs
+      - class OceanGeneratorEditor : Editor
+  Assets/_Foundry/World/Scripts/Editor/PlanetGeneratorEditor.cs
+      - class PlanetGeneratorEditor : Editor
+  Assets/_Foundry/World/Scripts/Editor/StarTextureGenerator.cs
+      - class StarTextureGenerator : EditorWindow
+  Assets/_Foundry/World/Scripts/Editor/TerrainGeneratorEditor.cs
+      - class TerrainGeneratorEditor : Editor
+  Assets/_Foundry/World/Scripts/Generation/AtmosphereGenerator.cs
+      - class AtmosphereGenerator : MonoBehaviour
+  Assets/_Foundry/World/Scripts/Generation/AtmosphereSettings.cs
+      - class AtmosphereSettings : ScriptableObject
+  Assets/_Foundry/World/Scripts/Generation/Noise/NoiseLayer.cs
+      - enum NoiseType
+      - class NoiseLayer : ScriptableObject
+  Assets/_Foundry/World/Scripts/Generation/Noise/PerlinNoise3D.cs
+      - class PerlinNoise3D
+  Assets/_Foundry/World/Scripts/Generation/OceanGenerator.cs
+      - class OceanGenerator : MonoBehaviour
+  Assets/_Foundry/World/Scripts/Generation/OceanSettings.cs
+      - class OceanSettings : ScriptableObject
+  Assets/_Foundry/World/Scripts/Generation/PlanetGenerator.cs
+      - class PlanetGenerator : MonoBehaviour
+  Assets/_Foundry/World/Scripts/Generation/PlanetSettings.cs
+      - class PlanetSettings : ScriptableObject
+  Assets/_Foundry/World/Scripts/Generation/SphereCreator.cs
+      - class SphereCreator
+      - struct Face
+  Assets/_Foundry/World/Scripts/Generation/SphereDeformer.cs
+      - class SphereDeformer
+  Assets/_Foundry/World/Scripts/Generation/TerrainGenerator.cs
+      - class TerrainGenerator : MonoBehaviour
+  Assets/_Foundry/World/Scripts/Generation/TerrainSettings.cs
+      - class TerrainSettings : ScriptableObject
+  Assets/_Mundi/Audio/MusicFadeIn.cs
+      - class MusicFadeIn : MonoBehaviour
+  Assets/_Mundi/Audio/PlanetSpinAudio.cs
+      - class PlanetSpinAudio : MonoBehaviour
+  Assets/_Mundi/Scripts/GlobalSunDirection.cs
+      - class GlobalSunDirection : MonoBehaviour
+  Assets/_Mundi/Scripts/PlanetUpgradeDatabase.cs
+      - class PlanetUpgradeDatabase : ScriptableObject
+  Assets/_Mundi/Scripts/PlanetUpgradeManager.cs
+      - class PlanetUpgradeManager : MonoBehaviour
+  Assets/_Mundi/Scripts/UpgradeBuyButton.cs
+      - class UpgradeBuyButton : MonoBehaviour
+  Assets/_Mundi/Scripts/UpgradeLabel.cs
+      - class UpgradeLabel : MonoBehaviour
+  Assets/_Mundi/Scripts/UpgradeSlot.cs
+      - enum UpgradeSlot
+      - class PlanetUpgrade : ScriptableObject
+  Assets/_Mundi/Scripts/WorldSpacePanel.cs
+      - class WorldSpacePanel : MonoBehaviour
+  Assets/Editor/ProjectScanner.cs
+      - class ProjectScanner
+
+Total scripts: 52
+
+=== SCRIPT CONTENTS ===
+
+----- Assets/_Foundry/Input/InputSystem_Actions.cs -----
+//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was auto-generated by com.unity.inputsystem:InputActionCodeGenerator
+//     version 1.19.0
+//     from Assets/_Foundry/Input/InputSystem_Actions.inputactions
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
+
+/// <summary>
+/// Provides programmatic access to <see cref="InputActionAsset" />, <see cref="InputActionMap" />, <see cref="InputAction" /> and <see cref="InputControlScheme" /> instances defined in asset "Assets/_Foundry/Input/InputSystem_Actions.inputactions".
+/// </summary>
+/// <remarks>
+/// This class is source generated and any manual edits will be discarded if the associated asset is reimported or modified.
+/// </remarks>
+/// <example>
+/// <code>
+/// using namespace UnityEngine;
+/// using UnityEngine.InputSystem;
+///
+/// // Example of using an InputActionMap named "Player" from a UnityEngine.MonoBehaviour implementing callback interface.
+/// public class Example : MonoBehaviour, MyActions.IPlayerActions
+/// {
+///     private MyActions_Actions m_Actions;                  // Source code representation of asset.
+///     private MyActions_Actions.PlayerActions m_Player;     // Source code representation of action map.
+///
+///     void Awake()
+///     {
+///         m_Actions = new MyActions_Actions();              // Create asset object.
+///         m_Player = m_Actions.Player;                      // Extract action map object.
+///         m_Player.AddCallbacks(this);                      // Register callback interface IPlayerActions.
+///     }
+///
+///     void OnDestroy()
+///     {
+///         m_Actions.Dispose();                              // Destroy asset object.
+///     }
+///
+///     void OnEnable()
+///     {
+///         m_Player.Enable();                                // Enable all actions within map.
+///     }
+///
+///     void OnDisable()
+///     {
+///         m_Player.Disable();                               // Disable all actions within map.
+///     }
+///
+///     #region Interface implementation of MyActions.IPlayerActions
+///
+///     // Invoked when "Move" action is either started, performed or canceled.
+///     public void OnMove(InputAction.CallbackContext context)
+///     {
+///         Debug.Log($"OnMove: {context.ReadValue&lt;Vector2&gt;()}");
+///     }
+///
+///     // Invoked when "Attack" action is either started, performed or canceled.
+///     public void OnAttack(InputAction.CallbackContext context)
+///     {
+///         Debug.Log($"OnAttack: {context.ReadValue&lt;float&gt;()}");
+///     }
+///
+///     #endregion
+/// }
+/// </code>
+/// </example>
+public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
+{
+    /// <summary>
+    /// Provides access to the underlying asset instance.
+    /// </summary>
+    public InputActionAsset asset { get; }
+
+    /// <summary>
+    /// Constructs a new instance.
+    /// </summary>
+    public @InputSystem_Actions()
+    {
+        asset = InputActionAsset.FromJson(@"{
+    ""version"": 1,
+    ""name"": ""InputSystem_Actions"",
+    ""maps"": [
+        {
+            ""name"": ""Player"",
+            ""id"": ""df70fa95-8a34-4494-b137-73ab6b9c7d37"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""351f2ccd-1f9f-44bf-9bec-d62ac5c5f408"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""6b444451-8a00-4d00-a97e-f47457f736a8"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""852140f2-7766-474d-8707-702459ba45f3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""27c5f898-bc57-4ee1-8800-db469aca5fe3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1ba0d36-48eb-4cd5-b651-1c94a6531f70"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Previous"",
+                    ""type"": ""Button"",
+                    ""id"": ""2776c80d-3c14-4091-8c56-d04ced07a2b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""641cd816-40e6-41b4-8c3d-04687c349290"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""978bfe49-cc26-4a3d-ab7b-7d7a29327403"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""00ca640b-d935-4593-8157-c05846ea39b3"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e2062cb9-1b15-46a2-838c-2f8d72a0bdd9"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""320bffee-a40b-4347-ac70-c210eb8bc73a"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d2581a9b-1d11-4566-b27d-b92aff5fabbc"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""fcfe95b8-67b9-4526-84b5-5d0bc98d6400"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
+                    ""path"": ""<XRController>/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ea4d645-4504-4529-b061-ab81934c3752"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1f7a91b-d0fd-4a62-997e-7fb9b69bf235"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=200,y=200)"",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c8e490b-c610-4785-884f-f04217b23ca4"",
+                    ""path"": ""<Pointer>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse;Touch"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e5f5442-8668-4b27-a940-df99bad7e831"",
+                    ""path"": ""<Joystick>/{Hatswitch}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""886e731e-7071-4ae4-95c0-e61739dad6fd"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Touch"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
+                    ""path"": ""<XRController>/{PrimaryAction}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b3c1c7f0-bd20-4ee7-a0f1-899b24bca6d7"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cbac6039-9c09-46a1-b5f2-4e5124ccb5ed"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e15ca19d-e649-4852-97d5-7fe8ccc44e94"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2e9ba44-c423-42a7-ad56-f20975884794"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8cbb2f4b-a784-49cc-8d5e-c010b8c7f4e6"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d8bf24bf-3f2f-4160-a97c-38ec1eb520ba"",
+                    ""path"": ""<XRController>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb40bb66-4559-4dfa-9a2f-820438abb426"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboa
+... [truncated]
+
+----- Assets/_Foundry/Physics/GravityBody.cs -----
+using UnityEngine;
+
+/// <summary>
+/// Applies spherical gravity from a PlanetGravity source and aligns the object
+/// so its up axis always points away from the planet center.
+/// </summary>
+[RequireComponent(typeof(Rigidbody))]
+public class GravityBody : MonoBehaviour
+{
+    public PlanetGravity planet;
+
+    [Tooltip("How quickly this object rotates to align with the planet surface.")]
+    public float alignSpeed = 10f;
+
+    private Rigidbody rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+    }
+
+    void FixedUpdate()
+    {
+        if (planet == null) return;
+
+        Vector3 gravityForce = planet.GetGravityForce(rb.position);
+        rb.AddForce(gravityForce, ForceMode.Acceleration);
+
+        // Align "up" to point away from planet center
+        Vector3 gravityDir = gravityForce.normalized;
+        Quaternion targetRot = Quaternion.FromToRotation(transform.up, -gravityDir) * rb.rotation;
+        rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRot, alignSpeed * Time.fixedDeltaTime));
+    }
+}
+
+----- Assets/_Foundry/Physics/PlanetGravity.cs -----
+using UnityEngine;
+
+/// <summary>
+/// Defines a spherical gravity source. Attach to a planet GameObject.
+/// </summary>
+public class PlanetGravity : MonoBehaviour
+{
+    public float gravityStrength = 9.8f;
+
+    /// <summary>
+    /// Returns the normalized direction toward this planet's center from a given position.
+    /// </summary>
+    public Vector3 GetGravityDirection(Vector3 position)
+    {
+        return (transform.position - position).normalized;
+    }
+
+    /// <summary>
+    /// Returns the full gravity force vector (direction * strength) from a given position.
+    /// </summary>
+    public Vector3 GetGravityForce(Vector3 position)
+    {
+        return GetGravityDirection(position) * gravityStrength;
+    }
+}
+
+----- Assets/_Foundry/Physics/PlanetLightingController.cs -----
+using UnityEngine;
+
+/// <summary>
+/// Passes sun direction and planet center to the atmosphere shader each frame.
+/// Drives the day/night appearance of the atmosphere glow.
+/// </summary>
+public class PlanetLightingController : MonoBehaviour
+{
+    [Tooltip("The directional light acting as the sun.")]
+    public Light sunLight;
+
+    [Tooltip("The AtmosphereGenerator on this planet.")]
+    public AtmosphereGenerator atmosphereGenerator;
+
+    void Update()
+    {
+        if (sunLight == null || atmosphereGenerator == null) return;
+
+        // Directional light forward points away from the sun, so invert it
+        Vector3 sunDirection = -sunLight.transform.forward.normalized;
+        atmosphereGenerator.SetSunDirection(sunDirection);
+    }
+}
+
+----- Assets/_Foundry/Player/PlanetCameraController.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlanetCameraController : MonoBehaviour
+{
+    [Header("References")]
+    public PlayerController player;
+    public Transform cameraPivot;
+    public Camera cam;
+
+    [Header("Pitch")]
+    public float mouseSensitivity = 2f;
+    public float minPitch = -80f;
+    public float maxPitch = 80f;
+
+    [Header("Distance")]
+    public float cameraDistance = 4f;
+    public float cameraCollisionRadius = 0.3f;
+    public LayerMask collisionMask;
+
+    [Header("Smoothing")]
+    public float positionSmoothing = 20f;
+
+    private InputSystem_Actions input;
+    private float pitch;
+    private Vector3 smoothedPivotPosition;
+
+    void Awake()
+    {
+        input = new InputSystem_Actions();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    void OnEnable()
+    {
+        input.Enable();
+        if (player != null)
+            smoothedPivotPosition = player.transform.position;
+    }
+
+    void OnDisable() => input.Disable();
+
+    void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            bool locked = Cursor.lockState == CursorLockMode.Locked;
+            Cursor.lockState = locked ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = locked;
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (player == null || cameraPivot == null || cam == null) return;
+
+        // Pitch
+        Vector2 lookInput = input.Player.Look.ReadValue<Vector2>();
+        pitch -= lookInput.y * mouseSensitivity;
+        pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
+
+        // Smooth pivot position to reduce jitter from physics/render mismatch
+        smoothedPivotPosition = Vector3.Lerp(
+            smoothedPivotPosition,
+            player.transform.position,
+            positionSmoothing * Time.deltaTime);
+
+        cameraPivot.position = smoothedPivotPosition;
+        cameraPivot.rotation = player.transform.rotation * Quaternion.Euler(pitch, 0f, 0f);
+
+        // Camera position with collision
+        Vector3 desiredPos = cameraPivot.position - cameraPivot.forward * cameraDistance;
+
+        if (Physics.SphereCast(
+            cameraPivot.position,
+            cameraCollisionRadius,
+            -cameraPivot.forward,
+            out RaycastHit hit,
+            cameraDistance,
+            collisionMask,
+            QueryTriggerInteraction.Ignore))
+        {
+            desiredPos = hit.point + hit.normal * cameraCollisionRadius;
+        }
+
+        cam.transform.position = desiredPos;
+        cam.transform.LookAt(cameraPivot.position, player.GravityUp);
+    }
+}
+
+----- Assets/_Foundry/Player/PlayerController.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+[RequireComponent(typeof(Rigidbody), typeof(GravityBody))]
+public class PlayerController : MonoBehaviour
+{
+    [Header("References")]
+    public PlanetGravity planet;
+
+    [Header("Movement")]
+    public float walkSpeed = 12f;
+    public float sprintSpeed = 24f;
+    public float acceleration = 20f;
+
+    [Header("Jump")]
+    public float jumpForce = 24f;
+
+    [Header("Look")]
+    public float mouseSensitivity = 2f;
+
+    [Header("Grounding")]
+    public LayerMask groundMask;
+    public float groundCheckDistance = 1.5f;
+
+    private Rigidbody rb;
+    private InputSystem_Actions input;
+    private Vector2 moveInput;
+    private float currentYaw;
+    private bool jumpRequested;
+    private bool isSprinting;
+    private bool isGrounded;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        rb.angularDamping = 10f;
+        input = new InputSystem_Actions();
+    }
+
+    void Start()
+    {
+        // Parent player to planet so it moves with orbit and rotation
+        if (planet != null)
+            transform.SetParent(planet.transform);
+    }
+
+    void OnEnable() => input.Enable();
+    void OnDisable() => input.Disable();
+
+    void Update()
+    {
+        moveInput = input.Player.Move.ReadValue<Vector2>();
+
+        Vector2 lookInput = input.Player.Look.ReadValue<Vector2>();
+        currentYaw += lookInput.x * mouseSensitivity;
+
+        if (input.Player.Sprint.WasPressedThisFrame())
+            isSprinting = !isSprinting;
+
+        if (input.Player.Jump.WasPressedThisFrame())
+            jumpRequested = true;
+    }
+
+    void FixedUpdate()
+    {
+        if (planet == null) return;
+        AlignToGravity();
+        CheckGround();
+        HandleMovement();
+        HandleJump();
+    }
+
+    void AlignToGravity()
+    {
+        Vector3 up = (transform.position - planet.transform.position).normalized;
+        Quaternion gravityAlign = Quaternion.FromToRotation(Vector3.up, up);
+        Quaternion targetRot = gravityAlign * Quaternion.Euler(0f, currentYaw, 0f);
+        rb.MoveRotation(targetRot);
+    }
+
+    void CheckGround()
+    {
+        Vector3 down = (planet.transform.position - transform.position).normalized;
+        isGrounded = Physics.Raycast(transform.position, down, groundCheckDistance, groundMask);
+    }
+
+    void HandleMovement()
+    {
+        Vector3 up = (transform.position - planet.transform.position).normalized;
+        Vector3 input3D = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
+        float targetSpeed = isSprinting ? sprintSpeed : walkSpeed;
+        Vector3 desiredVel = transform.TransformDirection(input3D) * targetSpeed;
+        Vector3 velocity = rb.linearVelocity;
+        Vector3 surfaceVelocity = Vector3.ProjectOnPlane(velocity, up);
+        Vector3 verticalVelocity = Vector3.Project(velocity, up);
+        Vector3 velocityChange = desiredVel - surfaceVelocity;
+        rb.AddForce(velocityChange * acceleration, ForceMode.Acceleration);
+        rb.linearVelocity = surfaceVelocity + verticalVelocity;
+    }
+
+    void HandleJump()
+    {
+        if (!jumpRequested) return;
+        jumpRequested = false;
+        if (!isGrounded) return;
+        Vector3 up = (transform.position - planet.transform.position).normalized;
+        rb.linearVelocity -= Vector3.Project(rb.linearVelocity, up);
+        rb.AddForce(up * jumpForce, ForceMode.VelocityChange);
+    }
+
+    public Vector3 GravityUp =>
+        planet != null ? (transform.position - planet.transform.position).normalized : Vector3.up;
+}
+
+----- Assets/_Foundry/QuitOnEscape.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class QuitOnEscape : MonoBehaviour
+{
+    void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            QuitGame();
+        }
+    }
+
+    void QuitGame()
+    {
+        Debug.Log("Quit Game");
+
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+}
+
+----- Assets/_Foundry/Space/PlanetDragController.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+
+/// <summary>
+/// Click-and-drag input for planets. Mode is decided by what's currently selected:
+/// dragging the selected planet itself spins it, dragging any other planet
+/// (including while the sun or nothing is selected) adjusts its orbit.
+/// </summary>
+public class PlanetDragController : MonoBehaviour
+{
+    [Header("References")]
+    public Camera cam;
+    public RawImage rawImage;
+    public SelectionManager selectionManager;
+    public SolarSystemManager solarSystemManager;
+
+    [Header("Tuning")]
+    public float orbitRadiusSensitivity = 0.5f;
+    public float orbitSpeedFlingSensitivity = 0.05f;
+    public float spinFlingSensitivity = 50f;
+
+    Transform draggedPlanet;
+    SolarBodyData draggedBody;
+    bool isSpinMode;
+    Vector3 lastPlanePoint;
+    Vector2 lastScreenPoint;
+    Vector2 smoothedScreenVelocity;
+    float smoothedTangentVelocity;
+
+    void Update()
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+            TryBeginDrag();
+        else if (draggedPlanet != null && Mouse.current.leftButton.isPressed)
+            ContinueDrag();
+        else if (draggedPlanet != null && Mouse.current.leftButton.wasReleasedThisFrame)
+            EndDrag();
+    }
+
+    bool TryGetViewportPoint(out Vector2 normalized)
+    {
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+        RectTransform rt = rawImage.rectTransform;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(rt, screenPos, null, out Vector2 local);
+        Rect rect = rt.rect;
+        normalized = new Vector2((local.x - rect.x) / rect.width, (local.y - rect.y) / rect.height);
+        return normalized.x >= 0 && normalized.x <= 1 && normalized.y >= 0 && normalized.y <= 1;
+    }
+
+    void TryBeginDrag()
+    {
+        if (!TryGetViewportPoint(out Vector2 viewport)) return;
+        Ray ray = cam.ViewportPointToRay(viewport);
+        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity)) return;
+
+        Transform root = hit.transform.root;
+        SolarBodyData body = solarSystemManager.GetBodyData(root);
+        if (body == null) return; // not a draggable planet
+
+        draggedPlanet = root;
+        draggedBody = body;
+        isSpinMode = root == selectionManager.selectedObject;
+
+        Plane plane = new Plane(Vector3.up, draggedPlanet.position);
+        plane.Raycast(ray, out float dist);
+        lastPlanePoint = ray.GetPoint(dist);
+        lastScreenPoint = Mouse.current.position.ReadValue();
+        smoothedScreenVelocity = Vector2.zero;
+        smoothedTangentVelocity = 0f;
+    }
+
+    void ContinueDrag()
+    {
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+        Vector2 screenDelta = screenPos - lastScreenPoint;
+        smoothedScreenVelocity = Vector2.Lerp(smoothedScreenVelocity, screenDelta, 0.5f);
+        lastScreenPoint = screenPos;
+
+        if (isSpinMode)
+        {
+            // Holding brakes the existing spin a little every frame, like gripping a
+            // spinning ball. If you also drag, the release impulse below adds fresh
+            // momentum on top � drag hard enough and you overcome the brake.
+            solarSystemManager.DampenSpin(draggedBody, solarSystemManager.holdBrakeStrength * Time.deltaTime);
+            return;
+        }
+
+        if (!TryGetViewportPoint(out Vector2 viewport)) return;
+        Ray ray = cam.ViewportPointToRay(viewport);
+        Plane plane = new Plane(Vector3.up, draggedPlanet.position);
+        if (!plane.Raycast(ray, out float dist)) return;
+        Vector3 worldPoint = ray.GetPoint(dist);
+        Vector3 worldDelta = worldPoint - lastPlanePoint;
+        lastPlanePoint = worldPoint;
+
+        Vector3 toPlanet = draggedPlanet.position - solarSystemManager.sun.position;
+        Vector3 radialDir = toPlanet.normalized;
+        Vector3 tangentDir = Vector3.Cross(Vector3.up, radialDir).normalized;
+
+        float radialAmount = Vector3.Dot(worldDelta, radialDir);
+        float tangentAmount = Vector3.Dot(worldDelta, tangentDir);
+
+        solarSystemManager.AdjustOrbitRadius(draggedBody, radialAmount * orbitRadiusSensitivity);
+        smoothedTangentVelocity = Mathf.Lerp(smoothedTangentVelocity, tangentAmount, 0.5f);
+    }
+
+    void EndDrag()
+    {
+        if (isSpinMode)
+        {
+            Vector3 axis = cam.transform.right * smoothedScreenVelocity.y
+                         - cam.transform.up * smoothedScreenVelocity.x;
+            solarSystemManager.AddSpin(draggedBody, axis * spinFlingSensitivity);
+        }
+        else
+        {
+            solarSystemManager.BoostOrbitSpeed(draggedBody, smoothedTangentVelocity * orbitSpeedFlingSensitivity);
+        }
+
+        draggedPlanet = null;
+        draggedBody = null;
+    }
+}
+
+----- Assets/_Foundry/Space/SolarBodyData.cs -----
+using System.Collections.Generic;
+using UnityEngine;
+/// <summary>
+/// Data for a moon � same orbital properties as a planet but no moons of its own.
+/// </summary>
+[System.Serializable]
+public class MoonData
+{
+    [Header("Identity")]
+    public string name;
+    public Transform transform;
+    [Header("Rotation")]
+    public float rotationSpeed = 5f;
+    [Range(0f, 90f)]
+    public float axialTilt = 0f;
+    [Header("Orbit")]
+    public float orbitRadius = 1500f;
+    public float orbitSpeed = 20f;
+    [Range(0f, 30f)]
+    public float orbitalInclination = 0f;
+    [Range(0f, 360f)]
+    public float startingAngle = 0f;
+    [HideInInspector]
+    public float currentAngle;
+}
+/// <summary>
+/// Represents a single planet in the solar system with optional moons.
+/// </summary>
+[System.Serializable]
+public class SolarBodyData
+{
+    [Header("Identity")]
+    public string name;
+    public Transform transform;
+    [Tooltip("If true, this planet stays pinned at world origin (0,0,0) while everything else orbits around it.")]
+    public bool isHomePlanet = false;
+    [Header("Rotation")]
+    [Tooltip("Degrees per second this body rotates on its own axis.")]
+    public float rotationSpeed = 10f;
+    [Tooltip("Tilt of the rotation axis in degrees.")]
+    [Range(0f, 90f)]
+    public float axialTilt = 0f;
+    [Header("Orbit")]
+    [Tooltip("Distance from the sun this planet orbits.")]
+    public float orbitRadius = 10000f;
+    [Tooltip("Degrees per second this planet moves along its orbit.")]
+    public float orbitSpeed = 5f;
+    [Tooltip("Tilt of the orbital plane in degrees.")]
+    [Range(0f, 30f)]
+    public float orbitalInclination = 0f;
+    [Tooltip("Starting angle so planets don't all start in a line.")]
+    [Range(0f, 360f)]
+    public float startingAngle = 0f;
+    [Header("Drag Interaction")]
+    [Tooltip("If true, Orbit Radius, Min, and Max below are automatically calculated from this planet's PlanetSettings.radius at Start(), and the values below are overwritten. If false, the values below are used as-is (with the old radius*0.5/2 auto-fill for min/max if left at 0).")]
+    public bool useRadiusBasedOrbitDistance = true;
+    [Tooltip("Minimum orbit radius the player can drag this planet to. Ignored at Start() if Use Radius Based Orbit Distance is on.")]
+    public float minOrbitRadius = -1f;
+    [Tooltip("Maximum orbit radius the player can drag this planet to. Ignored at Start() if Use Radius Based Orbit Distance is on.")]
+    public float maxOrbitRadius = -1f;
+    [Header("Moons")]
+    public List<MoonData> moons = new List<MoonData>();
+    [HideInInspector]
+    public float currentAngle;
+    [HideInInspector]
+    public float baseOrbitSpeed;
+    [System.NonSerialized]
+    public Vector3 spinVelocity;
+    [System.NonSerialized]
+    public bool wasSelected = false;
+}
+
+----- Assets/_Foundry/Space/SolarSystemManager.cs -----
+using System.Collections.Generic;
+using UnityEngine;
+/// <summary>
+/// Manages all orbiting bodies in the solar system as a natural simulation.
+/// Sun sits at world origin. Planets and moons orbit normally in world space.
+/// No parenting, no reference-frame tricks � every transform is independent,
+/// which is required for the custom gravity system to layer on top correctly.
+/// </summary>
+public class SolarSystemManager : MonoBehaviour
+{
+    [Header("Sun")]
+    public Transform sun;
+    public SolarBodyData sunData;
+    [Header("References")]
+    public SelectionManager selectionManager;
+    [Header("Planets")]
+    public List<SolarBodyData> planets = new List<SolarBodyData>();
+    [Header("Settings")]
+    [Tooltip("Global multiplier for all orbit speeds. 0 = paused.")]
+    public float timeScale = 1f;
+    [Tooltip("Global multiplier for all rotation speeds.")]
+    public float rotationScale = 1f;
+    [Tooltip("How quickly orbit speed eases back to its base value after a fling boost.")]
+    public float orbitSpeedRecoveryRate = 1.5f;
+    [Tooltip("How quickly player-added spin momentum decays. Higher = stops sooner.")]
+    public float spinDamping = 0.4f;
+    [Tooltip("How strongly holding a planet (without flinging) brakes its current spin.")]
+    public float holdBrakeStrength = 2f;
+    [Header("Orbit Distance Scaling")]
+    [Tooltip("Starting orbit distance = sun radius + (planet radius x this value).")]
+    public float startOrbitRadiusMultiplier = 4f;
+    [Tooltip("Minimum drag-in distance = sun radius + (planet radius x this value).")]
+    public float minOrbitRadiusMultiplier = 2.5f;
+    [Tooltip("Maximum drag-out distance = sun radius + (planet radius x this value).")]
+    public float maxOrbitRadiusMultiplier = 10f;
+
+    [HideInInspector] public bool gameActive = false;
+
+    void Start()
+    {
+        if (sun != null)
+            sun.position = Vector3.zero;
+
+        if (sunData != null)
+        {
+            sunData.baseOrbitSpeed = 0f;
+            sunData.spinVelocity = Vector3.zero;
+        }
+
+        float sunRadius = sun != null ? GetBodyRadius(sun) : 0f;
+
+        foreach (var planet in planets)
+        {
+            planet.currentAngle = planet.startingAngle;
+            planet.baseOrbitSpeed = planet.orbitSpeed;
+
+            if (planet.useRadiusBasedOrbitDistance)
+            {
+                float planetRadius = GetBodyRadius(planet.transform);
+                planet.orbitRadius = sunRadius + planetRadius * startOrbitRadiusMultiplier;
+                planet.minOrbitRadius = sunRadius + planetRadius * minOrbitRadiusMultiplier;
+                planet.maxOrbitRadius = sunRadius + planetRadius * maxOrbitRadiusMultiplier;
+            }
+            else
+            {
+                if (planet.minOrbitRadius <= 0f) planet.minOrbitRadius = planet.orbitRadius * 0.5f;
+                if (planet.maxOrbitRadius <= 0f) planet.maxOrbitRadius = planet.orbitRadius * 2f;
+            }
+
+            foreach (var moon in planet.moons)
+                moon.currentAngle = moon.startingAngle;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (sun != null)
+            sun.position = Vector3.zero;
+
+        if (sunData != null && sunData.transform != null)
+            RotatePlanet(sunData);
+
+        foreach (var planet in planets)
+        {
+            if (planet.transform == null) continue;
+
+            bool isSelected = selectionManager != null &&
+                              selectionManager.selectedObject == planet.transform;
+
+            // Brake spin when deselected
+            if (!isSelected && planet.spinVelocity.sqrMagnitude > 0.001f)
+                planet.spinVelocity = Vector3.Lerp(
+                    planet.spinVelocity,
+                    Vector3.zero,
+                    holdBrakeStrength * Time.fixedDeltaTime);
+
+            // Push selection and game state to PlanetStats
+            var stats = planet.transform.GetComponent<PlanetStats>();
+            if (stats != null)
+            {
+                stats.isSelected = isSelected;
+                stats.gameActive = gameActive;
+            }
+
+            planet.wasSelected = isSelected;
+
+            OrbitPlanet(planet);
+            RotatePlanet(planet);
+
+            foreach (var moon in planet.moons)
+            {
+                if (moon.transform == null) continue;
+                OrbitMoon(moon, planet.transform.position);
+                RotateMoon(moon);
+            }
+        }
+    }
+
+    float GetBodyRadius(Transform t)
+    {
+        var generator = t.GetComponent<PlanetGenerator>();
+        if (generator != null && generator.planetSettings != null)
+            return generator.planetSettings.radius;
+
+        Debug.LogWarning($"[SolarSystemManager] {t.name} has no PlanetGenerator or PlanetSettings � using fallback radius of 1.");
+        return 1f;
+    }
+
+    void OrbitPlanet(SolarBodyData planet)
+    {
+        planet.orbitSpeed = Mathf.Lerp(planet.orbitSpeed, planet.baseOrbitSpeed, orbitSpeedRecoveryRate * Time.fixedDeltaTime);
+        planet.currentAngle += planet.orbitSpeed * timeScale * Time.fixedDeltaTime;
+        if (planet.currentAngle > 360f) planet.currentAngle -= 360f;
+        float angleRad = planet.currentAngle * Mathf.Deg2Rad;
+        float inclinationRad = planet.orbitalInclination * Mathf.Deg2Rad;
+        Vector3 orbitOffset = new Vector3(
+            Mathf.Cos(angleRad) * planet.orbitRadius,
+            Mathf.Sin(angleRad) * Mathf.Sin(inclinationRad) * planet.orbitRadius,
+            Mathf.Sin(angleRad) * Mathf.Cos(inclinationRad) * planet.orbitRadius
+        );
+        planet.transform.position = sun.position + orbitOffset;
+    }
+
+    void OrbitMoon(MoonData moon, Vector3 planetPosition)
+    {
+        moon.currentAngle += moon.orbitSpeed * timeScale * Time.fixedDeltaTime;
+        if (moon.currentAngle > 360f) moon.currentAngle -= 360f;
+        float angleRad = moon.currentAngle * Mathf.Deg2Rad;
+        float inclinationRad = moon.orbitalInclination * Mathf.Deg2Rad;
+        Vector3 orbitOffset = new Vector3(
+            Mathf.Cos(angleRad) * moon.orbitRadius,
+            Mathf.Sin(angleRad) * Mathf.Sin(inclinationRad) * moon.orbitRadius,
+            Mathf.Sin(angleRad) * Mathf.Cos(inclinationRad) * moon.orbitRadius
+        );
+        moon.transform.position = planetPosition + orbitOffset;
+    }
+
+    void RotatePlanet(SolarBodyData planet)
+    {
+        Vector3 tiltedAxis = Quaternion.Euler(planet.axialTilt, 0f, 0f) * Vector3.up;
+        planet.transform.Rotate(tiltedAxis, planet.rotationSpeed * rotationScale * Time.fixedDeltaTime, Space.World);
+
+        var stats = planet.transform.GetComponent<PlanetStats>();
+        bool isSelected = selectionManager != null &&
+                          selectionManager.selectedObject == planet.transform;
+
+        if (stats != null)
+        {
+            // Only feed spin magnitude when selected � prevents stored spin
+            // from triggering fortune accrual when you come back to the planet
+            stats.currentSpinMagnitude = isSelected ? planet.spinVelocity.magnitude : 0f;
+        }
+
+        if (planet.spinVelocity.sqrMagnitude > 0.0001f)
+        {
+            float angle = planet.spinVelocity.magnitude * Time.fixedDeltaTime;
+            planet.transform.Rotate(planet.spinVelocity.normalized, angle, Space.World);
+            planet.spinVelocity = Vector3.Lerp(planet.spinVelocity, Vector3.zero, spinDamping * Time.fixedDeltaTime);
+        }
+    }
+
+    void RotateMoon(MoonData moon)
+    {
+        Vector3 tiltedAxis = Quaternion.Euler(moon.axialTilt, 0f, 0f) * Vector3.up;
+        moon.transform.Rotate(tiltedAxis, moon.rotationSpeed * rotationScale * Time.fixedDeltaTime, Space.World);
+    }
+
+    public void SetTimeScale(float scale)
+    {
+        timeScale = scale;
+    }
+
+    public SolarBodyData GetBodyData(Transform t)
+    {
+        if (sunData != null && sunData.transform == t) return sunData;
+        foreach (var p in planets)
+            if (p.transform == t) return p;
+        return null;
+    }
+
+    public void AdjustOrbitRadius(SolarBodyData body, float delta)
+    {
+        body.orbitRadius = Mathf.Clamp(body.orbitRadius + delta, body.minOrbitRadius, body.maxOrbitRadius);
+    }
+
+    public void BoostOrbitSpeed(SolarBodyData body, float boost)
+    {
+        body.orbitSpeed += boost;
+    }
+
+    public void AddSpin(SolarBodyData body, Vector3 angularImpulse)
+    {
+        body.spinVelocity += angularImpulse;
+    }
+
+    public void DampenSpin(SolarBodyData body, float t)
+    {
+        body.spinVelocity = Vector3.Lerp(body.spinVelocity, Vector3.zero, t);
+    }
+}
+
+----- Assets/_Foundry/Space/SunTracker.cs -----
+using UnityEngine;
+
+/// <summary>
+/// Points a directional light from the sun's current position toward the home planet (origin).
+/// Attach to the Directional Light, which should be parented under Sun.
+/// </summary>
+public class SunTracker : MonoBehaviour
+{
+    [Header("References")]
+    public Transform sun;
+
+    void LateUpdate()
+    {
+        if (sun == null) return;
+
+        // Direction from sun position toward origin (home planet)
+        Vector3 directionToHome = (Vector3.zero - sun.position).normalized;
+
+        if (directionToHome != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(directionToHome);
+    }
+}
+
+----- Assets/_Foundry/Utilities/BillboardClickReceiver.cs -----
+using UnityEngine;
+using UnityEngine.UI;
+
+/// <summary>
+/// Sits on the same GameObject as a UI Button and forwards clicks to BillboardLabel.
+/// </summary>
+[RequireComponent(typeof(Button))]
+public class BillboardClickReceiver : MonoBehaviour
+{
+    public BillboardLabel billboard;
+
+    void Start()
+    {
+        GetComponent<Button>().onClick.AddListener(() => billboard?.OnPointerClick());
+    }
+}
+
+----- Assets/_Foundry/Utilities/BillboardLabel.cs -----
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System;
+
+/// <summary>
+/// A world-space UI label that always faces the camera, bobs gently,
+/// and pulses opacity. Used for planet title screen labels.
+/// </summary>
+public class BillboardLabel : MonoBehaviour
+{
+    [Header("References")]
+    public Camera cam;
+    public TextMeshProUGUI label;
+    public CanvasGroup canvasGroup;
+
+    [Header("Content")]
+    public string displayText = "▶";
+
+    [Header("Bob")]
+    public float bobHeight = 8f;
+    public float bobSpeed = 1.2f;
+
+    [Header("Pulse")]
+    public float pulseSpeed = 1.5f;
+    public float pulseMin = 0.6f;
+    public float pulseMax = 1f;
+
+    // Called by TitleScreenController when this label is clicked
+    [HideInInspector]
+    public Action onClicked;
+
+    // Whether this label responds to clicks at all
+    [HideInInspector]
+    public bool isClickable = false;
+
+    Vector3 baseLocalPosition;
+    float bobOffset;
+
+    void Start()
+    {
+        baseLocalPosition = transform.localPosition;
+        // Randomize starting phase so planets don't all bob in sync
+        bobOffset = UnityEngine.Random.Range(0f, Mathf.PI * 2f);
+
+        if (label != null)
+            label.text = displayText;
+    }
+
+    void LateUpdate()
+    {
+        FaceCamera();
+        Bob();
+        Pulse();
+    }
+
+    void FaceCamera()
+    {
+        if (cam == null) return;
+        transform.rotation = Quaternion.LookRotation(
+            transform.position - cam.transform.position
+        );
+    }
+
+    void Bob()
+    {
+        float y = Mathf.Sin(Time.time * bobSpeed + bobOffset) * bobHeight;
+        transform.localPosition = baseLocalPosition + new Vector3(0f, y, 0f);
+    }
+
+    void Pulse()
+    {
+        if (canvasGroup == null) return;
+        float t = (Mathf.Sin(Time.time * pulseSpeed + bobOffset) + 1f) * 0.5f;
+        canvasGroup.alpha = Mathf.Lerp(pulseMin, pulseMax, t);
+    }
+
+    public void OnPointerClick()
+    {
+        if (isClickable)
+            onClicked?.Invoke();
+    }
+}
+
+----- Assets/_Foundry/Utilities/CameraFrameOffset.cs -----
+using UnityEngine;
+
+/// <summary>
+/// Shifts the camera's projection so whatever it's looking at (its forward direction)
+/// renders off-center on screen instead of dead center, while the scene still fills
+/// the entire viewport edge-to-edge � no black bars, no resized render area. Used in
+/// the space view to leave visual room for a planet detail UI panel.
+/// </summary>
+[RequireComponent(typeof(Camera))]
+public class CameraFrameOffset : MonoBehaviour
+{
+    [Tooltip("0 = centered. 1 = focus point sits at the left edge of the screen. 0.75 lands it about an eighth of the way in from the left edge.")]
+    [Range(0f, 1f)]
+    public float horizontalOffset = 0.5f;
+
+    Camera cam;
+
+    void Awake()
+    {
+        cam = GetComponent<Camera>();
+    }
+
+    void OnDisable()
+    {
+        if (cam != null)
+            cam.ResetProjectionMatrix(); // hand control back to normal auto FOV-based projection
+    }
+
+    void LateUpdate()
+    {
+        float near = cam.nearClipPlane;
+        float far = cam.farClipPlane;
+        float verticalFov = cam.fieldOfView * Mathf.Deg2Rad;
+        float top = near * Mathf.Tan(verticalFov * 0.5f);
+        float bottom = -top;
+        float right = top * cam.aspect;
+        float left = -right;
+
+        // Shifting the frustum window to the right pushes whatever the camera is
+        // looking straight at (camera-space x = 0) toward the left of the resulting
+        // image. Window width is unchanged, so FOV doesn't change � only where
+        // it's centered does.
+        float shift = horizontalOffset * right;
+        cam.projectionMatrix = Matrix4x4.Frustum(left + shift, right + shift, bottom, top, near, far);
+    }
+}
+
+----- Assets/_Foundry/Utilities/EditorFlyCamera.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+/// <summary>
+/// Free fly camera for editor mode.
+/// Right click + drag to orbit, scroll to zoom, middle click + drag to pan, F to focus target.
+/// </summary>
+[DisallowMultipleComponent]
+public class EditorFlyCamera : MonoBehaviour
+{
+    [Header("Target")]
+    public Transform focusTarget;
+
+    [Header("Orbit")]
+    public float orbitDistance = 2000f;
+    public float orbitSensitivity = 0.08f;
+    public float minDistance = 100f;
+    public float maxDistance = 50000f;
+
+    [Header("Zoom")]
+    public float zoomSpeed = 200000f;
+    public float zoomSmoothing = 8f;
+
+    [Header("Pan")]
+    public float panSensitivity = 0.001f;
+
+    [Header("Focus")]
+    public float focusSmoothing = 8f;
+
+    [Header("Planet Collision")]
+    public float planetRadius = 1000f;
+    public float surfaceBuffer = 50f;
+
+    private float currentYaw = 0f;
+    private float currentPitch = 30f;
+    private float targetDistance;
+    private Vector3 focusPoint;
+    private bool isPanning = false;
+
+    void OnEnable()
+    {
+        if (focusTarget != null)
+            focusPoint = focusTarget.position;
+
+        targetDistance = orbitDistance;
+
+        Vector3 angles = transform.eulerAngles;
+        currentYaw = angles.y;
+        currentPitch = angles.x;
+
+        ApplyTransform();
+    }
+
+    void LateUpdate()
+    {
+        // Keep focus point locked to target unless user is panning
+        if (focusTarget != null && !isPanning)
+            focusPoint = focusTarget.position;
+
+        HandleFocus();
+        HandleOrbit();
+        HandleZoom();
+        HandlePan();
+        ApplyTransform();
+    }
+
+    void HandleFocus()
+    {
+        if (Keyboard.current.fKey.wasPressedThisFrame && focusTarget != null)
+        {
+            focusPoint = focusTarget.position;
+            targetDistance = orbitDistance;
+        }
+    }
+
+    void HandleOrbit()
+    {
+        if (Mouse.current.rightButton.isPressed)
+        {
+            Vector2 delta = Mouse.current.delta.ReadValue();
+            float scaledSensitivity = orbitSensitivity * (orbitDistance / maxDistance);
+            currentYaw += delta.x * scaledSensitivity;
+            currentPitch -= delta.y * scaledSensitivity;
+            currentPitch = Mathf.Clamp(currentPitch, -89f, 89f);
+        }
+    }
+
+    void HandleZoom()
+    {
+        float scroll = Mouse.current.scroll.ReadValue().y;
+        if (scroll != 0f)
+        {
+            float scaledZoom = zoomSpeed * (targetDistance / maxDistance);
+            targetDistance -= scroll * scaledZoom * Time.deltaTime;
+            targetDistance = Mathf.Clamp(targetDistance, minDistance, maxDistance);
+        }
+
+        orbitDistance = Mathf.Lerp(orbitDistance, targetDistance, zoomSmoothing * Time.deltaTime);
+        orbitDistance = Mathf.Clamp(orbitDistance, minDistance, maxDistance);
+    }
+
+    void HandlePan()
+    {
+        isPanning = Mouse.current.middleButton.isPressed;
+
+        if (isPanning)
+        {
+            Vector2 delta = Mouse.current.delta.ReadValue();
+            Vector3 right = transform.right * (-delta.x * panSensitivity * (orbitDistance / maxDistance));
+            Vector3 up = transform.up * (-delta.y * panSensitivity * (orbitDistance / maxDistance));
+            focusPoint += right + up;
+        }
+    }
+
+    void ApplyTransform()
+    {
+        Quaternion rotation = Quaternion.Euler(currentPitch, currentYaw, 0f);
+        Vector3 offset = rotation * new Vector3(0f, 0f, -orbitDistance);
+        Vector3 desiredPosition = focusPoint + offset;
+
+        // Prevent camera from going inside planet
+        float distFromPlanetCenter = Vector3.Distance(desiredPosition, focusPoint);
+        if (distFromPlanetCenter < planetRadius + surfaceBuffer)
+        {
+            orbitDistance = planetRadius + surfaceBuffer;
+            targetDistance = orbitDistance;
+            offset = rotation * new Vector3(0f, 0f, -orbitDistance);
+            desiredPosition = focusPoint + offset;
+        }
+
+        transform.position = desiredPosition;
+        transform.rotation = rotation;
+    }
+}
+
+----- Assets/_Foundry/Utilities/GameManager.cs -----
+using UnityEngine;
+
+/// <summary>
+/// Manages global game state and persists across scenes.
+/// Controls which mode the game starts in and handles mode transitions.
+/// </summary>
+public class GameManager : MonoBehaviour
+{
+    public static GameManager Instance { get; private set; }
+
+    [Header("Settings")]
+    public GameMode startingMode = GameMode.SolarEditor;
+
+    public GameMode CurrentMode { get; private set; }
+
+    // Event other systems can subscribe to when mode changes
+    public event System.Action<GameMode> OnModeChanged;
+
+    void Awake()
+    {
+        // Singleton pattern � persist across scenes
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        SetMode(startingMode);
+    }
+
+    public void SetMode(GameMode mode)
+    {
+        CurrentMode = mode;
+        OnModeChanged?.Invoke(mode);
+        Debug.Log($"[GameManager] Mode set to: {mode}");
+    }
+
+    public void EnterSolarEditor()
+    {
+        SetMode(GameMode.SolarEditor);
+    }
+
+    public void EnterPlayerSurface()
+    {
+        SetMode(GameMode.PlayerSurface);
+    }
+
+    public bool IsInSolarEditor => CurrentMode == GameMode.SolarEditor;
+    public bool IsInPlayerSurface => CurrentMode == GameMode.PlayerSurface;
+}
+
+public enum GameMode
+{
+    SolarEditor,
+    PlayerSurface
+}
+
+----- Assets/_Foundry/Utilities/GameplayHover.cs -----
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
+
+/// <summary>
+/// During gameplay, detects which planet the cursor is hovering over
+/// and sets its TitlePlanetHover.isHovered flag � same hover scale
+/// effect as the title screen, but active during normal play.
+/// </summary>
+public class GameplayHover : MonoBehaviour
+{
+    [Header("References")]
+    public Camera cam;
+    public RawImage rawImage;
+    public SolarSystemManager solarSystemManager;
+    public SelectionManager selectionManager;
+
+    TitlePlanetHover lastHovered;
+
+    void Update()
+    {
+        Transform hovered = GetHoveredPlanet();
+
+        // Don't hover-highlight the currently selected planet
+        if (hovered != null && selectionManager != null &&
+            hovered == selectionManager.selectedObject)
+            hovered = null;
+
+        TitlePlanetHover newHover = hovered != null
+            ? hovered.GetComponent<TitlePlanetHover>()
+            : null;
+
+        if (newHover != lastHovered)
+        {
+            if (lastHovered != null) lastHovered.isHovered = false;
+            if (newHover != null) newHover.isHovered = true;
+            lastHovered = newHover;
+        }
+    }
+
+    Transform GetHoveredPlanet()
+    {
+        if (cam == null || rawImage == null) return null;
+
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        RectTransform rt = rawImage.rectTransform;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            rt, mousePos, null, out Vector2 local);
+        Rect rect = rt.rect;
+        Vector2 normalized = new Vector2(
+            (local.x - rect.x) / rect.width,
+            (local.y - rect.y) / rect.height);
+
+        if (normalized.x < 0 || normalized.x > 1 ||
+            normalized.y < 0 || normalized.y > 1)
+            return null;
+
+        int layerMask = ~LayerMask.GetMask("Ignore Raycast", "UI");
+        Ray ray = cam.ViewportPointToRay(normalized);
+        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
+            return null;
+
+        Transform root = hit.transform.root;
+
+        // Only hover planets that are in the solar system manager
+        if (solarSystemManager.GetBodyData(root) != null) return root;
+        if (solarSystemManager.sun == root) return root;
+        return null;
+    }
+}
+
+----- Assets/_Foundry/Utilities/GodModeController.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+[DisallowMultipleComponent]
+public class GodModeController : MonoBehaviour
+{
+    [Header("Mode Toggles")]
+    [Tooltip("Enable if this scene has a player that walks on planet surfaces (PlayerController, PlanetCameraController, GravityBody). Uncheck if there's no player in this game.")]
+    public bool usePlayerView = true;
+    [Tooltip("Enable if this scene has the space/solar editor view (EditorFlyCamera, SelectionManager).")]
+    public bool useSpaceView = true;
+
+    [Header("References")]
+    public PlayerController playerController;
+    public PlanetCameraController planetCameraController;
+    public GravityBody gravityBody;
+    public Camera cam;
+    public SelectionManager selectionManager;
+    public CameraFrameOffset cameraFrameOffset;
+
+    [Header("Clipping Planes")]
+    public float playModeFarClip = 10000f;
+    public float editorModeFarClip = 100000f;
+
+    private bool isGodMode = false;
+    private Vector3 savedPlayerPosition;
+    private Quaternion savedPlayerRotation;
+    private Rigidbody rb;
+    private Transform originalCameraParent;
+    private Vector3 originalCameraLocalPosition;
+    private Quaternion originalCameraLocalRotation;
+    private EditorFlyCamera editorFlyCamera;
+
+    void Awake()
+    {
+        if (usePlayerView && playerController != null)
+            rb = playerController.GetComponent<Rigidbody>();
+
+        originalCameraParent = cam.transform.parent;
+        originalCameraLocalPosition = cam.transform.localPosition;
+        originalCameraLocalRotation = cam.transform.localRotation;
+
+        editorFlyCamera = cam.GetComponent<EditorFlyCamera>();
+
+        // Disable everything that belongs to play mode at the start
+        if (useSpaceView)
+        {
+            if (editorFlyCamera != null) editorFlyCamera.enabled = false;
+            if (selectionManager != null) selectionManager.enabled = false;
+            if (cameraFrameOffset != null) cameraFrameOffset.enabled = false;
+        }
+        if (usePlayerView)
+        {
+            if (planetCameraController != null) planetCameraController.enabled = false;
+            if (playerController != null) playerController.enabled = false;
+            if (gravityBody != null) gravityBody.enabled = false;
+        }
+    }
+
+    void Start()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnModeChanged += OnGameModeChanged;
+            // GameManager may have already fired its initial mode before we subscribed,
+            // depending on script execution order. Sync to whatever the current mode is now.
+            OnGameModeChanged(GameManager.Instance.CurrentMode);
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnModeChanged -= OnGameModeChanged;
+    }
+
+    void OnGameModeChanged(GameMode mode)
+    {
+        if (mode == GameMode.SolarEditor && !isGodMode)
+            EnterGodMode();
+        else if (mode == GameMode.PlayerSurface && isGodMode)
+            ExitGodMode();
+    }
+
+    void Update()
+    {
+        if (!usePlayerView) return; // nothing to toggle to without a player
+
+        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        {
+            if (isGodMode)
+                GameManager.Instance.EnterPlayerSurface();
+            else
+                GameManager.Instance.EnterSolarEditor();
+        }
+    }
+
+    void EnterGodMode()
+    {
+        isGodMode = true;
+
+        if (usePlayerView && playerController != null)
+        {
+            // Save player state
+            savedPlayerPosition = playerController.transform.position;
+            savedPlayerRotation = playerController.transform.rotation;
+
+            // Unparent player from planet
+            playerController.transform.SetParent(null);
+
+            // Freeze player
+            if (gravityBody != null) gravityBody.enabled = false;
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+            playerController.enabled = false;
+            if (planetCameraController != null) planetCameraController.enabled = false;
+        }
+
+        // Detach camera from player hierarchy
+        cam.transform.SetParent(null);
+
+        // Extend far clip for solar system scale
+        cam.farClipPlane = editorModeFarClip;
+
+        if (useSpaceView)
+        {
+            // Set editor camera focus to current planet
+            if (usePlayerView && playerController != null && playerController.planet != null)
+                editorFlyCamera.focusTarget = playerController.planet.transform;
+
+            // Enable god mode systems
+            if (editorFlyCamera != null) editorFlyCamera.enabled = true;
+            if (selectionManager != null) selectionManager.enabled = true;
+            if (cameraFrameOffset != null) cameraFrameOffset.enabled = true;
+        }
+
+        // Unlock cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    void ExitGodMode()
+    {
+        isGodMode = false;
+
+        if (useSpaceView)
+        {
+            // Disable god mode systems
+            if (editorFlyCamera != null) editorFlyCamera.enabled = false;
+            if (selectionManager != null) selectionManager.enabled = false;
+            if (cameraFrameOffset != null) cameraFrameOffset.enabled = false;
+        }
+
+        // Restore far clip for play mode
+        cam.farClipPlane = playModeFarClip;
+
+        if (usePlayerView && playerController != null)
+        {
+            // Reattach camera to player
+            cam.transform.SetParent(originalCameraParent);
+            cam.transform.localPosition = originalCameraLocalPosition;
+            cam.transform.localRotation = originalCameraLocalRotation;
+
+            // Restore player position and rotation
+            playerController.transform.position = savedPlayerPosition;
+            playerController.transform.rotation = savedPlayerRotation;
+            if (rb != null) rb.linearVelocity = Vector3.zero;
+
+            // Reparent player to planet
+            if (playerController.planet != null)
+                playerController.transform.SetParent(playerController.planet.transform);
+
+            // Re-enable player
+            if (gravityBody != null) gravityBody.enabled = true;
+            playerController.enabled = true;
+            if (planetCameraController != null) planetCameraController.enabled = true;
+
+            // Lock cursor
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            // No player to hand control back to � keep cursor free for the space view
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+}
+
+----- Assets/_Foundry/Utilities/LabelFaceCamera.cs -----
+using UnityEngine;
+using TMPro;
+
+public class LabelFaceCamera : MonoBehaviour
+{
+    [Header("Camera")]
+    public Camera cam;
+    public Transform planet;
+    public float distanceFromCenter = 300f;
+
+    [Header("Default Text")]
+    public string defaultText = "axis";
+
+    TextMeshProUGUI tmpUI;
+    TextMeshPro tmp3D;
+
+    void Start()
+    {
+        tmpUI = GetComponent<TextMeshProUGUI>();
+        tmp3D = GetComponent<TextMeshPro>();
+
+        SetText(defaultText);
+
+        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+    }
+
+    public void SetText(string text)
+    {
+        if (tmpUI != null) tmpUI.text = text;
+        else if (tmp3D != null) tmp3D.text = text;
+        else Debug.LogWarning("[LabelFaceCamera] No TextMeshPro component found on this object.");
+    }
+
+    void LateUpdate()
+    {
+        if (cam == null || planet == null) return;
+
+        Vector3 toCam = (cam.transform.position - planet.position).normalized;
+        transform.position = planet.position + toCam * distanceFromCenter;
+        transform.rotation = Quaternion.LookRotation(
+            transform.position - cam.transform.position
+        );
+    }
+}
+
+----- Assets/_Foundry/Utilities/PlanetBuyButton.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+/// <summary>
+/// Floating 3D buy cube.
+/// Positions itself against planet surface.
+/// Hover previews current offer.
+/// Click purchases.
+/// </summary>
+public class PlanetBuyButton : MonoBehaviour
+{
+    [Header("References")]
+    public Camera cam;
+    public Transform planet;
+
+    public PlanetGenerator planetGenerator;
+    public PlanetUpgradeManager upgradeManager;
+    public SelectionManager selectionManager;
+
+    [Header("Positioning")]
+    public float distanceFromCenter = 300f;
+    public float horizontalOffset = -350f;
+    public float verticalOffset = -120f;
+
+    [Header("Hover")]
+    public float hoverPixelRadius = 60f;
+
+    [Header("Animation")]
+    public float hoverScale = 1.15f;
+
+    bool isPreviewing;
+
+    Vector3 originalScale;
+
+    TerrainSettings savedTerrain;
+    OceanSettings savedOcean;
+    AtmosphereSettings savedAtmosphere;
+
+    void Start()
+    {
+        originalScale = transform.localScale;
+    }
+
+    void LateUpdate()
+    {
+        if (cam == null || planet == null)
+            return;
+
+        bool isSelected =
+            selectionManager == null ||
+            selectionManager.selectedObject == planet;
+
+        // Keep cube active for positioning
+        MeshRenderer renderer =
+            GetComponent<MeshRenderer>();
+
+        Collider col =
+            GetComponent<Collider>();
+
+        if (renderer != null)
+            renderer.enabled = isSelected;
+
+        if (col != null)
+            col.enabled = isSelected;
+
+        if (!isSelected)
+        {
+            if (isPreviewing)
+                EndPreview();
+
+            return;
+        }
+
+        //------------------------------------------------
+        // POSITION EXACTLY LIKE UpgradeLabel
+        //------------------------------------------------
+
+        Vector3 toCam =
+            (cam.transform.position - planet.position).normalized;
+
+        Vector3 camRight =
+            cam.transform.right;
+
+        Vector3 camUp =
+            cam.transform.up;
+
+        Vector3 baseFacePos =
+            planet.position +
+            toCam * distanceFromCenter;
+
+        Quaternion faceCamera =
+            Quaternion.LookRotation(
+                baseFacePos - cam.transform.position
+            );
+
+        transform.position =
+            baseFacePos +
+            camRight * horizontalOffset +
+            camUp * verticalOffset;
+
+        transform.rotation =
+            faceCamera;
+
+        //------------------------------------------------
+        // HOVER
+        //------------------------------------------------
+
+        bool hovering =
+            IsMouseOverThis();
+
+        if (hovering && !isPreviewing)
+        {
+            transform.localScale =
+                originalScale * hoverScale;
+
+            StartPreview();
+        }
+
+        if (!hovering && isPreviewing)
+        {
+            transform.localScale =
+                originalScale;
+
+            EndPreview();
+        }
+
+        //------------------------------------------------
+        // BUY
+        //------------------------------------------------
+
+        if (
+            hovering &&
+            Mouse.current.leftButton.wasPressedThisFrame
+        )
+        {
+            upgradeManager?.TryBuyOffer();
+        }
+    }
+
+    bool IsMouseOverThis()
+    {
+        Vector3 screenPos =
+            cam.WorldToScreenPoint(
+                transform.position
+            );
+
+        if (screenPos.z < 0)
+            return false;
+
+        Vector2 mouse =
+            Mouse.current.position.ReadValue();
+
+        float dist =
+            Vector2.Distance(
+                mouse,
+                new Vector2(
+                    screenPos.x,
+                    screenPos.y
+                )
+            );
+
+        return dist < hoverPixelRadius;
+    }
+
+    void StartPreview()
+    {
+        if (
+            upgradeManager == null ||
+            upgradeManager.LockedOffer == null
+        )
+            return;
+
+        if (
+            planetGenerator == null ||
+            planetGenerator.planetSettings == null
+        )
+            return;
+
+        isPreviewing = true;
+
+        PlanetSettings settings =
+            planetGenerator.planetSettings;
+
+        savedTerrain =
+            settings.terrainSettings;
+
+        savedOcean =
+            settings.oceanSettings;
+
+        savedAtmosphere =
+            settings.atmosphereSettings;
+
+        PlanetUpgrade offer =
+            upgradeManager.LockedOffer;
+
+        switch (offer.slot)
+        {
+            case UpgradeSlot.Terrain:
+                settings.terrainSettings =
+                    offer.terrainSettings;
+                break;
+
+            case UpgradeSlot.Ocean:
+                settings.oceanSettings =
+                    offer.oceanSettings;
+                break;
+
+            case UpgradeSlot.Atmosphere:
+                settings.atmosphereSettings =
+                    offer.atmosphereSettings;
+                break;
+        }
+
+        planetGenerator.GeneratePlanet();
+    }
+
+    void EndPreview()
+    {
+        if (!isPreviewing)
+            return;
+
+        isPreviewing = false;
+
+        PlanetSettings settings =
+            planetGenerator.planetSettings;
+
+        settings.terrainSettings =
+            savedTerrain;
+
+        settings.oceanSettings =
+            savedOcean;
+
+        settings.atmosphereSettings =
+            savedAtmosphere;
+
+        planetGenerator.GeneratePlanet();
+    }
+}
+
+----- Assets/_Foundry/Utilities/PlanetStats.cs -----
+using UnityEngine;
+
+public class PlanetStats : MonoBehaviour
+{
+    [Header("Values")]
+    public float fortune = 0f;
+    public float wonder = 0f;
+
+    [Header("Caps")]
+    public float fortuneCap = 100f;
+    public float wonderCap = 10f;
+
+    [Header("Fortune Accrual")]
+    [Tooltip("Spin velocity magnitude above this threshold counts as fast spin for Fortune.")]
+    public float fortuneSpinThreshold = 5f;
+    [Tooltip("How long after a fling Fortune continues to accrue, in seconds.")]
+    public float fortuneAccrualWindow = 2f;
+    [Tooltip("Fortune gained per second while spinning fast.")]
+    public float fortuneAccrualRate = 1f;
+
+    [Header("Wonder (Fuel)")]
+    [Tooltip("Wonder drained per second while spinning above threshold.")]
+    public float wonderDrainRate = 1f;
+    [Tooltip("Wonder regenerated per second while selected and not spinning.")]
+    public float wonderRegenRate = 0.5f;
+
+    [HideInInspector] public float currentSpinMagnitude = 0f;
+    [HideInInspector] public bool isSelected = false;
+    [HideInInspector] public bool gameActive = false;
+
+    // Read by PlanetUpgradeManager to know when to brake
+    public bool IsOutOfWonder => wonder <= 0f;
+    // True while actively earning fortune
+    public bool IsSpinning => fortuneWindowTimer > 0f;
+
+    float fortuneWindowTimer = 0f;
+
+    void Update()
+    {
+        if (!gameActive || !isSelected)
+        {
+            fortuneWindowTimer = 0f;
+            return;
+        }
+
+        bool spinningFast = currentSpinMagnitude >= fortuneSpinThreshold && wonder > 0f;
+
+        if (spinningFast)
+            fortuneWindowTimer = fortuneAccrualWindow;
+
+        if (fortuneWindowTimer > 0f)
+        {
+            // Drain Wonder while spinning
+            wonder = Mathf.Max(0f, wonder - wonderDrainRate * Time.deltaTime);
+
+            // Earn Fortune while Wonder holds out
+            if (wonder > 0f && fortune < fortuneCap)
+                fortune = Mathf.Min(fortune + fortuneAccrualRate * Time.deltaTime, fortuneCap);
+
+            fortuneWindowTimer -= Time.deltaTime;
+        }
+        else
+        {
+            // Not spinning � regenerate Wonder slowly
+            if (wonder < wonderCap)
+                wonder = Mathf.Min(wonder + wonderRegenRate * Time.deltaTime, wonderCap);
+        }
+    }
+
+    public int FortuneInt => Mathf.FloorToInt(fortune);
+    public int WonderInt => Mathf.FloorToInt(wonder);
+}
+
+----- Assets/_Foundry/Utilities/PlanetStatsDisplay.cs -----
+using UnityEngine;
+using TMPro;
+
+/// <summary>
+/// Positions two floating number labels against the planet surface,
+/// always facing the camera. Only visible when the planet is selected.
+/// Numbers are fixed width so they don't wrap as they grow.
+/// </summary>
+public class PlanetStatsDisplay : MonoBehaviour
+{
+    [Header("References")]
+    public Camera cam;
+    public Transform planet;
+    public PlanetStats stats;
+    public SelectionManager selectionManager;
+    public TextMeshPro fortuneLabel;
+    public TextMeshPro wonderLabel;
+
+    [Header("Distance From Planet Center")]
+    public float distanceFromCenter = 280f;
+
+    [Header("Wonder Label Offset")]
+    public float wonderHorizontalOffset = -180f;
+    public float wonderVerticalOffset = -80f;
+
+    [Header("Fortune Label Offset")]
+    public float fortuneHorizontalOffset = -180f;
+    public float fortuneVerticalOffset = -160f;
+
+    void LateUpdate()
+    {
+        if (cam == null || planet == null) return;
+
+        // Only show when this planet is selected
+        bool isSelected = selectionManager != null &&
+                          selectionManager.selectedObject == planet;
+
+        if (fortuneLabel != null) fortuneLabel.gameObject.SetActive(isSelected);
+        if (wonderLabel != null) wonderLabel.gameObject.SetActive(isSelected);
+
+        if (!isSelected) return;
+
+        Vector3 toCam = (cam.transform.position - planet.position).normalized;
+        Vector3 camRight = cam.transform.right;
+        Vector3 camUp = cam.transform.up;
+
+        Vector3 baseFacePos = planet.position + toCam * distanceFromCenter;
+        Quaternion faceCamera = Quaternion.LookRotation(baseFacePos - cam.transform.position);
+
+        if (wonderLabel != null)
+        {
+            wonderLabel.transform.position = baseFacePos
+                + camRight * wonderHorizontalOffset
+                + camUp * wonderVerticalOffset;
+            wonderLabel.transform.rotation = faceCamera;
+
+            // Fixed width so numbers grow leftward, never wrap
+            wonderLabel.textWrappingMode = TextWrappingModes.NoWrap;
+            wonderLabel.overflowMode = TextOverflowModes.Overflow;
+            wonderLabel.horizontalAlignment = HorizontalAlignmentOptions.Left;
+
+            wonderLabel.text = stats != null ? stats.WonderInt.ToString() : "0";
+        }
+
+        if (fortuneLabel != null)
+        {
+            fortuneLabel.transform.position = baseFacePos
+                + camRight * fortuneHorizontalOffset
+                + camUp * fortuneVerticalOffset;
+            fortuneLabel.transform.rotation = faceCamera;
+
+            fortuneLabel.textWrappingMode = TextWrappingModes.NoWrap; 
+            fortuneLabel.overflowMode = TextOverflowModes.Overflow;
+            fortuneLabel.horizontalAlignment = HorizontalAlignmentOptions.Left;
+
+            fortuneLabel.text = stats != null ? stats.FortuneInt.ToString() : "0";
+        }
+    }
+}
+
+----- Assets/_Foundry/Utilities/SelectionManager.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+
+[DisallowMultipleComponent]
+public class SelectionManager : MonoBehaviour
+{
+    [Header("References")]
+    public Camera cam;
+    public EditorFlyCamera editorFlyCamera;
+    public RawImage rawImage;
+
+    public Transform selectedObject { get; private set; }
+
+    // While true, clicks are ignored and the camera stays on whatever
+    // focusTarget EditorFlyCamera currently has (the Sun at title screen).
+    [HideInInspector]
+    public bool isLocked = false;
+
+    void Update()
+    {
+        if (isLocked) return;
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+            TrySelect();
+    }
+
+    void TrySelect()
+    {
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        RectTransform rawImageRect = rawImage.rectTransform;
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            rawImageRect, mousePos, null, out localPoint);
+        Rect rect = rawImageRect.rect;
+        Vector2 normalized = new Vector2(
+            (localPoint.x - rect.x) / rect.width,
+            (localPoint.y - rect.y) / rect.height);
+
+        if (normalized.x < 0 || normalized.x > 1 || normalized.y < 0 || normalized.y > 1)
+        {
+            Debug.Log("[SelectionManager] Click outside viewport");
+            return;
+        }
+
+        Ray ray = cam.ViewportPointToRay(normalized);
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+        {
+            Debug.Log($"[SelectionManager] Hit: {hit.transform.name} root: {hit.transform.root.name}");
+            SelectObject(hit.transform.root);
+        }
+        else
+        {
+            Debug.Log("[SelectionManager] Raycast hit nothing");
+        }
+    }
+
+    void SelectObject(Transform obj)
+    {
+        selectedObject = obj;
+
+        if (editorFlyCamera != null)
+            editorFlyCamera.focusTarget = obj;
+
+        // Notify upgrade manager if present
+        var upgradeManager = obj.GetComponent<PlanetUpgradeManager>();
+        if (upgradeManager != null)
+            upgradeManager.OnSelected();
+
+        Debug.Log($"[SelectionManager] Selected: {obj.name}");
+    }
+
+    public void Deselect()
+    {
+        selectedObject = null;
+    }
+}
+
+----- Assets/_Foundry/Utilities/TitlePlanetHover.cs -----
+using UnityEngine;
+
+/// <summary>
+/// Scales a planet up slightly when hovered, back to normal when not.
+/// Attach to each title screen planet root.
+/// </summary>
+public class TitlePlanetHover : MonoBehaviour
+{
+    [HideInInspector] public bool isHovered = false;
+
+    Vector3 baseScale;
+    public float hoverScaleMultiplier = 1.08f;
+    public float scaleSpeed = 10f;
+
+    void Start()
+    {
+        baseScale = transform.localScale;
+    }
+
+    void Update()
+    {
+        Vector3 targetScale = isHovered ? baseScale * hoverScaleMultiplier : baseScale;
+        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, scaleSpeed * Time.deltaTime);
+    }
+}
+
+----- Assets/_Foundry/Utilities/TitleScreenController.cs -----
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.InputSystem;
+
+public class TitleScreenController : MonoBehaviour
+{
+    [Header("References")]
+    public SolarSystemManager solarSystemManager;
+    public SelectionManager selectionManager;
+    public EditorFlyCamera editorFlyCamera;
+    public Camera cam;
+    public RawImage rawImage;
+    public Transform sun;
+
+    [Header("Title Screen Planets")]
+    public Transform startPlanet;
+    public Transform optionsPlanet;
+    public Transform exitPlanet;
+
+    [Header("Sun Label")]
+    public LabelFaceCamera sunLabel;
+
+    [Header("Options Panel")]
+    public GameObject optionsPanel;
+
+    [Header("Controls Panel")]
+    public GameObject controlsPanel;
+
+    TitlePlanetHover sunHover;
+    TitlePlanetHover startHover;
+    TitlePlanetHover optionsHover;
+    TitlePlanetHover exitHover;
+
+    bool titleActive = true;
+
+    void Start()
+    {
+        solarSystemManager.timeScale = 0f;
+        solarSystemManager.gameActive = false;
+
+        if (editorFlyCamera != null && sun != null)
+            editorFlyCamera.focusTarget = sun;
+
+        if (selectionManager != null)
+            selectionManager.isLocked = true;
+
+        sunHover = GetOrAddHover(sun);
+        startHover = GetOrAddHover(startPlanet);
+        optionsHover = GetOrAddHover(optionsPlanet);
+        exitHover = GetOrAddHover(exitPlanet);
+    }
+
+    TitlePlanetHover GetOrAddHover(Transform t)
+    {
+        if (t == null) return null;
+        var h = t.GetComponent<TitlePlanetHover>();
+        if (h == null) h = t.gameObject.AddComponent<TitlePlanetHover>();
+        return h;
+    }
+
+    void Update()
+    {
+        if (!titleActive) return;
+        HandleHover();
+        HandleClick();
+    }
+
+    void HandleHover()
+    {
+        Transform hovered = GetHoveredPlanet();
+
+        if (sunHover != null) sunHover.isHovered = (hovered == sun);
+        if (startHover != null) startHover.isHovered = (hovered == startPlanet);
+        if (optionsHover != null) optionsHover.isHovered = (hovered == optionsPlanet);
+        if (exitHover != null) exitHover.isHovered = (hovered == exitPlanet);
+
+        if (sunLabel != null)
+        {
+            if (hovered == startPlanet) sunLabel.SetText("CONTROLS");
+            else if (hovered == optionsPlanet) sunLabel.SetText("OPTIONS");
+            else if (hovered == exitPlanet) sunLabel.SetText("EXIT");
+            else if (hovered == sun) sunLabel.SetText("PLAY");
+            else sunLabel.SetText("AXIS");
+        }
+    }
+
+    void HandleClick()
+    {
+        if (!Mouse.current.leftButton.wasPressedThisFrame) return;
+
+        Transform clicked = GetHoveredPlanet();
+        if (clicked == null) return;
+
+        if (clicked == sun) OnStartGame();
+        // planets do nothing for now
+    }
+
+    Transform GetHoveredPlanet()
+    {
+        if (cam == null || rawImage == null) return null;
+
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        RectTransform rawImageRect = rawImage.rectTransform;
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            rawImageRect, mousePos, null, out localPoint);
+        Rect rect = rawImageRect.rect;
+        Vector2 normalized = new Vector2(
+            (localPoint.x - rect.x) / rect.width,
+            (localPoint.y - rect.y) / rect.height);
+
+        if (normalized.x < 0 || normalized.x > 1 || normalized.y < 0 || normalized.y > 1)
+            return null;
+
+        int layerMask = ~LayerMask.GetMask("Ignore Raycast", "UI");
+        Ray ray = cam.ViewportPointToRay(normalized);
+        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
+            return null;
+
+        Transform root = hit.transform.root;
+        if (root == sun) return sun;
+        if (root == startPlanet) return startPlanet;
+        if (root == optionsPlanet) return optionsPlanet;
+        if (root == exitPlanet) return exitPlanet;
+        return null;
+    }
+
+    void OnStartGame()
+    {
+        titleActive = false;
+        solarSystemManager.timeScale = 1f;
+        solarSystemManager.gameActive = true;
+
+        if (selectionManager != null)
+            selectionManager.isLocked = false;
+
+        if (sunHover != null) sunHover.isHovered = false;
+        if (startHover != null) startHover.isHovered = false;
+        if (optionsHover != null) optionsHover.isHovered = false;
+        if (exitHover != null) exitHover.isHovered = false;
+
+        if (sunLabel != null)
+            sunLabel.gameObject.SetActive(false);
+
+        gameObject.SetActive(false);
+    }
+
+    void OnControls()
+    {
+        if (controlsPanel != null)
+            controlsPanel.SetActive(!controlsPanel.activeSelf);
+        else
+            Debug.Log("[TitleScreen] Controls clicked — panel not yet built.");
+    }
+
+    void OnOptions()
+    {
+        if (optionsPanel != null)
+            optionsPanel.SetActive(!optionsPanel.activeSelf);
+    }
+
+    void OnExit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Editor/AtmosphereGeneratorEditor.cs -----
+using UnityEngine;
+using UnityEditor;
+
+[CustomEditor(typeof(AtmosphereGenerator))]
+public class AtmosphereGeneratorEditor : Editor
+{
+    private AtmosphereGenerator atmosphereGenerator;
+
+    void OnEnable()
+    {
+        atmosphereGenerator = (AtmosphereGenerator)target;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        // ── Settings Asset Reference ─────────────────────────
+        EditorGUILayout.LabelField("Atmosphere", EditorStyles.boldLabel);
+        atmosphereGenerator.settings = (AtmosphereSettings)EditorGUILayout.ObjectField(
+            "Atmosphere Settings", atmosphereGenerator.settings, typeof(AtmosphereSettings), false);
+
+        EditorGUILayout.Space();
+
+        if (atmosphereGenerator.settings == null)
+        {
+            EditorGUILayout.HelpBox(
+                "Assign an AtmosphereSettings asset to begin editing.",
+                MessageType.Info);
+            serializedObject.ApplyModifiedProperties();
+            return;
+        }
+
+        // ── Atmosphere Settings ──────────────────────────────
+        EditorGUILayout.LabelField("Settings", EditorStyles.boldLabel);
+        EditorGUI.indentLevel++;
+        using (var check = new EditorGUI.ChangeCheckScope())
+        {
+            atmosphereGenerator.settings.atmosphereMaterial = (Material)EditorGUILayout.ObjectField(
+                "Atmosphere Material", atmosphereGenerator.settings.atmosphereMaterial, typeof(Material), false);
+            atmosphereGenerator.settings.sizeMultiplier = EditorGUILayout.FloatField(
+                "Size Multiplier", atmosphereGenerator.settings.sizeMultiplier);
+            atmosphereGenerator.settings.nightOpacity = EditorGUILayout.Slider(
+                "Night Opacity", atmosphereGenerator.settings.nightOpacity, 0f, 1f);
+
+            if (check.changed)
+            {
+                EditorUtility.SetDirty(atmosphereGenerator.settings);
+            }
+        }
+        EditorGUI.indentLevel--;
+
+        EditorGUILayout.Space();
+
+        // ── Actions ──────────────────────────────────────────
+        EditorGUILayout.LabelField("Actions", EditorStyles.boldLabel);
+
+        GUI.backgroundColor = new Color(0.4f, 0.8f, 0.4f);
+        if (GUILayout.Button("Save & Regenerate", GUILayout.Height(32)))
+        {
+            EditorUtility.SetDirty(atmosphereGenerator.settings);
+            AssetDatabase.SaveAssets();
+
+            PlanetGenerator pg = atmosphereGenerator.GetComponentInParent<PlanetGenerator>();
+            if (pg != null)
+            {
+                pg.GeneratePlanet();
+                SceneView.RepaintAll();
+            }
+            else
+            {
+                Debug.LogWarning("[AtmosphereGeneratorEditor] No PlanetGenerator found in parent.");
+            }
+        }
+        GUI.backgroundColor = Color.white;
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Editor/OceanGeneratorEditor.cs -----
+using UnityEngine;
+using UnityEditor;
+
+[CustomEditor(typeof(OceanGenerator))]
+public class OceanGeneratorEditor : Editor
+{
+    private OceanGenerator oceanGenerator;
+
+    void OnEnable()
+    {
+        oceanGenerator = (OceanGenerator)target;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        // ── Settings Asset Reference ─────────────────────────
+        EditorGUILayout.LabelField("Ocean", EditorStyles.boldLabel);
+        oceanGenerator.settings = (OceanSettings)EditorGUILayout.ObjectField(
+            "Ocean Settings", oceanGenerator.settings, typeof(OceanSettings), false);
+
+        EditorGUILayout.Space();
+
+        if (oceanGenerator.settings == null)
+        {
+            EditorGUILayout.HelpBox(
+                "Assign an OceanSettings asset to begin editing.",
+                MessageType.Info);
+            serializedObject.ApplyModifiedProperties();
+            return;
+        }
+
+        // ── Ocean Settings ───────────────────────────────────
+        EditorGUILayout.LabelField("Settings", EditorStyles.boldLabel);
+        EditorGUI.indentLevel++;
+        using (var check = new EditorGUI.ChangeCheckScope())
+        {
+            oceanGenerator.settings.oceanMaterial = (Material)EditorGUILayout.ObjectField(
+                "Ocean Material", oceanGenerator.settings.oceanMaterial, typeof(Material), false);
+            oceanGenerator.settings.seaLevel = EditorGUILayout.Slider(
+                "Sea Level", oceanGenerator.settings.seaLevel, 0f, 1f);
+
+            if (check.changed)
+            {
+                EditorUtility.SetDirty(oceanGenerator.settings);
+            }
+        }
+        EditorGUI.indentLevel--;
+
+        EditorGUILayout.Space();
+
+        // ── Actions ──────────────────────────────────────────
+        EditorGUILayout.LabelField("Actions", EditorStyles.boldLabel);
+
+        GUI.backgroundColor = new Color(0.4f, 0.8f, 0.4f);
+        if (GUILayout.Button("Save & Regenerate", GUILayout.Height(32)))
+        {
+            EditorUtility.SetDirty(oceanGenerator.settings);
+            AssetDatabase.SaveAssets();
+
+            PlanetGenerator pg = oceanGenerator.GetComponentInParent<PlanetGenerator>();
+            if (pg != null)
+            {
+                pg.GeneratePlanet();
+                SceneView.RepaintAll();
+            }
+            else
+            {
+                Debug.LogWarning("[OceanGeneratorEditor] No PlanetGenerator found in parent.");
+            }
+        }
+        GUI.backgroundColor = Color.white;
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Editor/PlanetGeneratorEditor.cs -----
+using UnityEngine;
+using UnityEditor;
+
+[CustomEditor(typeof(PlanetGenerator))]
+public class PlanetGeneratorEditor : Editor
+{
+    private PlanetGenerator generator;
+    private bool showBake = false;
+
+    void OnEnable()
+    {
+        generator = (PlanetGenerator)target;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        // ── Planet Settings ──────────────────────────────────
+        EditorGUILayout.LabelField("Planet", EditorStyles.boldLabel);
+        generator.planetSettings = (PlanetSettings)EditorGUILayout.ObjectField(
+            "Planet Settings", generator.planetSettings, typeof(PlanetSettings), false);
+
+        EditorGUILayout.Space();
+
+        if (generator.planetSettings == null)
+        {
+            EditorGUILayout.HelpBox(
+                "Assign a PlanetSettings asset to begin editing.",
+                MessageType.Info);
+            serializedObject.ApplyModifiedProperties();
+            return;
+        }
+
+        // ── Planet Settings Fields ───────────────────────────
+        EditorGUILayout.LabelField("Planet Settings", EditorStyles.boldLabel);
+        EditorGUI.indentLevel++;
+        using (var check = new EditorGUI.ChangeCheckScope())
+        {
+            generator.planetSettings.radius = EditorGUILayout.FloatField("Radius", generator.planetSettings.radius);
+            generator.planetSettings.axialTilt = EditorGUILayout.Slider("Axial Tilt", generator.planetSettings.axialTilt, 0f, 90f);
+            generator.planetSettings.rotationSpeed = EditorGUILayout.FloatField("Rotation Speed", generator.planetSettings.rotationSpeed);
+            if (check.changed)
+            {
+                EditorUtility.SetDirty(generator.planetSettings);
+            }
+        }
+        EditorGUI.indentLevel--;
+
+        EditorGUILayout.Space();
+
+        // ── Subsystems ───────────────────────────────────────
+        EditorGUILayout.LabelField("Subsystems", EditorStyles.boldLabel);
+        EditorGUI.indentLevel++;
+        generator.terrainGenerator = (TerrainGenerator)EditorGUILayout.ObjectField(
+            "Terrain", generator.terrainGenerator, typeof(TerrainGenerator), true);
+        generator.oceanGenerator = (OceanGenerator)EditorGUILayout.ObjectField(
+            "Ocean", generator.oceanGenerator, typeof(OceanGenerator), true);
+        generator.atmosphereGenerator = (AtmosphereGenerator)EditorGUILayout.ObjectField(
+            "Atmosphere", generator.atmosphereGenerator, typeof(AtmosphereGenerator), true);
+        EditorGUI.indentLevel--;
+
+        EditorGUILayout.Space();
+
+        // ── Actions ──────────────────────────────────────────
+        EditorGUILayout.LabelField("Actions", EditorStyles.boldLabel);
+
+        if (GUILayout.Button("Save Settings", GUILayout.Height(32)))
+        {
+            EditorUtility.SetDirty(generator.planetSettings);
+            AssetDatabase.SaveAssets();
+            Debug.Log("[PlanetGeneratorEditor] Planet settings saved.");
+        }
+
+        EditorGUILayout.Space();
+
+        if (GUILayout.Button("Generate Preview", GUILayout.Height(32)))
+        {
+            generator.GeneratePlanet();
+            SceneView.RepaintAll();
+        }
+
+        EditorGUILayout.Space();
+
+        showBake = EditorGUILayout.Foldout(showBake, "Bake", true, EditorStyles.foldoutHeader);
+        if (showBake)
+        {
+            EditorGUI.indentLevel++;
+
+            if (generator.planetSettings.bakedMesh != null)
+            {
+                EditorGUILayout.HelpBox(
+                    $"Baked mesh: {generator.planetSettings.bakedMesh.vertexCount} vertices.",
+                    MessageType.Info);
+            }
+            else
+            {
+                EditorGUILayout.HelpBox(
+                    "No baked mesh yet. Generate a preview then bake.",
+                    MessageType.Warning);
+            }
+
+            EditorGUILayout.Space();
+
+            GUI.backgroundColor = new Color(0.4f, 0.8f, 0.4f);
+            if (GUILayout.Button("Bake Planet", GUILayout.Height(32)))
+            {
+                BakePlanet();
+            }
+            GUI.backgroundColor = Color.white;
+
+            EditorGUI.indentLevel--;
+        }
+
+        serializedObject.ApplyModifiedProperties();
+    }
+
+    private void BakePlanet()
+    {
+        if (generator.planetSettings == null) return;
+
+        generator.GeneratePlanet();
+
+        MeshFilter mf = generator.terrainGenerator?.GetComponent<MeshFilter>();
+        if (mf == null || mf.sharedMesh == null)
+        {
+            Debug.LogWarning("[PlanetGeneratorEditor] No mesh found to bake.");
+            return;
+        }
+
+        string folder = "Assets/_Foundry/World/Meshes";
+        string assetName = generator.planetSettings.name + "_Baked.asset";
+        string path = $"{folder}/{assetName}";
+
+        if (!AssetDatabase.IsValidFolder(folder))
+            AssetDatabase.CreateFolder("Assets/_Foundry/World", "Meshes");
+
+        Mesh bakedMesh = Instantiate(mf.sharedMesh);
+        bakedMesh.name = generator.planetSettings.name + "_Baked";
+
+        Mesh existing = AssetDatabase.LoadAssetAtPath<Mesh>(path);
+        if (existing != null)
+        {
+            existing.Clear();
+            existing.vertices = bakedMesh.vertices;
+            existing.triangles = bakedMesh.triangles;
+            existing.uv = bakedMesh.uv;
+            existing.colors = bakedMesh.colors;
+            existing.RecalculateNormals();
+            existing.RecalculateBounds();
+            EditorUtility.SetDirty(existing);
+            generator.planetSettings.bakedMesh = existing;
+        }
+        else
+        {
+            AssetDatabase.CreateAsset(bakedMesh, path);
+            generator.planetSettings.bakedMesh = bakedMesh;
+        }
+
+        EditorUtility.SetDirty(generator.planetSettings);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+
+        Debug.Log($"[PlanetGeneratorEditor] Planet baked to {path}");
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Editor/StarTextureGenerator.cs -----
+using UnityEngine;
+using UnityEditor;
+using System.IO;
+
+public class StarTextureGenerator : EditorWindow
+{
+    [MenuItem("Worldlike Foundry/Generate Star Texture")]
+    public static void ShowWindow()
+    {
+        GetWindow<StarTextureGenerator>("Star Texture Generator");
+    }
+
+    private int textureWidth = 2048;
+    private int textureHeight = 1024;
+    private int starCount = 300;
+    private float starSize = 2.5f;
+    private float coloredStarChance = 0.1f;
+    private Color blueStarColor = new Color(0.6f, 0.8f, 1f);
+    private Color redStarColor = new Color(1f, 0.4f, 0.3f);
+    private int seed = 42;
+    private string savePath = "Assets/_Foundry/Rendering/T_Starfield.png";
+
+    void OnGUI()
+    {
+        GUILayout.Label("Star Texture Generator", EditorStyles.boldLabel);
+        EditorGUILayout.Space();
+
+        textureWidth = EditorGUILayout.IntField("Texture Width", textureWidth);
+        textureHeight = EditorGUILayout.IntField("Texture Height", textureHeight);
+        starCount = EditorGUILayout.IntField("Star Count", starCount);
+        starSize = EditorGUILayout.Slider("Star Size (px)", starSize, 0.5f, 8f);
+        coloredStarChance = EditorGUILayout.Slider("Colored Star Chance", coloredStarChance, 0f, 0.5f);
+        blueStarColor = EditorGUILayout.ColorField("Blue Star Color", blueStarColor);
+        redStarColor = EditorGUILayout.ColorField("Red Star Color", redStarColor);
+        seed = EditorGUILayout.IntField("Seed", seed);
+        savePath = EditorGUILayout.TextField("Save Path", savePath);
+
+        EditorGUILayout.Space();
+
+        GUI.backgroundColor = new Color(0.4f, 0.8f, 0.4f);
+        if (GUILayout.Button("Generate & Save", GUILayout.Height(32)))
+        {
+            GenerateAndSave();
+        }
+        GUI.backgroundColor = Color.white;
+    }
+
+    void GenerateAndSave()
+    {
+        Random.InitState(seed);
+
+        Texture2D tex = new Texture2D(textureWidth, textureHeight, TextureFormat.RGBA32, false);
+
+        // Fill with black
+        Color[] pixels = new Color[textureWidth * textureHeight];
+        for (int i = 0; i < pixels.Length; i++)
+            pixels[i] = Color.black;
+
+        // Place stars using spherical distribution
+        // Generate random points on a sphere and project to equirectangular UV
+        for (int i = 0; i < starCount; i++)
+        {
+            // Uniform sphere distribution using Gaussian method
+            float u = Random.Range(0f, 1f);
+            float v = Random.Range(0f, 1f);
+
+            // Convert to spherical angles � this gives even distribution across sphere
+            float theta = 2f * Mathf.PI * u;             // longitude: 0 to 2PI
+            float phi = Mathf.Acos(2f * v - 1f);         // latitude: 0 to PI, uniform on sphere
+
+            // Convert spherical to equirectangular UV
+            float uvX = theta / (2f * Mathf.PI);          // 0 to 1
+            float uvY = phi / Mathf.PI;                    // 0 to 1
+
+            int x = Mathf.Clamp(Mathf.RoundToInt(uvX * textureWidth), 0, textureWidth - 1);
+            int y = Mathf.Clamp(Mathf.RoundToInt(uvY * textureHeight), 0, textureHeight - 1);
+
+            // Determine star color
+            float colorRoll = Random.value;
+            Color starColor;
+
+            if (colorRoll < coloredStarChance * 0.5f)
+                starColor = blueStarColor;
+            else if (colorRoll < coloredStarChance)
+                starColor = redStarColor;
+            else
+            {
+                float brightness = Random.Range(0.7f, 1.0f);
+                starColor = new Color(brightness, brightness, brightness);
+            }
+
+            // Paint star as a circle with given radius
+            int radius = Mathf.RoundToInt(starSize);
+            for (int dx = -radius; dx <= radius; dx++)
+            {
+                for (int dy = -radius; dy <= radius; dy++)
+                {
+                    if (dx * dx + dy * dy <= radius * radius)
+                    {
+                        int px = (x + dx + textureWidth) % textureWidth;
+                        int py = Mathf.Clamp(y + dy, 0, textureHeight - 1);
+                        pixels[py * textureWidth + px] = starColor;
+                    }
+                }
+            }
+        }
+
+        tex.SetPixels(pixels);
+        tex.Apply();
+
+        // Save to disk
+        byte[] png = tex.EncodeToPNG();
+        string fullPath = Path.Combine(Application.dataPath, "../", savePath);
+
+        string dir = Path.GetDirectoryName(fullPath);
+        if (!Directory.Exists(dir))
+            Directory.CreateDirectory(dir);
+
+        File.WriteAllBytes(fullPath, png);
+        AssetDatabase.Refresh();
+
+        // Set texture import settings
+        TextureImporter importer = AssetImporter.GetAtPath(savePath) as TextureImporter;
+        if (importer != null)
+        {
+            importer.textureShape = TextureImporterShape.Texture2D;
+            importer.wrapMode = TextureWrapMode.Repeat;
+            importer.filterMode = FilterMode.Point;
+            importer.mipmapEnabled = false;
+            importer.SaveAndReimport();
+        }
+
+        Debug.Log($"[StarTextureGenerator] Saved to {savePath}");
+        DestroyImmediate(tex);
+
+        EditorUtility.DisplayDialog(
+            "Star Texture Generator",
+            $"Starfield saved to {savePath}",
+            "OK");
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Editor/TerrainGeneratorEditor.cs -----
+using UnityEngine;
+using UnityEditor;
+
+[CustomEditor(typeof(TerrainGenerator))]
+public class TerrainGeneratorEditor : Editor
+{
+    private TerrainGenerator terrainGenerator;
+
+    void OnEnable()
+    {
+        terrainGenerator = (TerrainGenerator)target;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        // ── Settings Asset Reference ─────────────────────────
+        EditorGUILayout.LabelField("Terrain", EditorStyles.boldLabel);
+        terrainGenerator.terrainSettings = (TerrainSettings)EditorGUILayout.ObjectField(
+            "Terrain Settings", terrainGenerator.terrainSettings, typeof(TerrainSettings), false);
+
+        EditorGUILayout.Space();
+
+        if (terrainGenerator.terrainSettings == null)
+        {
+            EditorGUILayout.HelpBox(
+                "Assign a TerrainSettings asset to begin editing.",
+                MessageType.Info);
+            serializedObject.ApplyModifiedProperties();
+            return;
+        }
+
+        // ── Terrain Settings ─────────────────────────────────
+        EditorGUILayout.LabelField("Settings", EditorStyles.boldLabel);
+        EditorGUI.indentLevel++;
+        using (var check = new EditorGUI.ChangeCheckScope())
+        {
+            terrainGenerator.terrainSettings.resolution = EditorGUILayout.IntSlider(
+                "Resolution", terrainGenerator.terrainSettings.resolution, 2, 256);
+            terrainGenerator.terrainSettings.globalHeightOffset = EditorGUILayout.FloatField(
+                "Global Height Offset", terrainGenerator.terrainSettings.globalHeightOffset);
+
+            EditorGUILayout.Space();
+
+            // ── Noise Layers ─────────────────────────────────
+            EditorGUILayout.LabelField("Noise Layers", EditorStyles.boldLabel);
+
+            SerializedObject settingsSO = new SerializedObject(terrainGenerator.terrainSettings);
+            settingsSO.Update();
+            SerializedProperty noiseLayers = settingsSO.FindProperty("noiseLayers");
+            EditorGUILayout.PropertyField(noiseLayers, new GUIContent("Noise Layers"), true);
+
+            if (check.changed || settingsSO.ApplyModifiedProperties())
+            {
+                EditorUtility.SetDirty(terrainGenerator.terrainSettings);
+            }
+        }
+        EditorGUI.indentLevel--;
+
+        EditorGUILayout.Space();
+
+        // ── Actions ──────────────────────────────────────────
+        EditorGUILayout.LabelField("Actions", EditorStyles.boldLabel);
+
+        GUI.backgroundColor = new Color(0.4f, 0.8f, 0.4f);
+        if (GUILayout.Button("Save & Regenerate", GUILayout.Height(32)))
+        {
+            EditorUtility.SetDirty(terrainGenerator.terrainSettings);
+            AssetDatabase.SaveAssets();
+
+            PlanetGenerator pg = terrainGenerator.GetComponentInParent<PlanetGenerator>();
+            if (pg != null)
+            {
+                pg.GeneratePlanet();
+                SceneView.RepaintAll();
+            }
+            else
+            {
+                Debug.LogWarning("[TerrainGeneratorEditor] No PlanetGenerator found in parent.");
+            }
+        }
+        GUI.backgroundColor = Color.white;
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/AtmosphereGenerator.cs -----
+using UnityEngine;
+using UnityEngine.Rendering;
+
+[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
+public class AtmosphereGenerator : MonoBehaviour
+{
+    public AtmosphereSettings settings;
+
+    private MeshFilter meshFilter;
+    private MeshRenderer meshRenderer;
+    private Mesh mesh;
+
+    /// <summary>
+    /// Generates the atmosphere glow sphere around the planet.
+    /// </summary>
+    public void Generate(int resolution, float maxElevation)
+    {
+        if (settings == null)
+        {
+            Debug.LogWarning("[AtmosphereGenerator] No AtmosphereSettings assigned.");
+            return;
+        }
+
+        meshFilter = GetComponent<MeshFilter>();
+        meshRenderer = GetComponent<MeshRenderer>();
+
+        if (mesh == null)
+            mesh = new Mesh { name = "Atmosphere Mesh" };
+
+        mesh.Clear();
+
+        float atmosphereRadius = maxElevation * (1f + settings.sizeMultiplier);
+
+        SphereCreator.CreateSphereMesh(
+            resolution, atmosphereRadius,
+            out Vector3[] vertices,
+            out int[] triangles,
+            out Vector2[] uvs);
+
+        mesh.vertices = vertices;
+        mesh.triangles = triangles;
+        mesh.uv = uvs;
+        mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
+
+        meshFilter.sharedMesh = mesh;
+
+        if (settings.atmosphereMaterial != null)
+        {
+            meshRenderer.sharedMaterial = settings.atmosphereMaterial;
+        }
+        else
+        {
+            Debug.LogWarning("[AtmosphereGenerator] No atmosphere material assigned.");
+        }
+
+        meshRenderer.shadowCastingMode = ShadowCastingMode.Off;
+        meshRenderer.receiveShadows = false;
+
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
+    }
+
+    /// <summary>
+    /// Updates the sun direction on the atmosphere shader each frame.
+    /// Called by AtmosphereSunController.
+    /// </summary>
+    public void SetSunDirection(Vector3 direction)
+    {
+        if (meshRenderer == null) return;
+        meshRenderer.material.SetVector("_SunDirection", direction);
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/AtmosphereSettings.cs -----
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "New Atmosphere Settings", menuName = "Worldlike Foundry/Atmosphere Settings")]
+public class AtmosphereSettings : ScriptableObject
+{
+    [Header("Glow Sphere")]
+    public Material atmosphereMaterial;
+
+    [Tooltip("How much larger the atmosphere sphere is relative to the planet radius.")]
+    public float sizeMultiplier = 0f;
+
+    [Header("Day/Night � handled by Sky system, not here")]
+    [Tooltip("How transparent the atmosphere is at night (0 = invisible, 1 = full color).")]
+    [Range(0f, 1f)]
+    public float nightOpacity = 0.1f;
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/Noise/NoiseLayer.cs -----
+using UnityEngine;
+
+public enum NoiseType { Standard, Ridge }
+
+[CreateAssetMenu(fileName = "NoiseLayer", menuName = "Worldlike Foundry/Noise Layer")]
+public class NoiseLayer : ScriptableObject
+{
+    public bool enabled = true;
+    public NoiseType noiseType = NoiseType.Standard;
+    public bool useFirstLayerAsMask = false;
+
+    [Header("Strength")]
+    public float strength = 1f;        // How much this layer displaces the surface
+    public float minValue = 0f;        // Noise floor � values below this are clamped (useful for flat oceans)
+
+    [Header("Frequency")]
+    public float roughness = 2f;       // Base frequency of the noise (higher = more jagged terrain)
+    public float lacunarity = 2f;      // Frequency multiplier per octave
+
+    [Header("Detail")]
+    public int octaves = 4;            // Number of noise layers stacked (more = finer detail)
+    [Range(0, 1)]
+    public float persistence = 0.5f;   // Amplitude decay per octave (lower = smoother)
+
+    [Header("Offset")]
+    public Vector3 offset = Vector3.zero; // Shifts the noise sample point (use for variation between planets)
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/Noise/PerlinNoise3D.cs -----
+using UnityEngine;
+
+/// <summary>
+/// True 3D gradient noise based on Ken Perlin's improved reference implementation.
+/// Replaces the 6-sample 2D approximation which caused origin symmetry / quad mirroring
+/// on cube-sphere meshes.
+/// </summary>
+public static class PerlinNoise3D
+{
+    // Ken Perlin's improved permutation table
+    private static readonly int[] perm = new int[512];
+    private static readonly int[] p = {
+        151,160,137,91,90,15,131,13,201,95,96,53,194,233,7,225,
+        140,36,103,30,69,142,8,99,37,240,21,10,23,190,6,148,247,
+        120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,
+        33,88,237,149,56,87,174,20,125,136,171,168,68,175,74,165,71,
+        134,139,48,27,166,77,146,158,231,83,111,229,122,60,211,133,
+        230,220,105,92,41,55,46,245,40,244,102,143,54,65,25,63,161,
+        1,216,80,73,209,76,132,187,208,89,18,169,200,196,135,130,
+        116,188,159,86,164,100,109,198,173,186,3,64,52,217,226,250,
+        124,123,5,202,38,147,118,126,255,82,85,212,207,206,59,227,
+        47,16,58,17,182,189,28,42,223,183,170,213,119,248,152,2,
+        44,154,163,70,221,153,101,155,167,43,172,9,129,22,39,253,
+        19,98,108,110,79,113,224,232,178,185,112,104,218,246,97,228,
+        251,34,242,193,238,210,144,12,191,179,162,241,81,51,145,235,
+        249,14,239,107,49,192,214,31,181,199,106,157,184,84,204,176,
+        115,121,50,45,127,4,150,254,138,236,205,93,222,114,67,29,
+        24,72,243,141,128,195,78,66,215,61,156,180
+    };
+
+    static PerlinNoise3D()
+    {
+        for (int i = 0; i < 256; i++)
+            perm[i] = perm[i + 256] = p[i];
+    }
+
+    public static float GenerateNoise(float x, float y, float z)
+    {
+        int X = Mathf.FloorToInt(x) & 255;
+        int Y = Mathf.FloorToInt(y) & 255;
+        int Z = Mathf.FloorToInt(z) & 255;
+
+        x -= Mathf.Floor(x);
+        y -= Mathf.Floor(y);
+        z -= Mathf.Floor(z);
+
+        float u = Fade(x), v = Fade(y), w = Fade(z);
+
+        int a = perm[X] + Y, aa = perm[a] + Z, ab = perm[a + 1] + Z;
+        int b = perm[X + 1] + Y, ba = perm[b] + Z, bb = perm[b + 1] + Z;
+
+        float result = Lerp(w,
+            Lerp(v,
+                Lerp(u, Grad(perm[aa], x, y, z),
+                        Grad(perm[ba], x - 1, y, z)),
+                Lerp(u, Grad(perm[ab], x, y - 1, z),
+                        Grad(perm[bb], x - 1, y - 1, z))),
+            Lerp(v,
+                Lerp(u, Grad(perm[aa + 1], x, y, z - 1),
+                        Grad(perm[ba + 1], x - 1, y, z - 1)),
+                Lerp(u, Grad(perm[ab + 1], x, y - 1, z - 1),
+                        Grad(perm[bb + 1], x - 1, y - 1, z - 1))));
+
+        // Remap from [-1, 1] to [0, 1] to match the existing pipeline
+        return (result + 1f) * 0.5f;
+    }
+
+    private static float Fade(float t) => t * t * t * (t * (t * 6 - 15) + 10);
+    private static float Lerp(float t, float a, float b) => a + t * (b - a);
+
+    private static float Grad(int hash, float x, float y, float z)
+    {
+        int h = hash & 15;
+        float u = h < 8 ? x : y;
+        float v = h < 4 ? y : (h == 12 || h == 14 ? x : z);
+        return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/OceanGenerator.cs -----
+using UnityEngine;
+using UnityEngine.Rendering;
+
+[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
+public class OceanGenerator : MonoBehaviour
+{
+    public OceanSettings settings;
+
+    private MeshFilter meshFilter;
+    private MeshRenderer meshRenderer;
+    private Mesh mesh;
+
+    /// <summary>
+    /// Generates the ocean sphere mesh sized to sit at sea level between min and max elevation.
+    /// </summary>
+    public void Generate(int resolution, float minElevation, float maxElevation)
+    {
+        if (settings == null)
+        {
+            Debug.LogWarning("[OceanGenerator] No OceanSettings assigned.");
+            return;
+        }
+
+        meshFilter = GetComponent<MeshFilter>();
+        meshRenderer = GetComponent<MeshRenderer>();
+
+        if (mesh == null)
+            mesh = new Mesh { name = "Ocean Mesh" };
+
+        mesh.Clear();
+
+        float oceanRadius = Mathf.Lerp(minElevation, maxElevation, settings.seaLevel);
+
+        SphereCreator.CreateSphereMesh(
+            resolution, oceanRadius,
+            out Vector3[] vertices,
+            out int[] triangles,
+            out Vector2[] uvs);
+
+        mesh.vertices = vertices;
+        mesh.triangles = triangles;
+        mesh.uv = uvs;
+        mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
+
+        meshFilter.sharedMesh = mesh;
+
+        if (settings.oceanMaterial != null)
+        {
+            meshRenderer.sharedMaterial = settings.oceanMaterial;
+        }
+        else
+        {
+            Debug.LogWarning("[OceanGenerator] OceanSettings has no material assigned.");
+        }
+
+        meshRenderer.shadowCastingMode = ShadowCastingMode.Off;
+        meshRenderer.receiveShadows = false;
+
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/OceanSettings.cs -----
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "New Ocean Settings", menuName = "Worldlike Foundry/Ocean Settings")]
+public class OceanSettings : ScriptableObject
+{
+    [Header("Visual")]
+    public Material oceanMaterial;
+
+    [Header("Surface")]
+    [Tooltip("Normalized elevation (0-1) where the ocean surface sits. Terrain below this level will be underwater.")]
+    [Range(0f, 1f)]
+    public float seaLevel = 0.65f;
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/PlanetGenerator.cs -----
+using UnityEngine;
+[DisallowMultipleComponent]
+public class PlanetGenerator : MonoBehaviour
+{
+    [Header("Planet Settings")]
+    public PlanetSettings planetSettings;
+    [Header("Subsystems")]
+    public TerrainGenerator terrainGenerator;
+    public OceanGenerator oceanGenerator;
+    public AtmosphereGenerator atmosphereGenerator;
+
+    public void GeneratePlanet()
+    {
+        if (planetSettings == null)
+        {
+            Debug.LogWarning("[PlanetGenerator] No PlanetSettings assigned.");
+            return;
+        }
+        if (terrainGenerator == null)
+        {
+            Debug.LogWarning("[PlanetGenerator] No TerrainGenerator assigned.");
+            return;
+        }
+
+        // 1. Sync terrain generator with planet settings
+        terrainGenerator.terrainSettings = planetSettings.terrainSettings;
+
+        // 2. Generate terrain, get the mesh back
+        Mesh planetMesh = terrainGenerator.GenerateTerrain(planetSettings.radius);
+        if (planetMesh == null) return;
+
+        // 3. Generate ocean
+        if (oceanGenerator != null && planetSettings.oceanSettings != null)
+        {
+            oceanGenerator.settings = planetSettings.oceanSettings;
+            oceanGenerator.Generate(
+                planetSettings.terrainSettings.resolution,
+                terrainGenerator.MinElevation,
+                terrainGenerator.MaxElevation);
+        }
+
+        // 4. Generate atmosphere
+        if (atmosphereGenerator != null && planetSettings.atmosphereSettings != null)
+        {
+            atmosphereGenerator.settings = planetSettings.atmosphereSettings;
+            atmosphereGenerator.Generate(
+                planetSettings.terrainSettings.resolution,
+                terrainGenerator.MaxElevation);
+        }
+
+        // 5. Apply axial tilt
+        transform.rotation = Quaternion.Euler(planetSettings.axialTilt, 0f, 0f);
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/PlanetSettings.cs -----
+using UnityEngine;
+[CreateAssetMenu(fileName = "New Planet", menuName = "Worldlike Foundry/Planet")]
+public class PlanetSettings : ScriptableObject
+{
+    [Header("Planet")]
+    public float radius = 100f;
+
+    [Header("Settings")]
+    public TerrainSettings terrainSettings;
+    public OceanSettings oceanSettings;
+    public AtmosphereSettings atmosphereSettings;
+
+    [Header("Rotation")]
+    [Tooltip("Degrees per second the planet rotates around its axis.")]
+    public float rotationSpeed = 10f;
+    [Tooltip("Tilt of the rotation axis in degrees. 0 = straight up, 23.5 = Earth-like.")]
+    [Range(0f, 90f)]
+    public float axialTilt = 23.5f;
+
+    [Header("Baked Assets")]
+    [Tooltip("The baked mesh generated from the settings above. Assigned automatically when you bake.")]
+    public Mesh bakedMesh;
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/SphereCreator.cs -----
+using UnityEngine;
+
+/// <summary>
+/// Generates a cube-sphere mesh by projecting a subdivided cube onto a sphere surface.
+/// Each of the 6 cube faces becomes a grid of (resolution+1)� vertices.
+/// </summary>
+public static class SphereCreator
+{
+    private struct Face
+    {
+        public Vector3 localUp;
+        public Vector3 axisA;
+        public Vector3 axisB;
+    }
+
+    public static void CreateSphereMesh(int resolution, float radius,
+        out Vector3[] vertices, out int[] triangles, out Vector2[] uvs)
+    {
+        int vertsPerFace = (resolution + 1) * (resolution + 1);
+        int trisPerFace = resolution * resolution * 2;
+
+        vertices = new Vector3[vertsPerFace * 6];
+        uvs = new Vector2[vertsPerFace * 6];
+        triangles = new int[trisPerFace * 3 * 6];
+
+        // Each face is defined so Cross(axisA, axisB) == localUp,
+        // giving consistent outward-facing normals across all 6 faces.
+        Face[] faces = new Face[]
+        {
+            new Face { localUp = Vector3.up,      axisA = Vector3.forward, axisB = Vector3.right },
+            new Face { localUp = Vector3.down,    axisA = Vector3.back,    axisB = Vector3.right },
+            new Face { localUp = Vector3.left,    axisA = Vector3.forward, axisB = Vector3.up    },
+            new Face { localUp = Vector3.right,   axisA = Vector3.back,    axisB = Vector3.up    },
+            new Face { localUp = Vector3.forward, axisA = Vector3.right,   axisB = Vector3.up    },
+            new Face { localUp = Vector3.back,    axisA = Vector3.left,    axisB = Vector3.up    },
+        };
+
+        int vertexIndex = 0;
+        int triangleIndex = 0;
+
+        foreach (Face face in faces)
+            CreateFace(face, resolution, radius, vertices, triangles, uvs, ref vertexIndex, ref triangleIndex);
+    }
+
+    private static void CreateFace(Face face, int resolution, float radius,
+        Vector3[] vertices, int[] triangles, Vector2[] uvs,
+        ref int vertexIndex, ref int triangleIndex)
+    {
+        int faceVertexStart = vertexIndex;
+
+        for (int y = 0; y <= resolution; y++)
+        {
+            for (int x = 0; x <= resolution; x++)
+            {
+                Vector2 percent = new Vector2(x, y) / resolution;
+
+                Vector3 pointOnCube = face.localUp
+                    + (percent.x - 0.5f) * 2f * face.axisA
+                    + (percent.y - 0.5f) * 2f * face.axisB;
+
+                vertices[vertexIndex] = pointOnCube.normalized * radius;
+                uvs[vertexIndex] = percent;
+                vertexIndex++;
+            }
+        }
+
+        for (int y = 0; y < resolution; y++)
+        {
+            for (int x = 0; x < resolution; x++)
+            {
+                int i = faceVertexStart + y * (resolution + 1) + x;
+
+                // First triangle (BL, BR, TL)
+                triangles[triangleIndex] = i;
+                triangles[triangleIndex + 1] = i + 1;
+                triangles[triangleIndex + 2] = i + resolution + 1;
+
+                // Second triangle (BR, TR, TL)
+                triangles[triangleIndex + 3] = i + 1;
+                triangles[triangleIndex + 4] = i + resolution + 2;
+                triangles[triangleIndex + 5] = i + resolution + 1;
+
+                triangleIndex += 6;
+            }
+        }
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/SphereDeformer.cs -----
+using UnityEngine;
+/// <summary>
+/// Applies procedural terrain deformation to a base sphere using TerrainSettings.
+/// Operates in normalized (radius = 1) space � scaling to world radius happens in TerrainGenerator.
+/// </summary>
+public static class SphereDeformer
+{
+    public static void ApplyTerrainDeformation(
+        Vector3[] baseVertices,
+        TerrainSettings terrainSettings,
+        out Vector3[] displacedVertices,
+        out float minElevation,
+        out float maxElevation)
+    {
+        displacedVertices = new Vector3[baseVertices.Length];
+        minElevation = float.MaxValue;
+        maxElevation = -float.MaxValue;
+
+        if (terrainSettings == null)
+        {
+            Debug.LogError("[SphereDeformer] TerrainSettings is null.");
+            return;
+        }
+
+        for (int i = 0; i < baseVertices.Length; i++)
+        {
+            Vector3 normal = baseVertices[i].normalized;
+            float displacement = terrainSettings.globalHeightOffset;
+            float firstLayerValue = 0f;
+
+            if (terrainSettings.noiseLayers != null)
+            {
+                for (int layerIndex = 0; layerIndex < terrainSettings.noiseLayers.Length; layerIndex++)
+                {
+                    NoiseLayer layer = terrainSettings.noiseLayers[layerIndex];
+                    if (layer == null || !layer.enabled) continue;
+
+                    float layerValue = EvaluateLayer(layer, normal);
+
+                    if (layerIndex == 0)
+                        firstLayerValue = layerValue;
+
+                    if (layer.useFirstLayerAsMask && firstLayerValue <= 0f)
+                        layerValue = 0f;
+
+                    displacement += layerValue * layer.strength;
+                }
+            }
+
+            Vector3 displaced = normal * (baseVertices[i].magnitude + displacement);
+            displacedVertices[i] = displaced;
+
+            float height = displaced.magnitude;
+            minElevation = Mathf.Min(minElevation, height);
+            maxElevation = Mathf.Max(maxElevation, height);
+        }
+    }
+
+    private static float EvaluateLayer(NoiseLayer layer, Vector3 normal)
+    {
+        float noise = 0f;
+        float frequency = layer.roughness;
+        float amplitude = 1f;
+        float totalAmplitude = 0f;
+
+        // Push samples far from the origin to break the point-symmetry in Perlin noise
+        // that causes quad mirroring on cube-spheres. The offset is applied after frequency
+        // scaling so it stays spatially consistent across octaves.
+        Vector3 seedOffset = layer.offset + new Vector3(1000f, 1000f, 1000f);
+
+        for (int o = 0; o < layer.octaves; o++)
+        {
+            Vector3 p = (normal * frequency) + seedOffset;
+            float v = PerlinNoise3D.GenerateNoise(p.x, p.y, p.z);
+
+            // Standard: remap [0,1] to [-1,1]
+            // Ridge: fold the noise to create sharp ridgelines
+            v = layer.noiseType == NoiseType.Ridge
+                ? 1f - Mathf.Abs(v * 2f - 1f)
+                : v * 2f - 1f;
+
+            noise += v * amplitude;
+            totalAmplitude += amplitude;
+            amplitude *= layer.persistence;
+            frequency *= layer.lacunarity;
+        }
+
+        return (totalAmplitude == 0f ? 0f : noise / totalAmplitude) + layer.minValue;
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/TerrainGenerator.cs -----
+using UnityEngine;
+[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider))]
+public class TerrainGenerator : MonoBehaviour
+{
+    public TerrainSettings terrainSettings;
+    public float MinElevation { get; private set; }
+    public float MaxElevation { get; private set; }
+    private MeshFilter meshFilter;
+    private MeshCollider meshCollider;
+    private Mesh previewMesh;
+
+    void Awake()
+    {
+        meshFilter = GetComponent<MeshFilter>();
+        meshCollider = GetComponent<MeshCollider>();
+    }
+
+    public Mesh GenerateTerrain(float radius)
+    {
+        if (terrainSettings == null ||
+            terrainSettings.noiseLayers == null ||
+            terrainSettings.noiseLayers.Length == 0)
+        {
+            Debug.LogWarning("[TerrainGenerator] TerrainSettings missing or has no noise layers.");
+            return null;
+        }
+
+        meshFilter = GetComponent<MeshFilter>();
+        meshCollider = GetComponent<MeshCollider>();
+        previewMesh = new Mesh { name = "Planet Terrain Preview" };
+
+        SphereCreator.CreateSphereMesh(
+            terrainSettings.resolution, 1f,
+            out Vector3[] vertices,
+            out int[] triangles,
+            out Vector2[] uvs);
+
+        SphereDeformer.ApplyTerrainDeformation(
+            vertices, terrainSettings,
+            out Vector3[] displaced,
+            out float min, out float max);
+
+        MinElevation = min * radius;
+        MaxElevation = max * radius;
+
+        for (int i = 0; i < displaced.Length; i++)
+            displaced[i] = displaced[i].normalized * displaced[i].magnitude * radius;
+
+        previewMesh.Clear();
+        previewMesh.vertices = displaced;
+        previewMesh.triangles = triangles;
+        previewMesh.uv = uvs;
+        previewMesh.RecalculateNormals();
+        previewMesh.RecalculateBounds();
+
+        meshFilter.sharedMesh = previewMesh;
+        meshCollider.sharedMesh = null;
+        meshCollider.sharedMesh = previewMesh;
+
+        return previewMesh;
+    }
+}
+
+----- Assets/_Foundry/World/Scripts/Generation/TerrainSettings.cs -----
+using UnityEngine;
+[CreateAssetMenu(fileName = "New Terrain Settings", menuName = "Worldlike Foundry/Terrain Settings")]
+public class TerrainSettings : ScriptableObject
+{
+    [Range(2, 256)]
+    [Tooltip("Number of vertices used to generate the terrain mesh.")]
+    public int resolution = 64;
+    [Tooltip("Adjusts the overall height of the terrain relative to the base radius. Negative values create ocean basins.")]
+    public float globalHeightOffset = 0f;
+    [Tooltip("Noise layers used for procedural terrain deformation.")]
+    public NoiseLayer[] noiseLayers;
+}
+
+----- Assets/_Mundi/Audio/MusicFadeIn.cs -----
+using UnityEngine;
+
+public class MusicFadeIn : MonoBehaviour
+{
+    AudioSource source;
+
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+        source.volume = 0;
+        source.Play();
+    }
+
+    void Update()
+    {
+        if (source.volume < 0.5f)
+            source.volume += Time.deltaTime * 0.05f;
+    }
+}
+
+----- Assets/_Mundi/Audio/PlanetSpinAudio.cs -----
+using UnityEngine;
+
+public class PlanetSpinAudio : MonoBehaviour
+{
+    public Transform planet;
+    public AudioSource loopAudio; // sparkle/twinkle loop
+
+    public float maxSpeed = 180f;
+    public float fastThreshold = 60f;
+
+    private Quaternion lastRot;
+    private float smoothedSpeed;
+
+    void Start()
+    {
+        lastRot = planet.rotation;
+
+        loopAudio.loop = true;
+        loopAudio.playOnAwake = false;
+        loopAudio.volume = 0f;
+        loopAudio.Play();
+    }
+
+    void Update()
+    {
+        // measure spin
+        Quaternion delta = planet.rotation * Quaternion.Inverse(lastRot);
+        delta.ToAngleAxis(out float angle, out Vector3 axis);
+
+        float rawSpeed = Mathf.Abs(angle) / Time.deltaTime;
+
+        // smooth it (IMPORTANT for stability)
+        smoothedSpeed = Mathf.Lerp(smoothedSpeed, rawSpeed, Time.deltaTime * 6f);
+
+        float t = Mathf.InverseLerp(0, maxSpeed, smoothedSpeed);
+
+        bool isSpinning = smoothedSpeed > fastThreshold;
+
+        // -------------------------
+        // SPARKLE LOOP CONTROL
+        // -------------------------
+        if (isSpinning)
+        {
+            loopAudio.volume = Mathf.Lerp(loopAudio.volume, Mathf.Lerp(0.1f, 0.7f, t), Time.deltaTime * 5f);
+            loopAudio.pitch = Mathf.Lerp(loopAudio.pitch, Mathf.Lerp(0.95f, 1.3f, t), Time.deltaTime * 5f);
+        }
+        else
+        {
+            loopAudio.volume = Mathf.Lerp(loopAudio.volume, 0f, Time.deltaTime * 3f);
+        }
+
+        lastRot = planet.rotation;
+    }
+}
+
+----- Assets/_Mundi/Scripts/GlobalSunDirection.cs -----
+using UnityEngine;
+
+[ExecuteAlways]
+public class GlobalSunDirection : MonoBehaviour
+{
+    public Color sunColor = Color.white;
+
+    static readonly int SunPosID = Shader.PropertyToID("_SunPosition");
+    static readonly int SunColorID = Shader.PropertyToID("_SunColor");
+
+    void Update()
+    {
+        Shader.SetGlobalVector(SunPosID, transform.position);
+        Shader.SetGlobalColor(SunColorID, sunColor);
+    }
+}
+
+----- Assets/_Mundi/Scripts/PlanetUpgradeDatabase.cs -----
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// Global list of every possible upgrade in the game.
+/// Create one instance of this asset and assign it to every planet's
+/// PlanetUpgradeManager. Add new upgrades here as you create them.
+/// </summary>
+[CreateAssetMenu(fileName = "UpgradeDatabase", menuName = "Worldlike Foundry/Upgrade Database")]
+public class PlanetUpgradeDatabase : ScriptableObject
+{
+    [Header("All Available Upgrades")]
+    public List<PlanetUpgrade> allUpgrades = new List<PlanetUpgrade>();
+
+    [Header("Roll Cost")]
+    [Tooltip("Fortune spent each time the player rolls 3 new options.")]
+    public float rollCost = 10f;
+}
+
+----- Assets/_Mundi/Scripts/PlanetUpgradeManager.cs -----
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlanetUpgradeManager : MonoBehaviour
+{
+    [Header("References")]
+    public PlanetGenerator planetGenerator;
+    public PlanetStats planetStats;
+    public PlanetUpgradeDatabase database;
+    public UpgradeLabel upgradeLabel;
+    public SelectionManager selectionManager;
+    public SolarSystemManager solarSystemManager;
+
+    [Header("Current Upgrades (read-only at runtime)")]
+    public PlanetUpgrade currentTerrainUpgrade;
+    public PlanetUpgrade currentOceanUpgrade;
+    public PlanetUpgrade currentAtmosphereUpgrade;
+
+    [Header("Slot Machine")]
+    public float cycleSpeedMax = 10f;
+
+    PlanetUpgrade[] rolledOptions = new PlanetUpgrade[3];
+    bool optionsRolled = false;
+
+    // Public so UpgradeLabel can read it for preview
+    public PlanetUpgrade LockedOffer { get; private set; }
+
+    float cycleTimer = 0f;
+    int cycleIndex = 0;
+    bool wasSpinning = false;
+
+    void Update()
+    {
+        if (selectionManager == null || selectionManager.selectedObject != transform) return;
+        if (!planetStats.gameActive) return;
+
+        bool isSpinning = planetStats.IsSpinning;
+
+        // Force brake if Wonder runs out mid-spin
+        if (isSpinning && planetStats.IsOutOfWonder)
+        {
+            var body = solarSystemManager.GetBodyData(transform);
+            if (body != null)
+                solarSystemManager.DampenSpin(body, 1f);
+        }
+
+        // Spin just started � roll options
+        if (isSpinning && !wasSpinning)
+        {
+            RollOptions();
+            LockedOffer = null;
+            if (upgradeLabel != null) upgradeLabel.ClearOffer();
+        }
+
+        // While spinning � cycle slot machine
+        if (isSpinning && optionsRolled)
+        {
+            float cycleSpeed = Mathf.Lerp(1f, cycleSpeedMax,
+                planetStats.currentSpinMagnitude / planetStats.fortuneSpinThreshold);
+
+            cycleTimer += Time.deltaTime * cycleSpeed;
+            if (cycleTimer >= 1f)
+            {
+                cycleTimer = 0f;
+                cycleIndex = (cycleIndex + 1) % 3;
+            }
+
+            // Update label to show cycling name
+            if (upgradeLabel != null && rolledOptions[cycleIndex] != null)
+                upgradeLabel.SetOffer(rolledOptions[cycleIndex]);
+        }
+
+        // Spin just stopped � lock in current option
+        if (!isSpinning && wasSpinning && optionsRolled)
+        {
+            LockedOffer = rolledOptions[cycleIndex];
+            if (upgradeLabel != null)
+                upgradeLabel.SetOffer(LockedOffer);
+        }
+
+        wasSpinning = isSpinning;
+    }
+
+    void RollOptions()
+    {
+        List<PlanetUpgrade> pool = new List<PlanetUpgrade>();
+        foreach (var upgrade in database.allUpgrades)
+        {
+            if (upgrade == currentTerrainUpgrade) continue;
+            if (upgrade == currentOceanUpgrade) continue;
+            if (upgrade == currentAtmosphereUpgrade) continue;
+            pool.Add(upgrade);
+        }
+
+        rolledOptions = new PlanetUpgrade[3];
+        for (int i = 0; i < 3 && pool.Count > 0; i++)
+        {
+            int idx = Random.Range(0, pool.Count);
+            rolledOptions[i] = pool[idx];
+            pool.RemoveAt(idx);
+        }
+
+        optionsRolled = true;
+        cycleIndex = 0;
+        cycleTimer = 0f;
+    }
+
+    public void TryBuyOffer()
+    {
+        if (LockedOffer == null || database == null) return;
+
+        float cost = database.rollCost;
+        if (planetStats.fortune < cost)
+        {
+            Debug.Log("[Upgrades] Not enough Fortune to buy.");
+            return;
+        }
+
+        planetStats.fortune -= cost;
+        ApplyUpgrade(LockedOffer);
+        LockedOffer = null;
+        optionsRolled = false;
+
+        if (upgradeLabel != null) upgradeLabel.ClearOffer();
+    }
+
+    void ApplyUpgrade(PlanetUpgrade upgrade)
+    {
+        if (planetGenerator == null || planetGenerator.planetSettings == null) return;
+
+        PlanetSettings settings = planetGenerator.planetSettings;
+
+        switch (upgrade.slot)
+        {
+            case UpgradeSlot.Terrain:
+                settings.terrainSettings = upgrade.terrainSettings;
+                currentTerrainUpgrade = upgrade;
+                break;
+            case UpgradeSlot.Ocean:
+                settings.oceanSettings = upgrade.oceanSettings;
+                currentOceanUpgrade = upgrade;
+                break;
+            case UpgradeSlot.Atmosphere:
+                settings.atmosphereSettings = upgrade.atmosphereSettings;
+                currentAtmosphereUpgrade = upgrade;
+                break;
+        }
+
+        planetGenerator.GeneratePlanet();
+    }
+
+    public void OnSelected()
+    {
+        // Refresh label on reselect
+        if (upgradeLabel != null && LockedOffer != null)
+            upgradeLabel.SetOffer(LockedOffer);
+    }
+}
+
+----- Assets/_Mundi/Scripts/UpgradeBuyButton.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+/// <summary>
+/// Attach to a 3D cube child of a planet.
+/// Hover to preview the current upgrade offer.
+/// Click to buy it.
+/// Positions itself relative to the planet like wonder/fortune labels.
+/// </summary>
+public class UpgradeBuyButton : MonoBehaviour
+{
+    [Header("References")]
+    public Camera cam;
+    public Transform planet;
+    public PlanetUpgradeManager upgradeManager;
+    public PlanetGenerator planetGenerator;
+
+    [Header("Positioning")]
+    public float distanceFromCenter = 300f;
+    public float horizontalOffset = -350f;
+    public float verticalOffset = -100f;
+
+    [Header("Hover Detection")]
+    public float hoverPixelRadius = 50f;
+
+    [Header("Visual")]
+    public Renderer cubeRenderer;
+    public Color defaultColor = Color.white;
+    public Color hoverColor = Color.yellow;
+    public Color noOfferColor = Color.grey;
+
+    bool isPreviewing = false;
+    TerrainSettings savedTerrain;
+    OceanSettings savedOcean;
+    AtmosphereSettings savedAtmosphere;
+
+    void Start()
+    {
+        if (cubeRenderer == null)
+            cubeRenderer = GetComponent<Renderer>();
+    }
+
+    void LateUpdate()
+    {
+        if (cam == null || planet == null) return;
+
+        // Position same pattern as fortune/wonder labels
+        Vector3 toCam = (cam.transform.position - planet.position).normalized;
+        Vector3 camRight = cam.transform.right;
+        Vector3 camUp = cam.transform.up;
+
+        Vector3 baseFacePos = planet.position + toCam * distanceFromCenter;
+
+        transform.position = baseFacePos
+            + camRight * horizontalOffset
+            + camUp * verticalOffset;
+
+        // Cube faces camera
+        transform.rotation = Quaternion.LookRotation(
+            transform.position - cam.transform.position);
+
+        // No offer � grey out and do nothing
+        bool hasOffer = upgradeManager != null &&
+                        upgradeManager.LockedOffer != null &&
+                        !upgradeManager.planetStats.IsSpinning;
+
+        if (!hasOffer)
+        {
+            if (isPreviewing) EndPreview();
+            SetColor(noOfferColor);
+            return;
+        }
+
+        bool hovering = IsMouseOverThis();
+
+        if (hovering && !isPreviewing)
+            StartPreview();
+        else if (!hovering && isPreviewing)
+            EndPreview();
+
+        SetColor(hovering ? hoverColor : defaultColor);
+
+        // Click to buy
+        if (hovering && Mouse.current.leftButton.wasPressedThisFrame)
+            upgradeManager.TryBuyOffer();
+    }
+
+    bool IsMouseOverThis()
+    {
+        Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
+        if (screenPos.z < 0) return false;
+
+        float dist = Vector2.Distance(
+            new Vector2(screenPos.x, screenPos.y),
+            Mouse.current.position.ReadValue());
+
+        return dist < hoverPixelRadius;
+    }
+
+    void SetColor(Color color)
+    {
+        if (cubeRenderer != null)
+            cubeRenderer.material.color = color;
+    }
+
+    void StartPreview()
+    {
+        if (upgradeManager?.LockedOffer == null) return;
+        if (planetGenerator?.planetSettings == null) return;
+
+        isPreviewing = true;
+
+        PlanetSettings settings = planetGenerator.planetSettings;
+        savedTerrain = settings.terrainSettings;
+        savedOcean = settings.oceanSettings;
+        savedAtmosphere = settings.atmosphereSettings;
+
+        PlanetUpgrade offer = upgradeManager.LockedOffer;
+        switch (offer.slot)
+        {
+            case UpgradeSlot.Terrain:
+                settings.terrainSettings = offer.terrainSettings;
+                break;
+            case UpgradeSlot.Ocean:
+                settings.oceanSettings = offer.oceanSettings;
+                break;
+            case UpgradeSlot.Atmosphere:
+                settings.atmosphereSettings = offer.atmosphereSettings;
+                break;
+        }
+
+        planetGenerator.GeneratePlanet();
+    }
+
+    void EndPreview()
+    {
+        if (!isPreviewing) return;
+        isPreviewing = false;
+
+        if (planetGenerator?.planetSettings == null) return;
+
+        PlanetSettings settings = planetGenerator.planetSettings;
+        settings.terrainSettings = savedTerrain;
+        settings.oceanSettings = savedOcean;
+        settings.atmosphereSettings = savedAtmosphere;
+
+        planetGenerator.GeneratePlanet();
+    }
+}
+
+----- Assets/_Mundi/Scripts/UpgradeLabel.cs -----
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
+
+/// <summary>
+/// Floating upgrade label that sits next to a planet.
+/// Shows the current upgrade offer. Hover to preview.
+/// Click to buy.
+/// Sits flat under the planet root, same as WonderLabel and FortuneLabel.
+/// </summary>
+public class UpgradeLabel : MonoBehaviour
+{
+    [Header("References")]
+    public Camera cam;
+    public RawImage rawImage;
+    public Transform planet;
+    public PlanetGenerator planetGenerator;
+    public PlanetUpgradeManager upgradeManager;
+    public SelectionManager selectionManager;
+
+    [Header("Positioning")]
+    public float distanceFromCenter = 300f;
+    public float horizontalOffset = -350f;
+    public float verticalOffset = 0f;
+
+    [Header("Hover Name Label")]
+    [Tooltip("Sibling TMP object that appears to the right on hover.")]
+    public TextMeshPro nameLabel;
+    public float nameHorizontalOffset = 200f;
+
+    [Header("Hover Detection")]
+    [Tooltip("Screen pixel radius that counts as hovering over this label.")]
+    public float hoverPixelRadius = 60f;
+
+    TextMeshPro tmp;
+    bool isPreviewing = false;
+
+    TerrainSettings savedTerrain;
+    OceanSettings savedOcean;
+    AtmosphereSettings savedAtmosphere;
+
+    void Start()
+    {
+        tmp = GetComponent<TextMeshPro>();
+        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+
+        if (nameLabel != null)
+        {
+            nameLabel.gameObject.SetActive(false);
+            nameLabel.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (cam == null || planet == null) return;
+
+        bool isSelected = selectionManager != null &&
+                          selectionManager.selectedObject == planet;
+
+        if (!isSelected)
+        {
+            if (tmp != null) tmp.enabled = false;
+            if (nameLabel != null) nameLabel.enabled = false;
+            if (isPreviewing) EndPreview();
+            return;
+        }
+
+        if (tmp != null) tmp.enabled = true;
+
+        Vector3 toCam = (cam.transform.position - planet.position).normalized;
+        Vector3 camRight = cam.transform.right;
+        Vector3 camUp = cam.transform.up;
+
+        Vector3 baseFacePos = planet.position + toCam * distanceFromCenter;
+        Quaternion faceCamera = Quaternion.LookRotation(baseFacePos - cam.transform.position);
+
+        transform.position = baseFacePos
+            + camRight * horizontalOffset
+            + camUp * verticalOffset;
+        transform.rotation = faceCamera;
+
+        if (nameLabel != null && nameLabel.gameObject.activeSelf)
+        {
+            nameLabel.transform.position = transform.position
+                + camRight * nameHorizontalOffset;
+            nameLabel.transform.rotation = faceCamera;
+        }
+
+        bool hovering = IsMouseOverThis();
+
+        if (hovering && !isPreviewing)
+            StartPreview();
+        else if (!hovering && isPreviewing)
+            EndPreview();
+
+        if (hovering && Mouse.current.leftButton.wasPressedThisFrame)
+            upgradeManager?.TryBuyOffer();
+    }
+
+    public void SetOffer(PlanetUpgrade upgrade)
+    {
+        if (tmp != null)
+            tmp.text = upgrade != null ? upgrade.upgradeName : "";
+
+        if (nameLabel != null)
+            nameLabel.text = upgrade != null ? upgrade.upgradeName : "";
+
+        if (isPreviewing)
+            EndPreview();
+    }
+
+    public void ClearOffer()
+    {
+        if (tmp != null) tmp.text = "";
+        if (nameLabel != null)
+        {
+            nameLabel.text = "";
+            nameLabel.gameObject.SetActive(false);
+        }
+
+        if (isPreviewing)
+            EndPreview();
+    }
+
+    bool IsMouseOverThis()
+    {
+        if (rawImage == null || cam == null) return false;
+
+        Vector3 labelScreenPos = cam.WorldToScreenPoint(transform.position);
+        if (labelScreenPos.z < 0) return false;
+
+        Vector2 screenMouse = Mouse.current.position.ReadValue();
+        float dist = Vector2.Distance(
+            new Vector2(labelScreenPos.x, labelScreenPos.y),
+            screenMouse);
+
+        return dist < hoverPixelRadius;
+    }
+
+    void StartPreview()
+    {
+        if (upgradeManager == null || upgradeManager.LockedOffer == null) return;
+        if (planetGenerator == null || planetGenerator.planetSettings == null) return;
+
+        isPreviewing = true;
+
+        PlanetSettings settings = planetGenerator.planetSettings;
+        savedTerrain = settings.terrainSettings;
+        savedOcean = settings.oceanSettings;
+        savedAtmosphere = settings.atmosphereSettings;
+
+        PlanetUpgrade offer = upgradeManager.LockedOffer;
+        switch (offer.slot)
+        {
+            case UpgradeSlot.Terrain:
+                settings.terrainSettings = offer.terrainSettings;
+                break;
+            case UpgradeSlot.Ocean:
+                settings.oceanSettings = offer.oceanSettings;
+                break;
+            case UpgradeSlot.Atmosphere:
+                settings.atmosphereSettings = offer.atmosphereSettings;
+                break;
+        }
+
+        planetGenerator.GeneratePlanet();
+
+        if (nameLabel != null)
+            nameLabel.gameObject.SetActive(true);
+    }
+
+    void EndPreview()
+    {
+        if (!isPreviewing) return;
+        isPreviewing = false;
+
+        if (planetGenerator == null || planetGenerator.planetSettings == null) return;
+
+        PlanetSettings settings = planetGenerator.planetSettings;
+        settings.terrainSettings = savedTerrain;
+        settings.oceanSettings = savedOcean;
+        settings.atmosphereSettings = savedAtmosphere;
+
+        planetGenerator.GeneratePlanet();
+
+        if (nameLabel != null)
+            nameLabel.gameObject.SetActive(false);
+    }
+}
+
+----- Assets/_Mundi/Scripts/UpgradeSlot.cs -----
+using UnityEngine;
+
+public enum UpgradeSlot { Terrain, Ocean, Atmosphere }
+
+/// <summary>
+/// A single upgrade option. Create these as assets in the Project window.
+/// Fill only the settings field that matches your slot type.
+/// </summary>
+[CreateAssetMenu(fileName = "New Planet Upgrade", menuName = "Worldlike Foundry/Planet Upgrade")]
+public class PlanetUpgrade : ScriptableObject
+{
+    [Header("Identity")]
+    public string upgradeName;
+    [TextArea(2, 4)]
+    public string description;
+
+    [Header("Slot")]
+    public UpgradeSlot slot;
+
+    [Header("Settings � fill only the one matching your slot")]
+    public TerrainSettings terrainSettings;
+    public OceanSettings oceanSettings;
+    public AtmosphereSettings atmosphereSettings;
+}
+
+----- Assets/_Mundi/Scripts/WorldSpacePanel.cs -----
+using UnityEngine;
+using TMPro;
+
+/// <summary>
+/// A world-space panel that floats to the side of a planet,
+/// always faces the camera, and shows only when the planet is selected.
+/// Content is set via SetContent() so both title screen and gameplay
+/// systems can reuse the same panel without touching positioning code.
+/// </summary>
+public class WorldSpacePanel : MonoBehaviour
+{
+    [Header("References")]
+    public Camera cam;
+    public Transform planet;
+    public SelectionManager selectionManager;
+
+    [Header("Positioning")]
+    [Tooltip("How far from the planet center the panel sits along the camera-facing axis.")]
+    public float distanceFromCenter = 300f;
+    [Tooltip("How far to the right of the planet the panel sits.")]
+    public float horizontalOffset = 400f;
+    [Tooltip("Vertical offset from planet center.")]
+    public float verticalOffset = 0f;
+
+    [Header("Content")]
+    public TextMeshPro titleText;
+    public TextMeshPro bodyText;
+
+    [Header("Placeholder")]
+    public string placeholderTitle = "Planet Name";
+    public string placeholderBody = "Details go here.";
+
+    bool isVisible = false;
+
+    void Start()
+    {
+        SetContent(placeholderTitle, placeholderBody);
+        SetVisible(false);
+    }
+
+    void LateUpdate()
+    {
+        if (cam == null || planet == null) return;
+
+        bool shouldShow = selectionManager != null &&
+                          selectionManager.selectedObject == planet;
+
+        if (shouldShow != isVisible)
+            SetVisible(shouldShow);
+
+        if (!isVisible) return;
+
+        Vector3 toCam = (cam.transform.position - planet.position).normalized;
+        Vector3 camRight = cam.transform.right;
+        Vector3 camUp = cam.transform.up;
+
+        transform.position = planet.position
+            + toCam * distanceFromCenter
+            + camRight * horizontalOffset
+            + camUp * verticalOffset;
+
+        transform.rotation = Quaternion.LookRotation(
+            transform.position - cam.transform.position
+        );
+    }
+
+    void SetVisible(bool visible)
+    {
+        isVisible = visible;
+        if (titleText != null) titleText.gameObject.SetActive(visible);
+        if (bodyText != null) bodyText.gameObject.SetActive(visible);
+    }
+
+    /// <summary>
+    /// Call this to push content into the panel.
+    /// Title screen uses it for options/controls.
+    /// Gameplay uses it for upgrade shop listings.
+    /// </summary>
+    public void SetContent(string title, string body)
+    {
+        if (titleText != null) titleText.text = title;
+        if (bodyText != null) bodyText.text = body;
+    }
+
+    public void SetTitle(string title)
+    {
+        if (titleText != null) titleText.text = title;
+    }
+
+    public void SetBody(string body)
+    {
+        if (bodyText != null) bodyText.text = body;
+    }
+}
+
+----- Assets/Editor/ProjectScanner.cs -----
+// Place this file in:  Assets/Editor/ProjectScanner.cs
+// Then use the menu:   Tools > Project Scanner
+// Output:              <ProjectRoot>/ProjectScans/<ProjectName>_scan_<date>_<time>.txt
+//                      (outside Assets, so Unity never imports the reports)
+
+#if UNITY_EDITOR
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Rendering;
+
+public static class ProjectScanner
+{
+    // Folders inside Assets that are usually third-party noise. Listed, but not expanded.
+    static readonly HashSet<string> CollapsedFolders = new HashSet<string>
+    {
+        "TextMesh Pro", "Samples", "StreamingAssets"
+    };
+
+    const int MaxFilesShownPerFolder = 40;
+    const int MaxScriptBytes = 20000;
+
+    static readonly Regex ClassRegex = new Regex(
+        @"(?:public|internal|private|protected)?\s*(?:abstract\s+|static\s+|sealed\s+|partial\s+)*(class|struct|enum|interface)\s+(\w+)(?:\s*:\s*([\w\.,\s<>]+?))?\s*(?:\{|where|$)",
+        RegexOptions.Multiline);
+
+    [MenuItem("Tools/Project Scanner/Scan Structure")]
+    public static void ScanStructure() => Scan(false);
+
+    [MenuItem("Tools/Project Scanner/Scan Structure + Script Contents")]
+    public static void ScanWithContents() => Scan(true);
+
+    static void Scan(bool includeContents)
+    {
+        var sb = new StringBuilder();
+        string projectRoot = Path.GetDirectoryName(Application.dataPath);
+        string assetsPath = Application.dataPath;
+
+        DateTime now = DateTime.Now;
+        sb.AppendLine($"PROJECT SCAN: {PlayerSettings.productName}");
+        sb.AppendLine($"Scanned: {now:yyyy-MM-dd HH:mm:ss}");
+        sb.AppendLine($"Mode: {(includeContents ? "Structure + script contents" : "Structure only")}");
+        sb.AppendLine();
+
+        WriteProjectInfo(sb);
+        WriteBuildScenes(sb);
+        WritePackages(sb, projectRoot);
+
+        sb.AppendLine("=== ASSETS FOLDER TREE ===");
+        sb.AppendLine("Assets/");
+        WriteTree(sb, assetsPath, 1);
+        sb.AppendLine();
+
+        WriteTypeSummary(sb, assetsPath);
+        WriteScenes(sb);
+        WritePrefabs(sb);
+        WriteScripts(sb, assetsPath, includeContents);
+
+        string safeName = Regex.Replace(PlayerSettings.productName, @"[^\w\-]+", "_");
+        string suffix = includeContents ? "_with_scripts" : "";
+        string outDir = Path.Combine(projectRoot, "ProjectScans");
+        Directory.CreateDirectory(outDir);
+        string outPath = Path.Combine(outDir, $"{safeName}_scan_{now:yyyy-MM-dd_HHmm}{suffix}.txt");
+        File.WriteAllText(outPath, sb.ToString(), Encoding.UTF8);
+
+        Debug.Log($"[ProjectScanner] Scan complete. Report saved to: {outPath}");
+        EditorUtility.RevealInFinder(outPath);
+    }
+
+    // ---------- Sections ----------
+
+    static void WriteProjectInfo(StringBuilder sb)
+    {
+        sb.AppendLine("=== PROJECT INFO ===");
+        sb.AppendLine($"Unity version:    {Application.unityVersion}");
+        sb.AppendLine($"Company:          {PlayerSettings.companyName}");
+        sb.AppendLine($"Color space:      {PlayerSettings.colorSpace}");
+        sb.AppendLine($"Active build target: {EditorUserBuildSettings.activeBuildTarget}");
+
+        var rp = GraphicsSettings.defaultRenderPipeline;
+        sb.AppendLine($"Render pipeline:  {(rp != null ? rp.GetType().Name + " (" + rp.name + ")" : "Built-in")}");
+
+        string defines = PlayerSettings.GetScriptingDefineSymbols(
+            UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(
+                BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget)));
+        sb.AppendLine($"Scripting defines: {(string.IsNullOrEmpty(defines) ? "(none)" : defines)}");
+        sb.AppendLine();
+    }
+
+    static void WriteBuildScenes(StringBuilder sb)
+    {
+        sb.AppendLine("=== SCENES IN BUILD SETTINGS ===");
+        var scenes = EditorBuildSettings.scenes;
+        if (scenes.Length == 0) sb.AppendLine("  (none)");
+        for (int i = 0; i < scenes.Length; i++)
+            sb.AppendLine($"  [{i}] {(scenes[i].enabled ? "ON " : "OFF")} {scenes[i].path}");
+        sb.AppendLine();
+    }
+
+    static void WritePackages(StringBuilder sb, string projectRoot)
+    {
+        sb.AppendLine("=== PACKAGES (Packages/manifest.json) ===");
+        string manifest = Path.Combine(projectRoot, "Packages", "manifest.json");
+        if (File.Exists(manifest))
+        {
+            foreach (Match m in Regex.Matches(File.ReadAllText(manifest), "\"([\\w\\.\\-]+)\"\\s*:\\s*\"([^\"]+)\""))
+            {
+                string name = m.Groups[1].Value;
+                if (name.StartsWith("com.") || name.StartsWith("net.") || name.StartsWith("org."))
+                    sb.AppendLine($"  {name}  {m.Groups[2].Value}");
+            }
+        }
+        else sb.AppendLine("  (manifest not found)");
+        sb.AppendLine();
+    }
+
+    static void WriteTree(StringBuilder sb, string dir, int depth)
+    {
+        string indent = new string(' ', depth * 2);
+
+        foreach (string sub in Directory.GetDirectories(dir).OrderBy(d => d))
+        {
+            string name = Path.GetFileName(sub);
+            if (name.StartsWith(".") || name.EndsWith("~")) continue;
+
+            if (CollapsedFolders.Contains(name))
+            {
+                int count = Directory.GetFiles(sub, "*", SearchOption.AllDirectories)
+                                     .Count(f => !f.EndsWith(".meta"));
+                sb.AppendLine($"{indent}{name}/  [collapsed, {count} files]");
+                continue;
+            }
+
+            sb.AppendLine($"{indent}{name}/");
+            WriteTree(sb, sub, depth + 1);
+        }
+
+        var files = Directory.GetFiles(dir).Where(f => !f.EndsWith(".meta")).OrderBy(f => f).ToList();
+        foreach (string f in files.Take(MaxFilesShownPerFolder))
+            sb.AppendLine($"{indent}{Path.GetFileName(f)}");
+        if (files.Count > MaxFilesShownPerFolder)
+            sb.AppendLine($"{indent}... and {files.Count - MaxFilesShownPerFolder} more files");
+    }
+
+    static void WriteTypeSummary(StringBuilder sb, string assetsPath)
+    {
+        sb.AppendLine("=== FILE TYPES IN ASSETS ===");
+        var groups = Directory.GetFiles(assetsPath, "*", SearchOption.AllDirectories)
+            .Where(f => !f.EndsWith(".meta"))
+            .GroupBy(f => Path.GetExtension(f).ToLower())
+            .OrderByDescending(g => g.Count());
+        foreach (var g in groups)
+            sb.AppendLine($"  {(g.Key == "" ? "(no ext)" : g.Key),-12} {g.Count(),5} files");
+        sb.AppendLine();
+    }
+
+    static void WriteScenes(StringBuilder sb)
+    {
+        sb.AppendLine("=== ALL SCENES ===");
+        foreach (string guid in AssetDatabase.FindAssets("t:Scene", new[] { "Assets" }))
+            sb.AppendLine($"  {AssetDatabase.GUIDToAssetPath(guid)}");
+        sb.AppendLine();
+    }
+
+    static void WritePrefabs(StringBuilder sb)
+    {
+        sb.AppendLine("=== PREFABS ===");
+        foreach (string guid in AssetDatabase.FindAssets("t:Prefab", new[] { "Assets" }))
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            var go = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            var comps = go != null
+                ? go.GetComponents<Component>().Where(c => c != null).Select(c => c.GetType().Name)
+                : Enumerable.Empty<string>();
+            sb.AppendLine($"  {path}  [{string.Join(", ", comps)}]");
+        }
+        sb.AppendLine();
+    }
+
+    static void WriteScripts(StringBuilder sb, string assetsPath, bool includeContents)
+    {
+        sb.AppendLine("=== SCRIPTS (types and base classes) ===");
+        var scripts = Directory.GetFiles(assetsPath, "*.cs", SearchOption.AllDirectories)
+                               .OrderBy(f => f).ToList();
+
+        foreach (string file in scripts)
+        {
+            string rel = "Assets" + file.Substring(assetsPath.Length).Replace('\\', '/');
+            string text = File.ReadAllText(file);
+            var types = ClassRegex.Matches(text).Cast<Match>()
+                .Select(m => m.Groups[3].Success && m.Groups[3].Value.Trim() != ""
+                    ? $"{m.Groups[1].Value} {m.Groups[2].Value} : {m.Groups[3].Value.Trim()}"
+                    : $"{m.Groups[1].Value} {m.Groups[2].Value}");
+            sb.AppendLine($"  {rel}");
+            foreach (string t in types) sb.AppendLine($"      - {t}");
+        }
+        sb.AppendLine($"\nTotal scripts: {scripts.Count}");
+        sb.AppendLine();
+
+        if (!includeContents) return;
+
+        sb.AppendLine("=== SCRIPT CONTENTS ===");
+        foreach (string file in scripts)
+        {
+            string rel = "Assets" + file.Substring(assetsPath.Length).Replace('\\', '/');
+            if (rel.Contains("/TextMesh Pro/") || rel.Contains("/Samples/")) continue;
+
+            string text = File.ReadAllText(file);
+            sb.AppendLine();
+            sb.AppendLine($"----- {rel} -----");
+            sb.AppendLine(text.Length > MaxScriptBytes
+                ? text.Substring(0, MaxScriptBytes) + "\n... [truncated]"
+                : text);
+        }
+    }
+}
+#endif

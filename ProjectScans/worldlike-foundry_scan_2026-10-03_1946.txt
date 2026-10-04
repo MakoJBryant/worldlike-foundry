@@ -1,0 +1,465 @@
+﻿PROJECT SCAN: worldlike-foundry
+Scanned: 2026-10-03 19:46:28
+Mode: Structure only
+
+=== PROJECT INFO ===
+Unity version:    6000.3.13f1
+Company:          DefaultCompany
+Color space:      Linear
+Active build target: StandaloneWindows64
+Render pipeline:  UniversalRenderPipelineAsset (PC_RPAsset)
+Scripting defines: (none)
+
+=== SCENES IN BUILD SETTINGS ===
+  [0] ON  Assets/_Game/Scenes/TitleScene.unity
+
+=== PACKAGES (Packages/manifest.json) ===
+  com.unity.ai.navigation  2.0.12
+  com.unity.collab-proxy  2.12.4
+  com.unity.ide.rider  3.0.39
+  com.unity.ide.visualstudio  2.0.26
+  com.unity.inputsystem  1.19.0
+  com.unity.multiplayer.center  1.0.1
+  com.unity.render-pipelines.universal  17.3.0
+  com.unity.shadergraph  17.3.0
+  com.unity.test-framework  1.6.0
+  com.unity.timeline  1.8.12
+  com.unity.ugui  2.0.0
+  com.unity.visualscripting  1.9.11
+  com.unity.modules.accessibility  1.0.0
+  com.unity.modules.adaptiveperformance  1.0.0
+  com.unity.modules.ai  1.0.0
+  com.unity.modules.androidjni  1.0.0
+  com.unity.modules.animation  1.0.0
+  com.unity.modules.assetbundle  1.0.0
+  com.unity.modules.audio  1.0.0
+  com.unity.modules.cloth  1.0.0
+  com.unity.modules.director  1.0.0
+  com.unity.modules.imageconversion  1.0.0
+  com.unity.modules.imgui  1.0.0
+  com.unity.modules.jsonserialize  1.0.0
+  com.unity.modules.particlesystem  1.0.0
+  com.unity.modules.physics  1.0.0
+  com.unity.modules.physics2d  1.0.0
+  com.unity.modules.screencapture  1.0.0
+  com.unity.modules.terrain  1.0.0
+  com.unity.modules.terrainphysics  1.0.0
+  com.unity.modules.tilemap  1.0.0
+  com.unity.modules.ui  1.0.0
+  com.unity.modules.uielements  1.0.0
+  com.unity.modules.umbra  1.0.0
+  com.unity.modules.unityanalytics  1.0.0
+  com.unity.modules.unitywebrequest  1.0.0
+  com.unity.modules.unitywebrequestassetbundle  1.0.0
+  com.unity.modules.unitywebrequestaudio  1.0.0
+  com.unity.modules.unitywebrequesttexture  1.0.0
+  com.unity.modules.unitywebrequestwww  1.0.0
+  com.unity.modules.vectorgraphics  1.0.0
+  com.unity.modules.vehicles  1.0.0
+  com.unity.modules.video  1.0.0
+  com.unity.modules.vr  1.0.0
+  com.unity.modules.wind  1.0.0
+  com.unity.modules.xr  1.0.0
+
+=== ASSETS FOLDER TREE ===
+Assets/
+  _Archive/
+    _Noise Layers/
+      Mountain Noise Layer.asset
+      Rocky Noise Layer.asset
+    Large Planet/
+      Large Atmosphere.asset
+      Large Ocean.asset
+      Large Planet.asset
+      Large Terrain.asset
+    Materials/
+      Atmospheres/
+        M_Blue_Atmosphere.mat
+        M_Purple_Atmosphere.mat
+        M_SunCorona.mat
+        M_Yellow_Atmosphere.mat
+      Oceans/
+        M_Blue_Ocean.mat
+        M_Grey_Ocean.mat
+        M_Lava_Ocean.mat
+      PlanetSurface/
+        M_Dirt_PlanetSurface.mat
+        M_Forest_PlanetSurface.mat
+        M_Marble_PlanetSurface.mat
+        M_SunCore.mat
+      M_Atmosphere.mat
+      M_Default_Atmosphere.mat
+      M_Default_Ocean.mat
+      M_Default_PlanetSurface.mat
+      M_Ocean.mat
+      M_PlanetSurface.mat
+      M_Starfield 1.mat
+      M_Starfield.mat
+      M_SunAtmosphere.mat
+      M_SunOcean.mat
+      M_SunTerrain.mat
+      TestToon.mat
+    Medium Planet/
+      Medium Atmosphere.asset
+      Medium Ocean.asset
+      Medium Planet.asset
+      Medium Terrain.asset
+    Small Planet/
+      Small Atmosphere.asset
+      Small Ocean.asset
+      Small Planet.asset
+      Small Terrain.asset
+    Sun Planet/
+      Sun Atmosphere.asset
+      Sun Noise Layer.asset
+      Sun Ocean.asset
+      Sun Planet.asset
+      Sun Terrain.asset
+    BillboardClickReceiver.cs
+    BillboardLabel.cs
+    CameraFrameOffset.cs
+    Default Atmosphere.asset
+    Default Noise Layer.asset
+    Default Ocean.asset
+    Default Planet.asset
+    Default Terrain.asset
+    GameplayHover.cs
+    LabelFaceCamera.cs
+    PlanetBuyButton.cs
+    PlanetDragController.cs
+    PlanetStats.cs
+    PlanetStatsDisplay.cs
+    PlanetUpgradeDatabase.cs
+    PlanetUpgradeManager.cs
+    SelectionManager.cs
+    TitlePlanetHover.cs
+    TitleScreenController.cs
+    UpgradeBuyButton.cs
+    UpgradeDatabase.asset
+    UpgradeLabel.cs
+    UpgradeSlot.cs
+    WorldSpacePanel.cs
+  _Framework/
+    0-Core/
+      Rendering/
+        Shaders/
+          Includes/
+            Lighting.hlsl
+          SubGraphs/
+            AddAdditionalLights.shadersubgraph
+            AdjustSmoothness.shadersubgraph
+            CalculateLightingRamp.shadersubgraph
+            CalculateLights.shadersubgraph
+            CalculateMainLight.shadersubgraph
+          StarSkybox.shader
+          SunCorona.shader
+          Toon.shadergraph
+          ToonLighting.shadergraph
+        Textures/
+          Rainbow.png
+          RT_Pixelated.renderTexture
+          T_Starfield.png
+          ToonRamp.png
+      EditorFlyCamera.cs
+      GameManager.cs
+      GodModeController.cs
+      ProjectScanner.cs
+      QuitOnEscape.cs
+    1-Generation/
+      _Atmosphere/
+        Presets/
+          Aurora Veil/
+            Atmosphere_Aurora_Veil.asset
+            Aurora_Veil.asset
+            M_Aurora_Veil.mat
+          Clear Sky/
+            Atmosphere_Clear_Sky.asset
+            Clear_Sky.asset
+            M_Clear_Sky.mat
+          Ember Haze/
+            Atmosphere_Ember_Haze.asset
+            Ember_Haze.asset
+            M_Ember_Haze.mat
+          Golden Halo/
+            Atmosphere_Golden_Halo.asset
+            Golden_Halo.asset
+            M_Golden_Halo.mat
+          Morning Mist/
+            Atmosphere_Morning_Mist.asset
+            M_Morning_Mist.mat
+            Morning_Mist.asset
+        AtmosphereGenerator.cs
+        AtmosphereSettings.cs
+      _Ocean/
+        Presets/
+          Azure Sea/
+            Azure_Sea.asset
+            M_Azure_Sea.mat
+            Ocean_Azure_Sea.asset
+          Crystal Deep/
+            Crystal_Deep.asset
+            M_Crystal_Deep.mat
+            Ocean_Crystal_Deep.asset
+          Jade Sea/
+            Jade_Sea.asset
+            M_Jade_Sea.mat
+            Ocean_Jade_Sea.asset
+          Moonlit Sea/
+            M_Moonlit_Sea.mat
+            Moonlit_Sea.asset
+            Ocean_Moonlit_Sea.asset
+          Sunset Sea/
+            M_Sunset_Sea.mat
+            Ocean_Sunset_Sea.asset
+            Sunset_Sea.asset
+        OceanGenerator.cs
+        OceanSettings.cs
+      _Planet/
+        PlanetGenerator.cs
+        PlanetSettings.cs
+        Test_Planet.asset
+      _Terrain/
+        Materials/
+          M_Ash_Grey.mat
+          M_Basalt_Stone.mat
+          M_Crystal_Ice.mat
+          M_Dry_Meadow.mat
+          M_Ember_Rock.mat
+          M_Highland_Sage.mat
+          M_Sandstone.mat
+          M_Twilight_Bloom.mat
+          M_Verdant_Moss.mat
+        Presets/
+          Archipelago/
+            Archipelago.asset
+            NoiseLayer_Archipelago.asset
+            Terrain_Archipelago.asset
+          Basin/
+            Basin.asset
+            NoiseLayer_Basin.asset
+            Terrain_Basin.asset
+          Crag/
+            Crag.asset
+            NoiseLayer_Crag.asset
+            Terrain_Crag.asset
+          Crown/
+            Crown.asset
+            NoiseLayer_Crown.asset
+            Terrain_Crown.asset
+          Highland/
+            Highland.asset
+            NoiseLayer_Highland.asset
+            Terrain_Highland.asset
+        TerrainGenerator.cs
+        TerrainSettings.cs
+      Editor/
+        AtmosphereGeneratorEditor.cs
+        OceanGeneratorEditor.cs
+        PlanetGeneratorEditor.cs
+        StarTextureGenerator.cs
+        TerrainGeneratorEditor.cs
+      Mesh/
+        SphereCreator.cs
+        SphereDeformer.cs
+      Noise/
+        NoiseLayer.cs
+        PerlinNoise3D.cs
+    2-Simulation/
+      Cosmos/
+        GlobalSunDirection.cs
+        SolarBodyData.cs
+        SolarSystemManager.cs
+        SunTracker.cs
+      Planet/
+        PlanetGravity.cs
+        PlanetLightingController.cs
+    3-Entity/
+      GravityBody.cs
+      PlanetCameraController.cs
+      PlayerController.cs
+    Prefabs/
+      Main Camera.prefab
+      Planet.prefab
+      Player.prefab
+  _Game/
+    Art/
+    Audio/
+      flick_down_v1.wav
+      flick_up_v1.wav
+      MusicFadeIn.cs
+      planet_spin_v1.wav
+      PlanetSpinAudio.cs
+      title_theme_v1.wav
+      twinkle_sun_v1.wav
+      twinkle_v1.wav
+    Materials/
+    Scenes/
+      SampleScene.unity
+      TitleScene.unity
+      TitleScene_Backup.unity
+      ToonTestScene.unity
+    Scripts/
+    UI/
+  Input/
+    InputSystem_Actions.cs
+    InputSystem_Actions.inputactions
+  Settings/
+    Build Profiles/
+      Windows.asset
+    DefaultVolumeProfile.asset
+    Mobile_Renderer.asset
+    Mobile_RPAsset.asset
+    PC_Renderer.asset
+    PC_RPAsset.asset
+    SampleSceneProfile.asset
+    UniversalRenderPipelineGlobalSettings.asset
+  TextMesh Pro/  [collapsed, 37 files]
+  Readme.asset
+
+=== FILE TYPES IN ASSETS ===
+  .asset          75 files
+  .cs             52 files
+  .mat            44 files
+  .shader         16 files
+  .shadergraph     6 files
+  .wav             6 files
+  .shadersubgraph     5 files
+  .txt             4 files
+  .cginc           4 files
+  .png             4 files
+  .unity           4 files
+  .prefab          3 files
+  .hlsl            2 files
+  .inputactions     1 files
+  .ttf             1 files
+  .json            1 files
+  .rendertexture     1 files
+
+=== ALL SCENES ===
+  Assets/_Game/Scenes/SampleScene.unity
+  Assets/_Game/Scenes/TitleScene.unity
+  Assets/_Game/Scenes/TitleScene_Backup.unity
+  Assets/_Game/Scenes/ToonTestScene.unity
+
+=== PREFABS ===
+  Assets/_Framework/Prefabs/Main Camera.prefab  [Transform, EditorFlyCamera, Camera, AudioListener, UniversalAdditionalCameraData]
+  Assets/_Framework/Prefabs/Planet.prefab  [Transform, PlanetGenerator, PlanetGravity, PlanetDragController]
+  Assets/_Framework/Prefabs/Player.prefab  [Transform, MeshFilter, MeshRenderer, CapsuleCollider, Rigidbody, GravityBody, PlayerController]
+
+=== SCRIPTS (types and base classes) ===
+  Assets/_Archive/BillboardClickReceiver.cs
+      - class BillboardClickReceiver : MonoBehaviour
+  Assets/_Archive/BillboardLabel.cs
+      - class BillboardLabel : MonoBehaviour
+  Assets/_Archive/CameraFrameOffset.cs
+      - class CameraFrameOffset : MonoBehaviour
+  Assets/_Archive/GameplayHover.cs
+      - class GameplayHover : MonoBehaviour
+  Assets/_Archive/LabelFaceCamera.cs
+      - class LabelFaceCamera : MonoBehaviour
+  Assets/_Archive/PlanetBuyButton.cs
+      - class PlanetBuyButton : MonoBehaviour
+  Assets/_Archive/PlanetDragController.cs
+      - class PlanetDragController : MonoBehaviour
+  Assets/_Archive/PlanetStats.cs
+      - class PlanetStats : MonoBehaviour
+  Assets/_Archive/PlanetStatsDisplay.cs
+      - class PlanetStatsDisplay : MonoBehaviour
+  Assets/_Archive/PlanetUpgradeDatabase.cs
+      - class PlanetUpgradeDatabase : ScriptableObject
+  Assets/_Archive/PlanetUpgradeManager.cs
+      - class PlanetUpgradeManager : MonoBehaviour
+  Assets/_Archive/SelectionManager.cs
+      - class SelectionManager : MonoBehaviour
+  Assets/_Archive/TitlePlanetHover.cs
+      - class TitlePlanetHover : MonoBehaviour
+  Assets/_Archive/TitleScreenController.cs
+      - class TitleScreenController : MonoBehaviour
+  Assets/_Archive/UpgradeBuyButton.cs
+      - class UpgradeBuyButton : MonoBehaviour
+  Assets/_Archive/UpgradeLabel.cs
+      - class UpgradeLabel : MonoBehaviour
+  Assets/_Archive/UpgradeSlot.cs
+      - enum UpgradeSlot
+      - class PlanetUpgrade : ScriptableObject
+  Assets/_Archive/WorldSpacePanel.cs
+      - class WorldSpacePanel : MonoBehaviour
+  Assets/_Framework/0-Core/EditorFlyCamera.cs
+      - class EditorFlyCamera : MonoBehaviour
+  Assets/_Framework/0-Core/GameManager.cs
+      - class GameManager : MonoBehaviour
+      - enum GameMode
+  Assets/_Framework/0-Core/GodModeController.cs
+      - class GodModeController : MonoBehaviour
+  Assets/_Framework/0-Core/ProjectScanner.cs
+      - class ProjectScanner
+  Assets/_Framework/0-Core/QuitOnEscape.cs
+      - class QuitOnEscape : MonoBehaviour
+  Assets/_Framework/1-Generation/_Atmosphere/AtmosphereGenerator.cs
+      - class AtmosphereGenerator : MonoBehaviour
+  Assets/_Framework/1-Generation/_Atmosphere/AtmosphereSettings.cs
+      - class AtmosphereSettings : ScriptableObject
+  Assets/_Framework/1-Generation/_Ocean/OceanGenerator.cs
+      - class OceanGenerator : MonoBehaviour
+  Assets/_Framework/1-Generation/_Ocean/OceanSettings.cs
+      - class OceanSettings : ScriptableObject
+  Assets/_Framework/1-Generation/_Planet/PlanetGenerator.cs
+      - class PlanetGenerator : MonoBehaviour
+  Assets/_Framework/1-Generation/_Planet/PlanetSettings.cs
+      - class PlanetSettings : ScriptableObject
+  Assets/_Framework/1-Generation/_Terrain/TerrainGenerator.cs
+      - class TerrainGenerator : MonoBehaviour
+  Assets/_Framework/1-Generation/_Terrain/TerrainSettings.cs
+      - class TerrainSettings : ScriptableObject
+  Assets/_Framework/1-Generation/Editor/AtmosphereGeneratorEditor.cs
+      - class AtmosphereGeneratorEditor : Editor
+  Assets/_Framework/1-Generation/Editor/OceanGeneratorEditor.cs
+      - class OceanGeneratorEditor : Editor
+  Assets/_Framework/1-Generation/Editor/PlanetGeneratorEditor.cs
+      - class PlanetGeneratorEditor : Editor
+  Assets/_Framework/1-Generation/Editor/StarTextureGenerator.cs
+      - class StarTextureGenerator : EditorWindow
+  Assets/_Framework/1-Generation/Editor/TerrainGeneratorEditor.cs
+      - class TerrainGeneratorEditor : Editor
+  Assets/_Framework/1-Generation/Mesh/SphereCreator.cs
+      - class SphereCreator
+      - struct Face
+  Assets/_Framework/1-Generation/Mesh/SphereDeformer.cs
+      - class SphereDeformer
+  Assets/_Framework/1-Generation/Noise/NoiseLayer.cs
+      - enum NoiseType
+      - class NoiseLayer : ScriptableObject
+  Assets/_Framework/1-Generation/Noise/PerlinNoise3D.cs
+      - class PerlinNoise3D
+  Assets/_Framework/2-Simulation/Cosmos/GlobalSunDirection.cs
+      - class GlobalSunDirection : MonoBehaviour
+  Assets/_Framework/2-Simulation/Cosmos/SolarBodyData.cs
+      - class MoonData
+      - class SolarBodyData
+  Assets/_Framework/2-Simulation/Cosmos/SolarSystemManager.cs
+      - class SolarSystemManager : MonoBehaviour
+  Assets/_Framework/2-Simulation/Cosmos/SunTracker.cs
+      - class SunTracker : MonoBehaviour
+  Assets/_Framework/2-Simulation/Planet/PlanetGravity.cs
+      - class PlanetGravity : MonoBehaviour
+  Assets/_Framework/2-Simulation/Planet/PlanetLightingController.cs
+      - class PlanetLightingController : MonoBehaviour
+  Assets/_Framework/3-Entity/GravityBody.cs
+      - class GravityBody : MonoBehaviour
+  Assets/_Framework/3-Entity/PlanetCameraController.cs
+      - class PlanetCameraController : MonoBehaviour
+  Assets/_Framework/3-Entity/PlayerController.cs
+      - class PlayerController : MonoBehaviour
+  Assets/_Game/Audio/MusicFadeIn.cs
+      - class MusicFadeIn : MonoBehaviour
+  Assets/_Game/Audio/PlanetSpinAudio.cs
+      - class PlanetSpinAudio : MonoBehaviour
+  Assets/Input/InputSystem_Actions.cs
+      - class Example : MonoBehaviour, MyActions.IPlayerActions
+      - struct PlayerActions
+      - struct UIActions
+      - interface IPlayerActions
+      - interface IUIActions
+
+Total scripts: 52
+
