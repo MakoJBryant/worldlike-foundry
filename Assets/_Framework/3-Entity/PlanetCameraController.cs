@@ -10,7 +10,7 @@ public class PlanetCameraController : MonoBehaviour
 
     [Header("Pitch")]
     public float mouseSensitivity = 2f;
-    public float minPitch = -80f;
+    public float minPitch = -55f;
     public float maxPitch = 80f;
 
     [Header("Distance")]

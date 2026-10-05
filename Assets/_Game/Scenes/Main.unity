@@ -636,6 +636,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1424749102}
     m_Modifications:
+    - target: {fileID: 6450202609808632189, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
+      propertyPath: near clip plane
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7464360377670156147, guid: e19beb30146144a4b8f905dd8781c86f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1405,6 +1409,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 970258463}
+    - target: {fileID: 5488826319505644722, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
+      propertyPath: collisionMask.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488826319505644722, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
+      propertyPath: cameraCollisionRadius
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5525498335494959922, guid: 04b1d46cc22b09c49a0fdeef4c7ee63e, type: 3}
       propertyPath: planet
       value: 
@@ -3762,7 +3774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &4337376481872150035
 MeshRenderer:
   m_ObjectHideFlags: 0
