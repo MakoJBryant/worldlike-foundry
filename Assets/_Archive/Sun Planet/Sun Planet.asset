@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c71940a8faa8641945f7702ca6e3c4, type: 3}
   m_Name: Sun Planet
   m_EditorClassIdentifier: Assembly-CSharp::PlanetData
-  radius: 500
+  radius: 750
   terrainSettings: {fileID: 11400000, guid: ee837e3051951d0468ea9cdf1253b0b0, type: 2}
   oceanSettings: {fileID: 11400000, guid: 4bd28cde7af7b1e4faac983ec9734fac, type: 2}
   atmosphereSettings: {fileID: 11400000, guid: 6ac8969569c616c41976160c0cf7239f, type: 2}
